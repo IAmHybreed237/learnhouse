@@ -228,7 +228,9 @@
     "leave_organization_title": "Keluar dari organisasi?",
     "leave_organization_desc": "Anda akan kehilangan akses ke {{org}} dan dihapus dari anggotanya. Anda dapat bergabung kembali nanti jika diundang.",
     "leave_organization_error": "Tidak dapat keluar dari organisasi ini. Silakan coba lagi.",
-    "leaving": "Keluar…"
+    "leaving": "Keluar…",
+    "dismiss": "Tutup",
+    "sign_out": "Keluar"
   },
   "banner": {
     "viewing_as_guest": "Anda melihat {{name}} sebagai tamu.",
@@ -389,7 +391,24 @@
     "image_subtitle_signup": "Buat akun Anda dan luncurkan kursus pertama Anda dalam hitungan menit.",
     "image_title_verify": "Verifikasi email Anda.",
     "image_subtitle_verify": "Satu langkah cepat untuk mengamankan akun Anda dan memulai.",
-    "turnstile_failed": "Verifikasi gagal. Silakan coba lagi."
+    "turnstile_failed": "Verifikasi gagal. Silakan coba lagi.",
+    "magic_back_to_login": "Kembali ke masuk",
+    "magic_send": "Kirimi saya tautan masuk",
+    "magic_sent_body": "Jika ada akun untuk {{email}}, kami baru saja mengirimkan tautan aman untuk masuk. Tautan segera kedaluwarsa, jadi gunakan sesegera mungkin.",
+    "magic_sent_title": "Periksa email Anda",
+    "magic_subtitle": "Masukkan email Anda dan kami akan mengirimkan tautan yang membuat Anda masuk — tanpa kata sandi.",
+    "magic_title": "Masuk dengan tautan",
+    "magic_use_password": "Masuk dengan kata sandi saja",
+    "mfa_back_to_login": "Kembali ke masuk",
+    "mfa_backup_code": "Kode cadangan",
+    "mfa_code": "Kode verifikasi",
+    "mfa_subtitle": "Masukkan kode 6 digit dari aplikasi autentikator Anda.",
+    "mfa_subtitle_backup": "Masukkan salah satu kode cadangan yang Anda simpan.",
+    "mfa_title": "Verifikasi dua langkah",
+    "mfa_use_authenticator": "Gunakan aplikasi autentikator saja",
+    "mfa_use_backup": "Gunakan kode cadangan saja",
+    "mfa_verify": "Verifikasi",
+    "mfa_invalid_code": "Kode itu tidak benar. Periksa apakah jam perangkat Anda diatur secara otomatis, lalu coba kode berikutnya."
   },
   "validation": {
     "required": "Wajib isi",
@@ -2966,6 +2985,73 @@
         "custom_required": "A label and a URL are required",
         "plan_locked": "Requires {{plan}} plan",
         "feature_off": "Feature is off"
+      },
+      "security": {
+        "active_no_date": "Kebijakan aktif",
+        "active_since": "Kebijakan aktif sejak {{date}}",
+        "admin_mfa_first": "Aktifkan autentikasi dua faktor di akun Anda sendiri sebelum mewajibkannya untuk organisasi.",
+        "admin_mfa_first_cta": "Siapkan autentikasi dua faktor di akun Anda",
+        "admin_mfa_first_why": "Jika tidak, kebijakan ini akan mengunci Anda dari organisasi Anda sendiri begitu disimpan — dan tidak ada admin yang tersisa untuk mematikannya kembali.",
+        "badge_enrolled": "Terdaftar",
+        "badge_exempt": "Dikecualikan — {{method}}",
+        "badge_not_enrolled": "Belum terdaftar",
+        "blocked_hint": "Tinjau daftar ini sebelum mengaktifkan persyaratan — inilah orang-orang yang kehilangan akses ke organisasi ini jika tidak mendaftar tepat waktu.",
+        "cancel": "Batal",
+        "compliance_count": "{{enabled}} dari {{total}} anggota telah mengaktifkan autentikasi dua faktor",
+        "compliance_title": "Cakupan dua faktor",
+        "confirm_button": "Ya, wajibkan dua faktor",
+        "confirm_deadline": "{{count}} dari {{total}} anggota akan kehilangan akses ke organisasi ini pada {{date}} kecuali mereka mengaktifkan autentikasi dua faktor sebelum itu.",
+        "confirm_exempt_note": "{{count}} anggota dikecualikan karena mereka masuk melalui penyedia identitas eksternal.",
+        "confirm_immediate": "{{count}} dari {{total}} anggota akan langsung kehilangan akses ke organisasi ini segera setelah Anda menyimpan.",
+        "confirm_list_title": "Siapa yang terpengaruh",
+        "confirm_none": "Semua orang di organisasi ini sudah mengaktifkan autentikasi dua faktor atau dikecualikan. Tidak ada yang kehilangan akses.",
+        "confirm_reversible": "Ini dapat dibatalkan: mematikan persyaratan akan memulihkan akses dengan segera.",
+        "confirm_title": "Wajibkan dua faktor untuk semua orang?",
+        "exempt_hint": "Penyedia identitas mereka sudah menangani autentikasi multifaktor, jadi meminta faktor kedua di sini tidak menambah apa pun.",
+        "exempt_label": "Kecualikan pengguna yang masuk melalui Google atau SSO",
+        "grace_days": "{{count}} hari",
+        "grace_hint_days": "Anggota memiliki {{count}} hari untuk mendaftar sebelum diblokir. Anggota baru mendapatkan jangka waktu yang sama sejak hari mereka bergabung.",
+        "grace_hint_immediate": "Anggota tanpa autentikasi dua faktor diblokir segera setelah kebijakan disimpan.",
+        "grace_immediately": "Segera",
+        "grace_label": "Masa tenggang",
+        "load_error": "Tidak dapat memuat status dua faktor organisasi Anda.",
+        "load_error_title": "Terjadi kesalahan",
+        "members_empty": "Belum ada anggota di organisasi ini.",
+        "members_sorted": "yang belum terdaftar didahulukan",
+        "members_title": "Anggota",
+        "methods_description": "Pilih cara anggota diizinkan masuk ke organisasi ini. Biarkan semua metode tercentang untuk menjaga proses masuk tanpa batasan.",
+        "methods_empty_warning": "Tanpa metode yang dipilih, tidak ada yang bisa masuk ke organisasi ini. Pilih setidaknya satu.",
+        "methods_title": "Metode masuk yang diizinkan",
+        "no_restart_note": "Menyimpan perubahan pada kebijakan yang sudah aktif tidak memulai ulang hitung mundur siapa pun — tenggat yang ada tetap terpatok pada tanggal di atas. Hitung mundur hanya diatur ulang jika Anda mematikan lalu menyalakan kembali persyaratan.",
+        "not_admin_body": "Hanya admin organisasi yang dapat melihat atau mengubah persyaratan dua faktor.",
+        "not_admin_title": "Anda tidak memiliki akses ke pengaturan ini",
+        "policy_description": "Anggota tanpa faktor kedua diblokir dari organisasi ini setelah masa tenggang mereka berakhir. Mereka tetap memiliki akun dan organisasi lain mana pun yang mereka ikuti, dan mendapatkan kembali akses begitu mereka mendaftar.",
+        "policy_title": "Wajibkan autentikasi dua faktor",
+        "read_only": "Anda dapat meninjau halaman ini, tetapi hanya admin organisasi yang dapat mengubah kebijakan.",
+        "refresh": "Segarkan",
+        "reset_2fa": "Setel ulang 2FA",
+        "reset_confirm": "Konfirmasi penyetelan ulang?",
+        "reset_error": "Tidak dapat menyetel ulang autentikasi dua faktor anggota ini.",
+        "reset_hint": "Bersihkan autentikasi dua faktor anggota ini agar mereka dapat menyiapkannya lagi",
+        "resetting": "Menyetel ulang…",
+        "retry": "Coba lagi",
+        "save": "Simpan perubahan",
+        "save_error": "Tidak dapat menyimpan kebijakan keamanan.",
+        "save_success": "Kebijakan keamanan diperbarui",
+        "saving": "Menyimpan kebijakan keamanan…",
+        "saving_short": "Menyimpan…",
+        "self_blocking": "Tenggat Anda sendiri telah lewat. Daftar sekarang untuk mempertahankan akses ke organisasi ini.",
+        "self_days_left": "Anda punya {{count}} hari lagi untuk mendaftar autentikasi dua faktor sendiri.",
+        "session_sharing_hint": "Saat mati, masuk di learnhouse.io tidak akan mengizinkan anggota masuk ke organisasi ini — mereka harus masuk lagi dari halaman masuk organisasi ini menggunakan metode yang diizinkan.",
+        "session_sharing_label": "Izinkan berbagi sesi dengan learnhouse.io",
+        "show_all": "Tampilkan semua {{count}} anggota",
+        "show_less": "Tampilkan lebih sedikit",
+        "stat_blocked": "Akan diblokir",
+        "stat_enrolled": "Terdaftar",
+        "stat_exempt": "Dikecualikan (masuk eksternal)",
+        "subtitle": "Wajibkan autentikasi dua faktor untuk semua orang di organisasi ini.",
+        "title": "Keamanan",
+        "you": "Anda"
       }
     },
     "users": {
@@ -3022,19 +3108,97 @@
         "failed_load": "Gagal memuat dosier siswa.",
         "back_to_students": "Kembali ke daftar siswa",
         "no_behavioral": "Tidak ada data perilaku (analitik mungkin belum dikonfigurasi untuk rentang waktu ini).",
-        "ranges": { "d30": "30 hari", "d90": "90 hari", "y1": "1 tahun" },
-        "kpi": { "courses": "Kursus", "completed": "{{count}} selesai", "avg_progress": "Rata-rata kemajuan", "time_spent": "Waktu yang dihabiskan", "assignments": "Tugas", "avg_grade": "rata-rata {{grade}}", "certificates": "Sertifikat", "connections": "Koneksi", "last": "terakhir {{date}}" },
-        "tabs": { "connections": "Koneksi", "courses": "Kursus", "assignments": "Tugas", "code": "Kode", "community": "Komunitas", "certificates": "Sertifikat", "behavior": "Perilaku" },
-        "identity": { "verified": "Terverifikasi", "unverified": "Belum terverifikasi", "via": "melalui {{method}}" },
-        "connections": { "title": "Koneksi", "empty": "Belum ada koneksi yang tercatat." },
-        "courses": { "title": "Kemajuan kursus", "empty": "Belum terdaftar di kursus mana pun.", "activities": "{{done}}/{{total}} aktivitas", "enrolled": "Terdaftar {{date}}" },
-        "assignments": { "title": "Tugas", "empty": "Tidak ada pengumpulan tugas.", "attempt": "percobaan {{number}}", "feedback": "Umpan balik:" },
-        "code": { "title": "Latihan kode", "empty": "Tidak ada pengumpulan kode.", "activity": "Aktivitas", "result": "Hasil", "tests": "Pengujian", "time": "Waktu", "when": "Kapan", "passed": "Lulus", "failed": "Gagal" },
-        "community": { "title": "Partisipasi komunitas", "empty": "Tidak ada aktivitas komunitas.", "discussions": "Diskusi", "comments": "Komentar" },
-        "certificates": { "title": "Sertifikat yang diperoleh", "empty": "Tidak ada sertifikat yang diperoleh." },
-        "behavior": { "title": "Analitik perilaku", "time_by_course": "Waktu yang dihabiskan per kursus", "searches": "Pencarian" },
-        "status": { "completed": "selesai", "in_progress": "sedang berlangsung", "paused": "dijeda", "cancelled": "dibatalkan", "graded": "dinilai", "submitted": "dikumpulkan", "pending": "menunggu", "late": "terlambat", "not_submitted": "belum dikumpulkan" },
-        "comparison": { "student": "Siswa", "enrolled": "Terdaftar", "completed": "Selesai", "certificates": "Sertifikat", "last_connection": "Koneksi terakhir", "view": "Lihat" }
+        "ranges": {
+          "d30": "30 hari",
+          "d90": "90 hari",
+          "y1": "1 tahun"
+        },
+        "kpi": {
+          "courses": "Kursus",
+          "completed": "{{count}} selesai",
+          "avg_progress": "Rata-rata kemajuan",
+          "time_spent": "Waktu yang dihabiskan",
+          "assignments": "Tugas",
+          "avg_grade": "rata-rata {{grade}}",
+          "certificates": "Sertifikat",
+          "connections": "Koneksi",
+          "last": "terakhir {{date}}"
+        },
+        "tabs": {
+          "connections": "Koneksi",
+          "courses": "Kursus",
+          "assignments": "Tugas",
+          "code": "Kode",
+          "community": "Komunitas",
+          "certificates": "Sertifikat",
+          "behavior": "Perilaku"
+        },
+        "identity": {
+          "verified": "Terverifikasi",
+          "unverified": "Belum terverifikasi",
+          "via": "melalui {{method}}"
+        },
+        "connections": {
+          "title": "Koneksi",
+          "empty": "Belum ada koneksi yang tercatat."
+        },
+        "courses": {
+          "title": "Kemajuan kursus",
+          "empty": "Belum terdaftar di kursus mana pun.",
+          "activities": "{{done}}/{{total}} aktivitas",
+          "enrolled": "Terdaftar {{date}}"
+        },
+        "assignments": {
+          "title": "Tugas",
+          "empty": "Tidak ada pengumpulan tugas.",
+          "attempt": "percobaan {{number}}",
+          "feedback": "Umpan balik:"
+        },
+        "code": {
+          "title": "Latihan kode",
+          "empty": "Tidak ada pengumpulan kode.",
+          "activity": "Aktivitas",
+          "result": "Hasil",
+          "tests": "Pengujian",
+          "time": "Waktu",
+          "when": "Kapan",
+          "passed": "Lulus",
+          "failed": "Gagal"
+        },
+        "community": {
+          "title": "Partisipasi komunitas",
+          "empty": "Tidak ada aktivitas komunitas.",
+          "discussions": "Diskusi",
+          "comments": "Komentar"
+        },
+        "certificates": {
+          "title": "Sertifikat yang diperoleh",
+          "empty": "Tidak ada sertifikat yang diperoleh."
+        },
+        "behavior": {
+          "title": "Analitik perilaku",
+          "time_by_course": "Waktu yang dihabiskan per kursus",
+          "searches": "Pencarian"
+        },
+        "status": {
+          "completed": "selesai",
+          "in_progress": "sedang berlangsung",
+          "paused": "dijeda",
+          "cancelled": "dibatalkan",
+          "graded": "dinilai",
+          "submitted": "dikumpulkan",
+          "pending": "menunggu",
+          "late": "terlambat",
+          "not_submitted": "belum dikumpulkan"
+        },
+        "comparison": {
+          "student": "Siswa",
+          "enrolled": "Terdaftar",
+          "completed": "Selesai",
+          "certificates": "Sertifikat",
+          "last_connection": "Koneksi terakhir",
+          "view": "Lihat"
+        }
       },
       "active_users": {
         "title": "Pengguna aktif",

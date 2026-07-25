@@ -228,7 +228,9 @@
     "leave_organization_title": "Organisation verlassen?",
     "leave_organization_desc": "Du verlierst den Zugriff auf {{org}} und wirst aus den Mitgliedern entfernt. Du kannst später erneut beitreten, wenn du eingeladen wirst.",
     "leave_organization_error": "Organisation konnte nicht verlassen werden. Bitte versuche es erneut.",
-    "leaving": "Wird verlassen…"
+    "leaving": "Wird verlassen…",
+    "dismiss": "Schließen",
+    "sign_out": "Abmelden"
   },
   "banner": {
     "viewing_as_guest": "Sie betrachten {{name}} als Gast.",
@@ -367,7 +369,24 @@
     "image_title_verify": "Bestätige deine E-Mail-Adresse.",
     "image_subtitle_verify": "Ein kurzer Schritt, um dein Konto zu sichern und loszulegen.",
     "turnstile_failed": "Verifizierung fehlgeschlagen. Bitte versuchen Sie es erneut.",
-    "resend_verification": "Nicht erhalten? E-Mail erneut senden"
+    "resend_verification": "Nicht erhalten? E-Mail erneut senden",
+    "magic_back_to_login": "Zurück zur Anmeldung",
+    "magic_send": "Anmeldelink per E-Mail senden",
+    "magic_sent_body": "Falls ein Konto für {{email}} existiert, haben wir gerade einen sicheren Link zur Anmeldung gesendet. Er läuft bald ab, also nutze ihn zeitnah.",
+    "magic_sent_title": "Prüfe deine E-Mails",
+    "magic_subtitle": "Gib deine E-Mail-Adresse ein und wir senden dir einen Link, der dich anmeldet – ganz ohne Passwort.",
+    "magic_title": "Mit Link anmelden",
+    "magic_use_password": "Stattdessen mit Passwort anmelden",
+    "mfa_back_to_login": "Zurück zur Anmeldung",
+    "mfa_backup_code": "Backup-Code",
+    "mfa_code": "Bestätigungscode",
+    "mfa_subtitle": "Gib den 6-stelligen Code aus deiner Authenticator-App ein.",
+    "mfa_subtitle_backup": "Gib einen deiner gespeicherten Backup-Codes ein.",
+    "mfa_title": "Zwei-Faktor-Authentifizierung",
+    "mfa_use_authenticator": "Stattdessen die Authenticator-App verwenden",
+    "mfa_use_backup": "Stattdessen einen Backup-Code verwenden",
+    "mfa_verify": "Bestätigen",
+    "mfa_invalid_code": "Dieser Code ist nicht korrekt. Prüfe, ob die Uhr deines Geräts automatisch gestellt wird, und versuche dann den nächsten Code."
   },
   "validation": {
     "required": "Erforderlich",
@@ -2944,6 +2963,73 @@
         "custom_required": "A label and a URL are required",
         "plan_locked": "Requires {{plan}} plan",
         "feature_off": "Feature is off"
+      },
+      "security": {
+        "active_no_date": "Richtlinie ist aktiv",
+        "active_since": "Richtlinie aktiv seit {{date}}",
+        "admin_mfa_first": "Aktiviere die Zwei-Faktor-Authentifizierung für dein eigenes Konto, bevor du sie für die Organisation verlangst.",
+        "admin_mfa_first_cta": "Zwei-Faktor-Authentifizierung für dein Konto einrichten",
+        "admin_mfa_first_why": "Andernfalls würde dich die Richtlinie beim Speichern aus deiner eigenen Organisation aussperren – und kein Admin könnte sie wieder deaktivieren.",
+        "badge_enrolled": "Eingerichtet",
+        "badge_exempt": "Ausgenommen – {{method}}",
+        "badge_not_enrolled": "Nicht eingerichtet",
+        "blocked_hint": "Prüfe diese Liste, bevor du die Anforderung aktivierst – das sind die Personen, die den Zugriff auf diese Organisation verlieren, wenn sie sich nicht rechtzeitig einrichten.",
+        "cancel": "Abbrechen",
+        "compliance_count": "{{enabled}} von {{total}} Mitgliedern haben die Zwei-Faktor-Authentifizierung aktiviert",
+        "compliance_title": "Zwei-Faktor-Abdeckung",
+        "confirm_button": "Ja, Zwei-Faktor-Authentifizierung verlangen",
+        "confirm_deadline": "{{count}} von {{total}} Mitgliedern verlieren am {{date}} den Zugriff auf diese Organisation, sofern sie bis dahin die Zwei-Faktor-Authentifizierung nicht aktivieren.",
+        "confirm_exempt_note": "{{count}} Mitglieder sind ausgenommen, da sie sich über einen externen Identitätsanbieter anmelden.",
+        "confirm_immediate": "{{count}} von {{total}} Mitgliedern verlieren sofort beim Speichern den Zugriff auf diese Organisation.",
+        "confirm_list_title": "Wer ist betroffen",
+        "confirm_none": "Alle in dieser Organisation haben die Zwei-Faktor-Authentifizierung aktiviert oder sind ausgenommen. Niemand verliert den Zugriff.",
+        "confirm_reversible": "Dies ist umkehrbar: Wird die Anforderung deaktiviert, wird der Zugriff sofort wiederhergestellt.",
+        "confirm_title": "Zwei-Faktor-Authentifizierung für alle verlangen?",
+        "exempt_hint": "Ihr Identitätsanbieter übernimmt bereits die Multi-Faktor-Authentifizierung, daher bringt ein zweiter Faktor hier keinen Mehrwert.",
+        "exempt_label": "Benutzer ausnehmen, die sich über Google oder SSO anmelden",
+        "grace_days": "{{count}} Tage",
+        "grace_hint_days": "Mitglieder haben {{count}} Tage Zeit, sich einzurichten, bevor sie blockiert werden. Neue Mitglieder erhalten denselben Zeitraum ab ihrem Beitrittstag.",
+        "grace_hint_immediate": "Mitglieder ohne Zwei-Faktor-Authentifizierung werden blockiert, sobald die Richtlinie gespeichert wird.",
+        "grace_immediately": "Sofort",
+        "grace_label": "Übergangsfrist",
+        "load_error": "Der Zwei-Faktor-Status deiner Organisation konnte nicht geladen werden.",
+        "load_error_title": "Etwas ist schiefgelaufen",
+        "members_empty": "Noch keine Mitglieder in dieser Organisation.",
+        "members_sorted": "nicht eingerichtete zuerst",
+        "members_title": "Mitglieder",
+        "methods_description": "Lege fest, wie sich Mitglieder bei dieser Organisation anmelden dürfen. Lasse alle Methoden aktiviert, um die Anmeldung uneingeschränkt zu lassen.",
+        "methods_empty_warning": "Ohne ausgewählte Methode könnte sich niemand bei dieser Organisation anmelden. Wähle mindestens eine aus.",
+        "methods_title": "Erlaubte Anmeldemethoden",
+        "no_restart_note": "Das Speichern von Änderungen an einer bereits aktiven Richtlinie setzt keinen laufenden Countdown zurück – bestehende Fristen bleiben an das oben genannte Datum gebunden. Der Countdown wird nur zurückgesetzt, wenn du die Anforderung deaktivierst und wieder aktivierst.",
+        "not_admin_body": "Nur Organisationsadmins können die Zwei-Faktor-Anforderung ansehen oder ändern.",
+        "not_admin_title": "Du hast keinen Zugriff auf diese Einstellung",
+        "policy_description": "Mitglieder ohne zweiten Faktor werden nach Ablauf ihrer Übergangsfrist von dieser Organisation blockiert. Sie behalten ihr Konto und alle anderen Organisationen, denen sie angehören, und erhalten den Zugriff zurück, sobald sie sich einrichten.",
+        "policy_title": "Zwei-Faktor-Authentifizierung verlangen",
+        "read_only": "Du kannst diese Seite ansehen, aber nur ein Organisationsadmin kann die Richtlinie ändern.",
+        "refresh": "Aktualisieren",
+        "reset_2fa": "2FA zurücksetzen",
+        "reset_confirm": "Zurücksetzen bestätigen?",
+        "reset_error": "Die Zwei-Faktor-Authentifizierung dieses Mitglieds konnte nicht zurückgesetzt werden.",
+        "reset_hint": "Die Zwei-Faktor-Authentifizierung dieses Mitglieds löschen, damit es sie erneut einrichten kann",
+        "resetting": "Wird zurückgesetzt…",
+        "retry": "Erneut versuchen",
+        "save": "Änderungen speichern",
+        "save_error": "Die Sicherheitsrichtlinie konnte nicht gespeichert werden.",
+        "save_success": "Sicherheitsrichtlinie aktualisiert",
+        "saving": "Sicherheitsrichtlinie wird gespeichert…",
+        "saving_short": "Wird gespeichert…",
+        "self_blocking": "Deine eigene Frist ist abgelaufen. Richte jetzt die Zwei-Faktor-Authentifizierung ein, um den Zugriff auf diese Organisation zu behalten.",
+        "self_days_left": "Du hast noch {{count}} Tage, um selbst die Zwei-Faktor-Authentifizierung einzurichten.",
+        "session_sharing_hint": "Wenn deaktiviert, gelangen Mitglieder durch die Anmeldung bei learnhouse.io nicht in diese Organisation – sie müssen sich erneut über die Anmeldeseite dieser Organisation mit einer erlaubten Methode anmelden.",
+        "session_sharing_label": "Teilen von Sitzungen mit learnhouse.io erlauben",
+        "show_all": "Alle {{count}} Mitglieder anzeigen",
+        "show_less": "Weniger anzeigen",
+        "stat_blocked": "Würde blockiert",
+        "stat_enrolled": "Eingerichtet",
+        "stat_exempt": "Ausgenommen (externe Anmeldung)",
+        "subtitle": "Verlange die Zwei-Faktor-Authentifizierung für alle in dieser Organisation.",
+        "title": "Sicherheit",
+        "you": "du"
       }
     },
     "users": {
@@ -3000,19 +3086,97 @@
         "failed_load": "Das Studentendossier konnte nicht geladen werden.",
         "back_to_students": "Zurück zu den Studenten",
         "no_behavioral": "Keine Verhaltensdaten (Analysen sind für diesen Zeitraum möglicherweise nicht konfiguriert).",
-        "ranges": { "d30": "30 Tage", "d90": "90 Tage", "y1": "1 Jahr" },
-        "kpi": { "courses": "Kurse", "completed": "{{count}} abgeschlossen", "avg_progress": "Durchschn. Fortschritt", "time_spent": "Aufgewendete Zeit", "assignments": "Aufgaben", "avg_grade": "Durchschn. {{grade}}", "certificates": "Zertifikate", "connections": "Verbindungen", "last": "letzte {{date}}" },
-        "tabs": { "connections": "Verbindungen", "courses": "Kurse", "assignments": "Aufgaben", "code": "Code", "community": "Community", "certificates": "Zertifikate", "behavior": "Verhalten" },
-        "identity": { "verified": "Verifiziert", "unverified": "Nicht verifiziert", "via": "über {{method}}" },
-        "connections": { "title": "Verbindungen", "empty": "Noch keine Verbindungen aufgezeichnet." },
-        "courses": { "title": "Kursfortschritt", "empty": "In keinem Kurs eingeschrieben.", "activities": "{{done}}/{{total}} Aktivitäten", "enrolled": "Eingeschrieben am {{date}}" },
-        "assignments": { "title": "Aufgaben", "empty": "Keine Aufgabeneinreichungen.", "attempt": "Versuch {{number}}", "feedback": "Feedback:" },
-        "code": { "title": "Programmieraufgaben", "empty": "Keine Code-Einreichungen.", "activity": "Aktivität", "result": "Ergebnis", "tests": "Tests", "time": "Zeit", "when": "Wann", "passed": "Bestanden", "failed": "Fehlgeschlagen" },
-        "community": { "title": "Community-Beteiligung", "empty": "Keine Community-Aktivität.", "discussions": "Diskussionen", "comments": "Kommentare" },
-        "certificates": { "title": "Erworbene Zertifikate", "empty": "Keine Zertifikate erworben." },
-        "behavior": { "title": "Verhaltensanalysen", "time_by_course": "Aufgewendete Zeit pro Kurs", "searches": "Suchen" },
-        "status": { "completed": "abgeschlossen", "in_progress": "in Bearbeitung", "paused": "pausiert", "cancelled": "abgebrochen", "graded": "benotet", "submitted": "eingereicht", "pending": "ausstehend", "late": "verspätet", "not_submitted": "nicht eingereicht" },
-        "comparison": { "student": "Student", "enrolled": "Eingeschrieben", "completed": "Abgeschlossen", "certificates": "Zertifikate", "last_connection": "Letzte Verbindung", "view": "Anzeigen" }
+        "ranges": {
+          "d30": "30 Tage",
+          "d90": "90 Tage",
+          "y1": "1 Jahr"
+        },
+        "kpi": {
+          "courses": "Kurse",
+          "completed": "{{count}} abgeschlossen",
+          "avg_progress": "Durchschn. Fortschritt",
+          "time_spent": "Aufgewendete Zeit",
+          "assignments": "Aufgaben",
+          "avg_grade": "Durchschn. {{grade}}",
+          "certificates": "Zertifikate",
+          "connections": "Verbindungen",
+          "last": "letzte {{date}}"
+        },
+        "tabs": {
+          "connections": "Verbindungen",
+          "courses": "Kurse",
+          "assignments": "Aufgaben",
+          "code": "Code",
+          "community": "Community",
+          "certificates": "Zertifikate",
+          "behavior": "Verhalten"
+        },
+        "identity": {
+          "verified": "Verifiziert",
+          "unverified": "Nicht verifiziert",
+          "via": "über {{method}}"
+        },
+        "connections": {
+          "title": "Verbindungen",
+          "empty": "Noch keine Verbindungen aufgezeichnet."
+        },
+        "courses": {
+          "title": "Kursfortschritt",
+          "empty": "In keinem Kurs eingeschrieben.",
+          "activities": "{{done}}/{{total}} Aktivitäten",
+          "enrolled": "Eingeschrieben am {{date}}"
+        },
+        "assignments": {
+          "title": "Aufgaben",
+          "empty": "Keine Aufgabeneinreichungen.",
+          "attempt": "Versuch {{number}}",
+          "feedback": "Feedback:"
+        },
+        "code": {
+          "title": "Programmieraufgaben",
+          "empty": "Keine Code-Einreichungen.",
+          "activity": "Aktivität",
+          "result": "Ergebnis",
+          "tests": "Tests",
+          "time": "Zeit",
+          "when": "Wann",
+          "passed": "Bestanden",
+          "failed": "Fehlgeschlagen"
+        },
+        "community": {
+          "title": "Community-Beteiligung",
+          "empty": "Keine Community-Aktivität.",
+          "discussions": "Diskussionen",
+          "comments": "Kommentare"
+        },
+        "certificates": {
+          "title": "Erworbene Zertifikate",
+          "empty": "Keine Zertifikate erworben."
+        },
+        "behavior": {
+          "title": "Verhaltensanalysen",
+          "time_by_course": "Aufgewendete Zeit pro Kurs",
+          "searches": "Suchen"
+        },
+        "status": {
+          "completed": "abgeschlossen",
+          "in_progress": "in Bearbeitung",
+          "paused": "pausiert",
+          "cancelled": "abgebrochen",
+          "graded": "benotet",
+          "submitted": "eingereicht",
+          "pending": "ausstehend",
+          "late": "verspätet",
+          "not_submitted": "nicht eingereicht"
+        },
+        "comparison": {
+          "student": "Student",
+          "enrolled": "Eingeschrieben",
+          "completed": "Abgeschlossen",
+          "certificates": "Zertifikate",
+          "last_connection": "Letzte Verbindung",
+          "view": "Anzeigen"
+        }
       },
       "active_users": {
         "title": "Aktive Benutzer",

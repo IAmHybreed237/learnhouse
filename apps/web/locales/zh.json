@@ -228,7 +228,9 @@
     "leave_organization_title": "退出组织？",
     "leave_organization_desc": "你将失去对 {{org}} 的访问权限，并从成员列表中移除。若收到邀请，你之后可以重新加入。",
     "leave_organization_error": "无法退出此组织。请重试。",
-    "leaving": "正在退出…"
+    "leaving": "正在退出…",
+    "dismiss": "关闭",
+    "sign_out": "退出登录"
   },
   "banner": {
     "viewing_as_guest": "您正在以访客身份浏览 {{name}}。",
@@ -367,7 +369,24 @@
     "image_title_verify": "验证你的邮箱。",
     "image_subtitle_verify": "一步即可保护账户安全并开始使用。",
     "turnstile_failed": "验证失败。请重试。",
-    "resend_verification": "没收到？重新发送邮件"
+    "resend_verification": "没收到？重新发送邮件",
+    "magic_back_to_login": "返回登录",
+    "magic_send": "给我发送登录链接",
+    "magic_sent_body": "如果 {{email}} 存在对应账户，我们已向其发送了一个安全登录链接。链接很快就会失效，请尽快使用。",
+    "magic_sent_title": "请查收邮件",
+    "magic_subtitle": "输入你的邮箱，我们会向你发送一个登录链接——无需密码。",
+    "magic_title": "使用链接登录",
+    "magic_use_password": "改用密码登录",
+    "mfa_back_to_login": "返回登录",
+    "mfa_backup_code": "备用码",
+    "mfa_code": "验证码",
+    "mfa_subtitle": "输入身份验证器应用中的 6 位数字验证码。",
+    "mfa_subtitle_backup": "输入你保存的其中一个备用码。",
+    "mfa_title": "两步验证",
+    "mfa_use_authenticator": "改用身份验证器应用",
+    "mfa_use_backup": "改用备用码",
+    "mfa_verify": "验证",
+    "mfa_invalid_code": "验证码不正确。请检查设备时钟是否设置为自动，然后尝试下一个验证码。"
   },
   "verify_email": {
     "title": "邮箱验证",
@@ -2956,6 +2975,73 @@
         "custom_required": "A label and a URL are required",
         "plan_locked": "Requires {{plan}} plan",
         "feature_off": "Feature is off"
+      },
+      "security": {
+        "active_no_date": "策略已启用",
+        "active_since": "策略自 {{date}} 起生效",
+        "admin_mfa_first": "在为整个组织强制启用两步验证之前，请先为你自己的账户启用它。",
+        "admin_mfa_first_cta": "为你的账户设置两步验证",
+        "admin_mfa_first_why": "否则该策略一旦保存，就会将你锁在自己的组织之外——届时将没有管理员能把它重新关闭。",
+        "badge_enrolled": "已启用",
+        "badge_exempt": "豁免——{{method}}",
+        "badge_not_enrolled": "未启用",
+        "blocked_hint": "在开启此要求之前，请先查看此列表——这些成员如果未能及时启用，将失去对本组织的访问权限。",
+        "cancel": "取消",
+        "compliance_count": "{{total}} 名成员中有 {{enabled}} 名已启用两步验证",
+        "compliance_title": "两步验证覆盖率",
+        "confirm_button": "是的，强制启用两步验证",
+        "confirm_deadline": "除非在此之前启用两步验证，否则 {{total}} 名成员中的 {{count}} 名将于 {{date}} 失去对本组织的访问权限。",
+        "confirm_exempt_note": "有 {{count}} 名成员因通过外部身份提供方登录而获得豁免。",
+        "confirm_immediate": "{{total}} 名成员中的 {{count}} 名将在你保存后立即失去对本组织的访问权限。",
+        "confirm_list_title": "受影响的成员",
+        "confirm_none": "本组织中的每个人要么已启用两步验证，要么已获豁免。没有人会失去访问权限。",
+        "confirm_reversible": "此操作可撤销：关闭该要求会立即恢复访问权限。",
+        "confirm_title": "为所有人强制启用两步验证？",
+        "exempt_hint": "他们的身份提供方已经处理了多因素验证，因此在此再要求一次第二因素并无意义。",
+        "exempt_label": "豁免通过 Google 或 SSO 登录的用户",
+        "grace_days": "{{count}} 天",
+        "grace_hint_days": "成员在被阻止之前有 {{count}} 天时间启用。新成员从加入之日起享有同样的时间窗口。",
+        "grace_hint_immediate": "未启用两步验证的成员会在策略保存后立即被阻止。",
+        "grace_immediately": "立即",
+        "grace_label": "宽限期",
+        "load_error": "无法加载你所在组织的两步验证状态。",
+        "load_error_title": "出了点问题",
+        "members_empty": "本组织暂无成员。",
+        "members_sorted": "未启用者优先",
+        "members_title": "成员",
+        "methods_description": "选择允许成员以何种方式登录本组织。保持所有方式勾选即可不限制登录方式。",
+        "methods_empty_warning": "如果不选择任何方式，将没有人能登录本组织。请至少选择一种。",
+        "methods_title": "允许的登录方式",
+        "no_restart_note": "对已生效的策略保存更改不会重置任何人的倒计时——现有截止时间仍锚定在上述日期。只有关闭该要求再重新开启时，倒计时才会重置。",
+        "not_admin_body": "只有组织管理员才能查看或更改两步验证要求。",
+        "not_admin_title": "你没有访问此设置的权限",
+        "policy_description": "没有第二因素的成员在宽限期结束后将被阻止访问本组织。他们仍保留自己的账户以及所属的其他任何组织，并在启用后立即恢复访问权限。",
+        "policy_title": "强制启用两步验证",
+        "read_only": "你可以查看此页面，但只有组织管理员才能更改该策略。",
+        "refresh": "刷新",
+        "reset_2fa": "重置 2FA",
+        "reset_confirm": "确认重置？",
+        "reset_error": "无法重置该成员的两步验证。",
+        "reset_hint": "清除该成员的两步验证，让其可以重新设置",
+        "resetting": "正在重置…",
+        "retry": "重试",
+        "save": "保存更改",
+        "save_error": "无法保存安全策略。",
+        "save_success": "安全策略已更新",
+        "saving": "正在保存安全策略…",
+        "saving_short": "正在保存…",
+        "self_blocking": "你自己的截止时间已过。请立即启用以保持对本组织的访问权限。",
+        "self_days_left": "你还有 {{count}} 天时间为自己启用两步验证。",
+        "session_sharing_hint": "关闭后，在 learnhouse.io 登录不会让成员进入本组织——他们必须使用允许的方式从本组织的登录页面重新登录。",
+        "session_sharing_label": "允许与 learnhouse.io 共享会话",
+        "show_all": "显示全部 {{count}} 名成员",
+        "show_less": "收起",
+        "stat_blocked": "将被阻止",
+        "stat_enrolled": "已启用",
+        "stat_exempt": "豁免（外部登录）",
+        "subtitle": "为本组织中的所有人强制启用两步验证。",
+        "title": "安全",
+        "you": "你"
       }
     },
     "users": {
@@ -3012,19 +3098,97 @@
         "failed_load": "加载学生档案失败。",
         "back_to_students": "返回学生列表",
         "no_behavioral": "暂无行为数据（此时间段的分析可能尚未配置）。",
-        "ranges": { "d30": "30 天", "d90": "90 天", "y1": "1 年" },
-        "kpi": { "courses": "课程", "completed": "已完成 {{count}} 个", "avg_progress": "平均进度", "time_spent": "花费时间", "assignments": "作业", "avg_grade": "平均 {{grade}}", "certificates": "证书", "connections": "登录次数", "last": "最近 {{date}}" },
-        "tabs": { "connections": "登录记录", "courses": "课程", "assignments": "作业", "code": "代码", "community": "社区", "certificates": "证书", "behavior": "行为" },
-        "identity": { "verified": "已验证", "unverified": "未验证", "via": "通过 {{method}}" },
-        "connections": { "title": "登录记录", "empty": "暂无登录记录。" },
-        "courses": { "title": "课程进度", "empty": "未报名任何课程。", "activities": "{{done}}/{{total}} 个活动", "enrolled": "报名于 {{date}}" },
-        "assignments": { "title": "作业", "empty": "暂无作业提交。", "attempt": "第 {{number}} 次尝试", "feedback": "反馈：" },
-        "code": { "title": "代码练习", "empty": "暂无代码提交。", "activity": "活动", "result": "结果", "tests": "测试", "time": "时间", "when": "时间", "passed": "通过", "failed": "失败" },
-        "community": { "title": "社区参与", "empty": "暂无社区活动。", "discussions": "讨论", "comments": "评论" },
-        "certificates": { "title": "已获得证书", "empty": "暂无已获得证书。" },
-        "behavior": { "title": "行为分析", "time_by_course": "按课程花费时间", "searches": "搜索" },
-        "status": { "completed": "已完成", "in_progress": "进行中", "paused": "已暂停", "cancelled": "已取消", "graded": "已评分", "submitted": "已提交", "pending": "待处理", "late": "逾期", "not_submitted": "未提交" },
-        "comparison": { "student": "学生", "enrolled": "已报名", "completed": "已完成", "certificates": "证书", "last_connection": "最近登录", "view": "查看" }
+        "ranges": {
+          "d30": "30 天",
+          "d90": "90 天",
+          "y1": "1 年"
+        },
+        "kpi": {
+          "courses": "课程",
+          "completed": "已完成 {{count}} 个",
+          "avg_progress": "平均进度",
+          "time_spent": "花费时间",
+          "assignments": "作业",
+          "avg_grade": "平均 {{grade}}",
+          "certificates": "证书",
+          "connections": "登录次数",
+          "last": "最近 {{date}}"
+        },
+        "tabs": {
+          "connections": "登录记录",
+          "courses": "课程",
+          "assignments": "作业",
+          "code": "代码",
+          "community": "社区",
+          "certificates": "证书",
+          "behavior": "行为"
+        },
+        "identity": {
+          "verified": "已验证",
+          "unverified": "未验证",
+          "via": "通过 {{method}}"
+        },
+        "connections": {
+          "title": "登录记录",
+          "empty": "暂无登录记录。"
+        },
+        "courses": {
+          "title": "课程进度",
+          "empty": "未报名任何课程。",
+          "activities": "{{done}}/{{total}} 个活动",
+          "enrolled": "报名于 {{date}}"
+        },
+        "assignments": {
+          "title": "作业",
+          "empty": "暂无作业提交。",
+          "attempt": "第 {{number}} 次尝试",
+          "feedback": "反馈："
+        },
+        "code": {
+          "title": "代码练习",
+          "empty": "暂无代码提交。",
+          "activity": "活动",
+          "result": "结果",
+          "tests": "测试",
+          "time": "时间",
+          "when": "时间",
+          "passed": "通过",
+          "failed": "失败"
+        },
+        "community": {
+          "title": "社区参与",
+          "empty": "暂无社区活动。",
+          "discussions": "讨论",
+          "comments": "评论"
+        },
+        "certificates": {
+          "title": "已获得证书",
+          "empty": "暂无已获得证书。"
+        },
+        "behavior": {
+          "title": "行为分析",
+          "time_by_course": "按课程花费时间",
+          "searches": "搜索"
+        },
+        "status": {
+          "completed": "已完成",
+          "in_progress": "进行中",
+          "paused": "已暂停",
+          "cancelled": "已取消",
+          "graded": "已评分",
+          "submitted": "已提交",
+          "pending": "待处理",
+          "late": "逾期",
+          "not_submitted": "未提交"
+        },
+        "comparison": {
+          "student": "学生",
+          "enrolled": "已报名",
+          "completed": "已完成",
+          "certificates": "证书",
+          "last_connection": "最近登录",
+          "view": "查看"
+        }
       },
       "active_users": {
         "title": "活跃用户",

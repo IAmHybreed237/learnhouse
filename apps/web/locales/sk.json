@@ -228,7 +228,9 @@
     "leave_organization_title": "Opustiť organizáciu?",
     "leave_organization_desc": "Stratíte prístup k {{org}} a budete odstránení z jej členov. Ak dostanete pozvánku, môžete sa pripojiť znova.",
     "leave_organization_error": "Organizáciu sa nepodarilo opustiť. Skúste to znova.",
-    "leaving": "Opúšťanie…"
+    "leaving": "Opúšťanie…",
+    "dismiss": "Zavrieť",
+    "sign_out": "Odhlásiť sa"
   },
   "banner": {
     "viewing_as_guest": "Prezeráte si {{name}} ako hosť.",
@@ -367,7 +369,24 @@
     "image_title_verify": "Overte svoj e-mail.",
     "image_subtitle_verify": "Jeden rýchly krok na zabezpečenie účtu a môžete začať.",
     "turnstile_failed": "Overenie zlyhalo. Prosím skúste znova.",
-    "resend_verification": "Nedostali ste to? Poslať email znova"
+    "resend_verification": "Nedostali ste to? Poslať email znova",
+    "magic_back_to_login": "Späť na prihlásenie",
+    "magic_send": "Poslať mi prihlasovací odkaz",
+    "magic_sent_body": "Ak pre {{email}} existuje účet, práve sme naň poslali bezpečný odkaz na prihlásenie. Čoskoro vyprší, preto ho použite čo najskôr.",
+    "magic_sent_title": "Skontrolujte si e-mail",
+    "magic_subtitle": "Zadajte svoj e-mail a pošleme vám odkaz, ktorý vás prihlási — bez hesla.",
+    "magic_title": "Prihlásiť sa pomocou odkazu",
+    "magic_use_password": "Prihlásiť sa pomocou hesla",
+    "mfa_back_to_login": "Späť na prihlásenie",
+    "mfa_backup_code": "Záložný kód",
+    "mfa_code": "Overovací kód",
+    "mfa_subtitle": "Zadajte 6-miestny kód z vašej autentifikačnej aplikácie.",
+    "mfa_subtitle_backup": "Zadajte jeden zo záložných kódov, ktoré ste si uložili.",
+    "mfa_title": "Dvojstupňové overenie",
+    "mfa_use_authenticator": "Použiť autentifikačnú aplikáciu",
+    "mfa_use_backup": "Použiť záložný kód",
+    "mfa_verify": "Overiť",
+    "mfa_invalid_code": "Tento kód nie je správny. Skontrolujte, či sú hodiny vášho zariadenia nastavené automaticky, a potom skúste ďalší kód."
   },
   "validation": {
     "required": "Povinné",
@@ -3206,6 +3225,73 @@
         "custom_required": "A label and a URL are required",
         "plan_locked": "Requires {{plan}} plan",
         "feature_off": "Feature is off"
+      },
+      "security": {
+        "active_no_date": "Pravidlo je aktívne",
+        "active_since": "Pravidlo aktívne od {{date}}",
+        "admin_mfa_first": "Predtým, než dvojfaktorové overenie budete vyžadovať pre organizáciu, zapnite si ho na vlastnom účte.",
+        "admin_mfa_first_cta": "Nastaviť dvojfaktorové overenie na svojom účte",
+        "admin_mfa_first_why": "V opačnom prípade by vás pravidlo v momente uloženia uzamklo z vlastnej organizácie — a nezostal by žiadny správca, ktorý by ho vypol.",
+        "badge_enrolled": "Zaregistrovaný",
+        "badge_exempt": "Vyňatý — {{method}}",
+        "badge_not_enrolled": "Nezaregistrovaný",
+        "blocked_hint": "Pred zapnutím požiadavky si prezrite tento zoznam — sú to ľudia, ktorí stratia prístup k tejto organizácii, ak sa včas nezaregistrujú.",
+        "cancel": "Zrušiť",
+        "compliance_count": "{{enabled}} z {{total}} členov má zapnuté dvojfaktorové overenie",
+        "compliance_title": "Pokrytie dvojfaktorovým overením",
+        "confirm_button": "Áno, vyžadovať dvojfaktorové overenie",
+        "confirm_deadline": "{{count}} z {{total}} členov stratí prístup k tejto organizácii dňa {{date}}, ak si predtým nezapnú dvojfaktorové overenie.",
+        "confirm_exempt_note": "{{count}} členov je vyňatých, pretože sa prihlasujú cez externého poskytovateľa identity.",
+        "confirm_immediate": "{{count}} z {{total}} členov stratí prístup k tejto organizácii okamžite po uložení.",
+        "confirm_list_title": "Koho sa to týka",
+        "confirm_none": "Všetci v tejto organizácii majú zapnuté dvojfaktorové overenie alebo sú vyňatí. Nikto nestratí prístup.",
+        "confirm_reversible": "Toto je vratné: vypnutie požiadavky okamžite obnoví prístup.",
+        "confirm_title": "Vyžadovať dvojfaktorové overenie od všetkých?",
+        "exempt_hint": "Ich poskytovateľ identity už zabezpečuje viacfaktorové overenie, takže žiadať ich tu o druhý faktor nič nepridá.",
+        "exempt_label": "Vyňať používateľov, ktorí sa prihlasujú cez Google alebo SSO",
+        "grace_days": "{{count}} dní",
+        "grace_hint_days": "Členovia majú {{count}} dní na registráciu, kým budú zablokovaní. Noví členovia dostanú rovnaké obdobie odo dňa, keď sa pripoja.",
+        "grace_hint_immediate": "Členovia bez dvojfaktorového overenia sú zablokovaní hneď po uložení pravidla.",
+        "grace_immediately": "Okamžite",
+        "grace_label": "Odkladná lehota",
+        "load_error": "Nepodarilo sa načítať stav dvojfaktorového overenia vašej organizácie.",
+        "load_error_title": "Niečo sa pokazilo",
+        "members_empty": "V tejto organizácii zatiaľ nie sú žiadni členovia.",
+        "members_sorted": "najprv nezaregistrovaní",
+        "members_title": "Členovia",
+        "methods_description": "Vyberte, ako sa členovia môžu prihlasovať do tejto organizácie. Ponechajte všetky metódy začiarknuté, aby prihlásenie zostalo bez obmedzení.",
+        "methods_empty_warning": "Bez vybranej metódy by sa do tejto organizácie nemohol nikto prihlásiť. Vyberte aspoň jednu.",
+        "methods_title": "Povolené metódy prihlásenia",
+        "no_restart_note": "Uloženie zmien už aktívneho pravidla nereštartuje nikoho odpočítavanie — existujúce termíny zostávajú ukotvené k dátumu vyššie. Odpočítavanie sa vynuluje len vtedy, ak požiadavku vypnete a znova zapnete.",
+        "not_admin_body": "Len správcovia organizácie môžu zobraziť alebo zmeniť požiadavku na dvojfaktorové overenie.",
+        "not_admin_title": "K tomuto nastaveniu nemáte prístup",
+        "policy_description": "Členovia bez druhého faktora sú po skončení odkladnej lehoty zablokovaní z tejto organizácie. Ponechajú si svoj účet aj akúkoľvek inú organizáciu, do ktorej patria, a prístup získajú späť hneď, ako sa zaregistrujú.",
+        "policy_title": "Vyžadovať dvojfaktorové overenie",
+        "read_only": "Túto stránku si môžete prezrieť, ale pravidlo môže zmeniť len správca organizácie.",
+        "refresh": "Obnoviť",
+        "reset_2fa": "Resetovať 2FA",
+        "reset_confirm": "Potvrdiť reset?",
+        "reset_error": "Nepodarilo sa resetovať dvojfaktorové overenie tohto člena.",
+        "reset_hint": "Vymažte dvojfaktorové overenie tohto člena, aby si ho mohol znova nastaviť",
+        "resetting": "Resetuje sa…",
+        "retry": "Skúsiť znova",
+        "save": "Uložiť zmeny",
+        "save_error": "Nepodarilo sa uložiť bezpečnostné pravidlo.",
+        "save_success": "Bezpečnostné pravidlo aktualizované",
+        "saving": "Ukladá sa bezpečnostné pravidlo…",
+        "saving_short": "Ukladá sa…",
+        "self_blocking": "Váš vlastný termín už uplynul. Zaregistrujte sa teraz, aby ste si zachovali prístup k tejto organizácii.",
+        "self_days_left": "Máte ešte {{count}} dní na to, aby ste sa sami zaregistrovali do dvojfaktorového overenia.",
+        "session_sharing_hint": "Keď je vypnuté, prihlásenie na learnhouse.io nevpustí členov do tejto organizácie — musia sa znova prihlásiť z prihlasovacej stránky tejto organizácie povolenou metódou.",
+        "session_sharing_label": "Povoliť zdieľanie relácií s learnhouse.io",
+        "show_all": "Zobraziť všetkých {{count}} členov",
+        "show_less": "Zobraziť menej",
+        "stat_blocked": "Boli by zablokovaní",
+        "stat_enrolled": "Zaregistrovaní",
+        "stat_exempt": "Vyňatí (externé prihlásenie)",
+        "subtitle": "Vyžadovať dvojfaktorové overenie od všetkých v tejto organizácii.",
+        "title": "Zabezpečenie",
+        "you": "vy"
       }
     },
     "users": {
@@ -3262,19 +3348,97 @@
         "failed_load": "Nepodarilo sa načítať zložku študenta.",
         "back_to_students": "Späť na študentov",
         "no_behavioral": "Žiadne údaje o správaní (analytika nemusí byť pre toto obdobie nakonfigurovaná).",
-        "ranges": { "d30": "30 dní", "d90": "90 dní", "y1": "1 rok" },
-        "kpi": { "courses": "Kurzy", "completed": "{{count}} dokončených", "avg_progress": "Priemerný pokrok", "time_spent": "Strávený čas", "assignments": "Zadania", "avg_grade": "priemer {{grade}}", "certificates": "Certifikáty", "connections": "Pripojenia", "last": "naposledy {{date}}" },
-        "tabs": { "connections": "Pripojenia", "courses": "Kurzy", "assignments": "Zadania", "code": "Kód", "community": "Komunita", "certificates": "Certifikáty", "behavior": "Správanie" },
-        "identity": { "verified": "Overené", "unverified": "Neoverené", "via": "cez {{method}}" },
-        "connections": { "title": "Pripojenia", "empty": "Zatiaľ žiadne zaznamenané pripojenia." },
-        "courses": { "title": "Pokrok v kurze", "empty": "Nezapísaný do žiadneho kurzu.", "activities": "{{done}}/{{total}} aktivít", "enrolled": "Zapísaný {{date}}" },
-        "assignments": { "title": "Zadania", "empty": "Žiadne odovzdané zadania.", "attempt": "pokus {{number}}", "feedback": "Spätná väzba:" },
-        "code": { "title": "Kódové cvičenia", "empty": "Žiadne odovzdané kódy.", "activity": "Aktivita", "result": "Výsledok", "tests": "Testy", "time": "Čas", "when": "Kedy", "passed": "Prešlo", "failed": "Zlyhalo" },
-        "community": { "title": "Účasť v komunite", "empty": "Žiadna komunitná aktivita.", "discussions": "Diskusie", "comments": "Komentáre" },
-        "certificates": { "title": "Získané certifikáty", "empty": "Žiadne získané certifikáty." },
-        "behavior": { "title": "Analytika správania", "time_by_course": "Strávený čas podľa kurzu", "searches": "Vyhľadávania" },
-        "status": { "completed": "dokončené", "in_progress": "prebieha", "paused": "pozastavené", "cancelled": "zrušené", "graded": "ohodnotené", "submitted": "odovzdané", "pending": "čaká sa", "late": "oneskorené", "not_submitted": "neodovzdané" },
-        "comparison": { "student": "Študent", "enrolled": "Zapísaný", "completed": "Dokončené", "certificates": "Certifikáty", "last_connection": "Posledné pripojenie", "view": "Zobraziť" }
+        "ranges": {
+          "d30": "30 dní",
+          "d90": "90 dní",
+          "y1": "1 rok"
+        },
+        "kpi": {
+          "courses": "Kurzy",
+          "completed": "{{count}} dokončených",
+          "avg_progress": "Priemerný pokrok",
+          "time_spent": "Strávený čas",
+          "assignments": "Zadania",
+          "avg_grade": "priemer {{grade}}",
+          "certificates": "Certifikáty",
+          "connections": "Pripojenia",
+          "last": "naposledy {{date}}"
+        },
+        "tabs": {
+          "connections": "Pripojenia",
+          "courses": "Kurzy",
+          "assignments": "Zadania",
+          "code": "Kód",
+          "community": "Komunita",
+          "certificates": "Certifikáty",
+          "behavior": "Správanie"
+        },
+        "identity": {
+          "verified": "Overené",
+          "unverified": "Neoverené",
+          "via": "cez {{method}}"
+        },
+        "connections": {
+          "title": "Pripojenia",
+          "empty": "Zatiaľ žiadne zaznamenané pripojenia."
+        },
+        "courses": {
+          "title": "Pokrok v kurze",
+          "empty": "Nezapísaný do žiadneho kurzu.",
+          "activities": "{{done}}/{{total}} aktivít",
+          "enrolled": "Zapísaný {{date}}"
+        },
+        "assignments": {
+          "title": "Zadania",
+          "empty": "Žiadne odovzdané zadania.",
+          "attempt": "pokus {{number}}",
+          "feedback": "Spätná väzba:"
+        },
+        "code": {
+          "title": "Kódové cvičenia",
+          "empty": "Žiadne odovzdané kódy.",
+          "activity": "Aktivita",
+          "result": "Výsledok",
+          "tests": "Testy",
+          "time": "Čas",
+          "when": "Kedy",
+          "passed": "Prešlo",
+          "failed": "Zlyhalo"
+        },
+        "community": {
+          "title": "Účasť v komunite",
+          "empty": "Žiadna komunitná aktivita.",
+          "discussions": "Diskusie",
+          "comments": "Komentáre"
+        },
+        "certificates": {
+          "title": "Získané certifikáty",
+          "empty": "Žiadne získané certifikáty."
+        },
+        "behavior": {
+          "title": "Analytika správania",
+          "time_by_course": "Strávený čas podľa kurzu",
+          "searches": "Vyhľadávania"
+        },
+        "status": {
+          "completed": "dokončené",
+          "in_progress": "prebieha",
+          "paused": "pozastavené",
+          "cancelled": "zrušené",
+          "graded": "ohodnotené",
+          "submitted": "odovzdané",
+          "pending": "čaká sa",
+          "late": "oneskorené",
+          "not_submitted": "neodovzdané"
+        },
+        "comparison": {
+          "student": "Študent",
+          "enrolled": "Zapísaný",
+          "completed": "Dokončené",
+          "certificates": "Certifikáty",
+          "last_connection": "Posledné pripojenie",
+          "view": "Zobraziť"
+        }
       },
       "active_users": {
         "title": "Aktívni používatelia",

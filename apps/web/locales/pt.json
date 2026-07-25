@@ -228,7 +228,9 @@
     "leave_organization_title": "Sair da organização?",
     "leave_organization_desc": "Você perderá o acesso a {{org}} e será removido dos membros. Poderá entrar novamente depois se receber um convite.",
     "leave_organization_error": "Não foi possível sair desta organização. Tente novamente.",
-    "leaving": "Saindo…"
+    "leaving": "Saindo…",
+    "dismiss": "Ignorar",
+    "sign_out": "Terminar sessão"
   },
   "banner": {
     "viewing_as_guest": "Você está visualizando {{name}} como convidado.",
@@ -367,7 +369,24 @@
     "image_title_verify": "Verifique o seu e-mail.",
     "image_subtitle_verify": "Um passo rápido para proteger a sua conta e começar.",
     "turnstile_failed": "Verificação falhou. Tente novamente.",
-    "resend_verification": "Não recebeu? Reenviar email"
+    "resend_verification": "Não recebeu? Reenviar email",
+    "magic_back_to_login": "Voltar ao início de sessão",
+    "magic_send": "Enviar-me um link de acesso",
+    "magic_sent_body": "Se existir uma conta para {{email}}, acabámos de enviar um link seguro para iniciar sessão. Expira em breve, por isso use-o rapidamente.",
+    "magic_sent_title": "Verifique o seu email",
+    "magic_subtitle": "Introduza o seu email e enviamos-lhe um link que inicia a sua sessão — sem palavra-passe.",
+    "magic_title": "Iniciar sessão com um link",
+    "magic_use_password": "Iniciar sessão com uma palavra-passe",
+    "mfa_back_to_login": "Voltar ao início de sessão",
+    "mfa_backup_code": "Código de recuperação",
+    "mfa_code": "Código de verificação",
+    "mfa_subtitle": "Introduza o código de 6 dígitos da sua aplicação de autenticação.",
+    "mfa_subtitle_backup": "Introduza um dos códigos de recuperação que guardou.",
+    "mfa_title": "Verificação em duas etapas",
+    "mfa_use_authenticator": "Usar a aplicação de autenticação",
+    "mfa_use_backup": "Usar um código de recuperação",
+    "mfa_verify": "Verificar",
+    "mfa_invalid_code": "Esse código não está correto. Verifique se o relógio do seu dispositivo está definido automaticamente e tente o código seguinte."
   },
   "validation": {
     "required": "Obrigatório",
@@ -2946,6 +2965,73 @@
         "custom_required": "A label and a URL are required",
         "plan_locked": "Requires {{plan}} plan",
         "feature_off": "Feature is off"
+      },
+      "security": {
+        "active_no_date": "A política está ativa",
+        "active_since": "Política ativa desde {{date}}",
+        "admin_mfa_first": "Ative a autenticação de dois fatores na sua própria conta antes de a exigir para a organização.",
+        "admin_mfa_first_cta": "Configurar a autenticação de dois fatores na sua conta",
+        "admin_mfa_first_why": "Caso contrário, a política bloqueá-lo-ia da sua própria organização assim que fosse guardada — e não restaria nenhum administrador para a desativar.",
+        "badge_enrolled": "Inscrito",
+        "badge_exempt": "Isento — {{method}}",
+        "badge_not_enrolled": "Não inscrito",
+        "blocked_hint": "Reveja esta lista antes de ativar o requisito — estas são as pessoas que perdem o acesso a esta organização se não se inscreverem a tempo.",
+        "cancel": "Cancelar",
+        "compliance_count": "{{enabled}} de {{total}} membros têm a autenticação de dois fatores ativada",
+        "compliance_title": "Cobertura de dois fatores",
+        "confirm_button": "Sim, exigir dois fatores",
+        "confirm_deadline": "{{count}} de {{total}} membros perderão o acesso a esta organização em {{date}}, a menos que ativem a autenticação de dois fatores antes disso.",
+        "confirm_exempt_note": "{{count}} membros estão isentos porque iniciam sessão através de um fornecedor de identidade externo.",
+        "confirm_immediate": "{{count}} de {{total}} membros perderão o acesso a esta organização imediatamente, assim que guardar.",
+        "confirm_list_title": "Quem é afetado",
+        "confirm_none": "Todos nesta organização têm a autenticação de dois fatores ativada ou estão isentos. Ninguém perde o acesso.",
+        "confirm_reversible": "Isto é reversível: desativar o requisito restaura o acesso imediatamente.",
+        "confirm_title": "Exigir dois fatores para todos?",
+        "exempt_hint": "O fornecedor de identidade deles já trata da autenticação multifator, por isso pedir-lhes um segundo fator aqui não acrescenta nada.",
+        "exempt_label": "Isentar utilizadores que iniciam sessão através do Google ou SSO",
+        "grace_days": "{{count}} dias",
+        "grace_hint_days": "Os membros têm {{count}} dias para se inscreverem antes de serem bloqueados. Os novos membros têm o mesmo período a partir do dia em que aderem.",
+        "grace_hint_immediate": "Os membros sem autenticação de dois fatores são bloqueados assim que a política é guardada.",
+        "grace_immediately": "Imediatamente",
+        "grace_label": "Período de tolerância",
+        "load_error": "Não foi possível carregar o estado de dois fatores da sua organização.",
+        "load_error_title": "Algo correu mal",
+        "members_empty": "Ainda não há membros nesta organização.",
+        "members_sorted": "não inscritos primeiro",
+        "members_title": "Membros",
+        "methods_description": "Escolha como os membros podem iniciar sessão nesta organização. Deixe todos os métodos selecionados para manter o início de sessão sem restrições.",
+        "methods_empty_warning": "Sem nenhum método selecionado, ninguém poderia iniciar sessão nesta organização. Escolha pelo menos um.",
+        "methods_title": "Métodos de início de sessão permitidos",
+        "no_restart_note": "Guardar alterações a uma política já ativa não reinicia a contagem decrescente de ninguém — os prazos existentes mantêm-se ancorados à data acima. A contagem só reinicia se desativar e voltar a ativar o requisito.",
+        "not_admin_body": "Apenas os administradores da organização podem ver ou alterar o requisito de dois fatores.",
+        "not_admin_title": "Não tem acesso a esta definição",
+        "policy_description": "Os membros sem um segundo fator são bloqueados desta organização quando o período de tolerância termina. Mantêm a sua conta e qualquer outra organização a que pertençam, e recuperam o acesso assim que se inscreverem.",
+        "policy_title": "Exigir autenticação de dois fatores",
+        "read_only": "Pode rever esta página, mas apenas um administrador da organização pode alterar a política.",
+        "refresh": "Atualizar",
+        "reset_2fa": "Repor 2FA",
+        "reset_confirm": "Confirmar reposição?",
+        "reset_error": "Não foi possível repor a autenticação de dois fatores deste membro.",
+        "reset_hint": "Limpe a autenticação de dois fatores deste membro para que possa configurá-la novamente",
+        "resetting": "A repor…",
+        "retry": "Tentar novamente",
+        "save": "Guardar alterações",
+        "save_error": "Não foi possível guardar a política de segurança.",
+        "save_success": "Política de segurança atualizada",
+        "saving": "A guardar a política de segurança…",
+        "saving_short": "A guardar…",
+        "self_blocking": "O seu próprio prazo já passou. Inscreva-se agora para manter o acesso a esta organização.",
+        "self_days_left": "Tem {{count}} dias para se inscrever na autenticação de dois fatores.",
+        "session_sharing_hint": "Quando desativado, iniciar sessão em learnhouse.io não permite a entrada dos membros nesta organização — têm de iniciar sessão novamente a partir da página de login desta organização usando um método permitido.",
+        "session_sharing_label": "Permitir a partilha de sessões com learnhouse.io",
+        "show_all": "Mostrar todos os {{count}} membros",
+        "show_less": "Mostrar menos",
+        "stat_blocked": "Seria bloqueado",
+        "stat_enrolled": "Inscrito",
+        "stat_exempt": "Isento (início de sessão externo)",
+        "subtitle": "Exigir autenticação de dois fatores para todos nesta organização.",
+        "title": "Segurança",
+        "you": "você"
       }
     },
     "users": {
@@ -3002,19 +3088,97 @@
         "failed_load": "Falha ao carregar o dossiê do aluno.",
         "back_to_students": "Voltar aos alunos",
         "no_behavioral": "Sem dados comportamentais (as análises podem não estar configuradas para este período).",
-        "ranges": { "d30": "30 dias", "d90": "90 dias", "y1": "1 ano" },
-        "kpi": { "courses": "Cursos", "completed": "{{count}} concluídos", "avg_progress": "Progresso médio", "time_spent": "Tempo gasto", "assignments": "Tarefas", "avg_grade": "média {{grade}}", "certificates": "Certificados", "connections": "Conexões", "last": "última {{date}}" },
-        "tabs": { "connections": "Conexões", "courses": "Cursos", "assignments": "Tarefas", "code": "Código", "community": "Comunidade", "certificates": "Certificados", "behavior": "Comportamento" },
-        "identity": { "verified": "Verificado", "unverified": "Não verificado", "via": "via {{method}}" },
-        "connections": { "title": "Conexões", "empty": "Nenhuma conexão registrada ainda." },
-        "courses": { "title": "Progresso do curso", "empty": "Não inscrito em nenhum curso.", "activities": "{{done}}/{{total}} atividades", "enrolled": "Inscrito em {{date}}" },
-        "assignments": { "title": "Tarefas", "empty": "Nenhuma entrega de tarefa.", "attempt": "tentativa {{number}}", "feedback": "Feedback:" },
-        "code": { "title": "Exercícios de código", "empty": "Nenhuma entrega de código.", "activity": "Atividade", "result": "Resultado", "tests": "Testes", "time": "Tempo", "when": "Quando", "passed": "Aprovado", "failed": "Reprovado" },
-        "community": { "title": "Participação na comunidade", "empty": "Nenhuma atividade na comunidade.", "discussions": "Discussões", "comments": "Comentários" },
-        "certificates": { "title": "Certificados obtidos", "empty": "Nenhum certificado obtido." },
-        "behavior": { "title": "Análises comportamentais", "time_by_course": "Tempo gasto por curso", "searches": "Pesquisas" },
-        "status": { "completed": "concluído", "in_progress": "em andamento", "paused": "pausado", "cancelled": "cancelado", "graded": "avaliado", "submitted": "enviado", "pending": "pendente", "late": "atrasado", "not_submitted": "não enviado" },
-        "comparison": { "student": "Aluno", "enrolled": "Inscrito", "completed": "Concluído", "certificates": "Certificados", "last_connection": "Última conexão", "view": "Ver" }
+        "ranges": {
+          "d30": "30 dias",
+          "d90": "90 dias",
+          "y1": "1 ano"
+        },
+        "kpi": {
+          "courses": "Cursos",
+          "completed": "{{count}} concluídos",
+          "avg_progress": "Progresso médio",
+          "time_spent": "Tempo gasto",
+          "assignments": "Tarefas",
+          "avg_grade": "média {{grade}}",
+          "certificates": "Certificados",
+          "connections": "Conexões",
+          "last": "última {{date}}"
+        },
+        "tabs": {
+          "connections": "Conexões",
+          "courses": "Cursos",
+          "assignments": "Tarefas",
+          "code": "Código",
+          "community": "Comunidade",
+          "certificates": "Certificados",
+          "behavior": "Comportamento"
+        },
+        "identity": {
+          "verified": "Verificado",
+          "unverified": "Não verificado",
+          "via": "via {{method}}"
+        },
+        "connections": {
+          "title": "Conexões",
+          "empty": "Nenhuma conexão registrada ainda."
+        },
+        "courses": {
+          "title": "Progresso do curso",
+          "empty": "Não inscrito em nenhum curso.",
+          "activities": "{{done}}/{{total}} atividades",
+          "enrolled": "Inscrito em {{date}}"
+        },
+        "assignments": {
+          "title": "Tarefas",
+          "empty": "Nenhuma entrega de tarefa.",
+          "attempt": "tentativa {{number}}",
+          "feedback": "Feedback:"
+        },
+        "code": {
+          "title": "Exercícios de código",
+          "empty": "Nenhuma entrega de código.",
+          "activity": "Atividade",
+          "result": "Resultado",
+          "tests": "Testes",
+          "time": "Tempo",
+          "when": "Quando",
+          "passed": "Aprovado",
+          "failed": "Reprovado"
+        },
+        "community": {
+          "title": "Participação na comunidade",
+          "empty": "Nenhuma atividade na comunidade.",
+          "discussions": "Discussões",
+          "comments": "Comentários"
+        },
+        "certificates": {
+          "title": "Certificados obtidos",
+          "empty": "Nenhum certificado obtido."
+        },
+        "behavior": {
+          "title": "Análises comportamentais",
+          "time_by_course": "Tempo gasto por curso",
+          "searches": "Pesquisas"
+        },
+        "status": {
+          "completed": "concluído",
+          "in_progress": "em andamento",
+          "paused": "pausado",
+          "cancelled": "cancelado",
+          "graded": "avaliado",
+          "submitted": "enviado",
+          "pending": "pendente",
+          "late": "atrasado",
+          "not_submitted": "não enviado"
+        },
+        "comparison": {
+          "student": "Aluno",
+          "enrolled": "Inscrito",
+          "completed": "Concluído",
+          "certificates": "Certificados",
+          "last_connection": "Última conexão",
+          "view": "Ver"
+        }
       },
       "active_users": {
         "title": "Usuários ativos",

@@ -228,7 +228,9 @@
     "leave_organization_title": "Kuruluştan ayrılmak istiyor musunuz?",
     "leave_organization_desc": "{{org}} erişiminizi kaybedecek ve üyelerinden çıkarılacaksınız. Davet edilmeniz hâlinde daha sonra tekrar katılabilirsiniz.",
     "leave_organization_error": "Bu kuruluştan ayrılamadık. Lütfen tekrar deneyin.",
-    "leaving": "Ayrılıyor…"
+    "leaving": "Ayrılıyor…",
+    "dismiss": "Kapat",
+    "sign_out": "Çıkış yap"
   },
   "banner": {
     "viewing_as_guest": "{{name}} sitesini misafir olarak görüntülüyorsunuz.",
@@ -389,7 +391,24 @@
     "image_subtitle_signup": "Hesabınızı oluşturun ve ilk kursunuzu dakikalar içinde yayınlayın.",
     "image_title_verify": "E-postanızı doğrulayın.",
     "image_subtitle_verify": "Hesabınızı güvene almak ve başlamak için tek bir hızlı adım.",
-    "turnstile_failed": "Doğrulama başarısız. Lütfen tekrar deneyin."
+    "turnstile_failed": "Doğrulama başarısız. Lütfen tekrar deneyin.",
+    "magic_back_to_login": "Giriş sayfasına dön",
+    "magic_send": "Bana giriş bağlantısı gönder",
+    "magic_sent_body": "{{email}} için bir hesap varsa, giriş yapman için az önce güvenli bir bağlantı gönderdik. Kısa sürede geçerliliğini yitirir, bu yüzden hemen kullan.",
+    "magic_sent_title": "E-postanı kontrol et",
+    "magic_subtitle": "E-posta adresini gir, seni giriş yaptıracak bir bağlantı gönderelim — parola gerekmez.",
+    "magic_title": "Bağlantıyla giriş yap",
+    "magic_use_password": "Bunun yerine parolayla giriş yap",
+    "mfa_back_to_login": "Giriş sayfasına dön",
+    "mfa_backup_code": "Yedek kod",
+    "mfa_code": "Doğrulama kodu",
+    "mfa_subtitle": "Kimlik doğrulama uygulamandaki 6 haneli kodu gir.",
+    "mfa_subtitle_backup": "Kaydettiğin yedek kodlardan birini gir.",
+    "mfa_title": "İki adımlı doğrulama",
+    "mfa_use_authenticator": "Bunun yerine kimlik doğrulama uygulamasını kullan",
+    "mfa_use_backup": "Bunun yerine yedek kod kullan",
+    "mfa_verify": "Doğrula",
+    "mfa_invalid_code": "Bu kod doğru değil. Cihazının saatinin otomatik olarak ayarlandığını kontrol et, ardından bir sonraki kodu dene."
   },
   "validation": {
     "required": "Gerekli",
@@ -2968,6 +2987,73 @@
         "custom_required": "A label and a URL are required",
         "plan_locked": "Requires {{plan}} plan",
         "feature_off": "Feature is off"
+      },
+      "security": {
+        "active_no_date": "Politika etkin",
+        "active_since": "Politika {{date}} tarihinden beri etkin",
+        "admin_mfa_first": "İki faktörlü doğrulamayı kuruluş için zorunlu kılmadan önce kendi hesabında etkinleştir.",
+        "admin_mfa_first_cta": "Hesabında iki faktörlü doğrulamayı ayarla",
+        "admin_mfa_first_why": "Aksi takdirde bu politika kaydedildiği anda seni kendi kuruluşundan kilitler — ve onu tekrar kapatacak hiçbir yönetici kalmaz.",
+        "badge_enrolled": "Kayıtlı",
+        "badge_exempt": "Muaf — {{method}}",
+        "badge_not_enrolled": "Kayıtlı değil",
+        "blocked_hint": "Gerekliliği açmadan önce bu listeyi gözden geçir — bunlar zamanında kaydolmazlarsa bu kuruluşa erişimini kaybedecek kişilerdir.",
+        "cancel": "İptal",
+        "compliance_count": "{{total}} üyeden {{enabled}} tanesi iki faktörlü doğrulamayı etkinleştirdi",
+        "compliance_title": "İki faktörlü doğrulama kapsamı",
+        "confirm_button": "Evet, iki faktörlü doğrulamayı zorunlu kıl",
+        "confirm_deadline": "{{total}} üyeden {{count}} tanesi, {{date}} tarihine kadar iki faktörlü doğrulamayı etkinleştirmezse o tarihte bu kuruluşa erişimini kaybedecek.",
+        "confirm_exempt_note": "{{count}} üye, harici bir kimlik sağlayıcısı üzerinden giriş yaptığı için muaftır.",
+        "confirm_immediate": "{{total}} üyeden {{count}} tanesi, sen kaydeder kaydetmez bu kuruluşa erişimini anında kaybedecek.",
+        "confirm_list_title": "Kimler etkileniyor",
+        "confirm_none": "Bu kuruluştaki herkeste iki faktörlü doğrulama etkin ya da herkes muaf. Kimse erişimini kaybetmiyor.",
+        "confirm_reversible": "Bu geri alınabilir: gerekliliği kapatmak erişimi anında geri verir.",
+        "confirm_title": "İki faktörlü doğrulama herkes için zorunlu kılınsın mı?",
+        "exempt_hint": "Kimlik sağlayıcıları zaten çok faktörlü doğrulamayı hallettiği için burada onlardan ikinci bir faktör istemek hiçbir şey katmaz.",
+        "exempt_label": "Google veya SSO ile giriş yapan kullanıcıları muaf tut",
+        "grace_days": "{{count}} gün",
+        "grace_hint_days": "Üyelerin engellenmeden önce kaydolmak için {{count}} günü vardır. Yeni üyeler katıldıkları günden itibaren aynı süreye sahip olur.",
+        "grace_hint_immediate": "İki faktörlü doğrulaması olmayan üyeler, politika kaydedilir kaydedilmez engellenir.",
+        "grace_immediately": "Hemen",
+        "grace_label": "Ek süre",
+        "load_error": "Kuruluşunun iki faktörlü doğrulama durumu yüklenemedi.",
+        "load_error_title": "Bir şeyler ters gitti",
+        "members_empty": "Bu kuruluşta henüz üye yok.",
+        "members_sorted": "önce kayıtlı olmayanlar",
+        "members_title": "Üyeler",
+        "methods_description": "Üyelerin bu kuruluşa nasıl giriş yapabileceğini seç. Girişi kısıtlamasız tutmak için tüm yöntemleri işaretli bırak.",
+        "methods_empty_warning": "Hiçbir yöntem seçilmezse, bu kuruluşa kimse giriş yapamaz. En az bir tane seç.",
+        "methods_title": "İzin verilen giriş yöntemleri",
+        "no_restart_note": "Halihazırda etkin olan bir politikada yapılan değişiklikleri kaydetmek kimsenin geri sayımını yeniden başlatmaz — mevcut son tarihler yukarıdaki tarihe sabit kalır. Geri sayım yalnızca gerekliliği kapatıp yeniden açtığında sıfırlanır.",
+        "not_admin_body": "İki faktörlü doğrulama gerekliliğini yalnızca kuruluş yöneticileri görüntüleyebilir veya değiştirebilir.",
+        "not_admin_title": "Bu ayara erişimin yok",
+        "policy_description": "İkinci faktörü olmayan üyeler, ek süreleri sona erdiğinde bu kuruluştan engellenir. Hesaplarını ve ait oldukları diğer kuruluşları korurlar ve kaydoldukları anda erişimi geri kazanırlar.",
+        "policy_title": "İki faktörlü kimlik doğrulamayı zorunlu kıl",
+        "read_only": "Bu sayfayı inceleyebilirsin, ancak politikayı yalnızca bir kuruluş yöneticisi değiştirebilir.",
+        "refresh": "Yenile",
+        "reset_2fa": "2FA'yı sıfırla",
+        "reset_confirm": "Sıfırlama onaylansın mı?",
+        "reset_error": "Bu üyenin iki faktörlü doğrulaması sıfırlanamadı.",
+        "reset_hint": "Bu üyenin iki faktörlü doğrulamasını temizle ki yeniden kurabilsin",
+        "resetting": "Sıfırlanıyor…",
+        "retry": "Yeniden dene",
+        "save": "Değişiklikleri kaydet",
+        "save_error": "Güvenlik politikası kaydedilemedi.",
+        "save_success": "Güvenlik politikası güncellendi",
+        "saving": "Güvenlik politikası kaydediliyor…",
+        "saving_short": "Kaydediliyor…",
+        "self_blocking": "Kendi son tarihin geçti. Bu kuruluşa erişimini korumak için şimdi kaydol.",
+        "self_days_left": "İki faktörlü doğrulamaya kendin kaydolmak için {{count}} günün kaldı.",
+        "session_sharing_hint": "Kapalıyken, learnhouse.io üzerinde giriş yapmak üyeleri bu kuruluşa almaz — izin verilen bir yöntemle bu kuruluşun giriş sayfasından yeniden giriş yapmaları gerekir.",
+        "session_sharing_label": "learnhouse.io ile oturum paylaşımına izin ver",
+        "show_all": "{{count}} üyenin tümünü göster",
+        "show_less": "Daha az göster",
+        "stat_blocked": "Engellenecekti",
+        "stat_enrolled": "Kayıtlı",
+        "stat_exempt": "Muaf (harici giriş)",
+        "subtitle": "Bu kuruluştaki herkes için iki faktörlü kimlik doğrulamayı zorunlu kıl.",
+        "title": "Güvenlik",
+        "you": "sen"
       }
     },
     "users": {
@@ -3024,19 +3110,97 @@
         "failed_load": "Öğrenci dosyası yüklenemedi.",
         "back_to_students": "Öğrencilere geri dön",
         "no_behavioral": "Davranışsal veri yok (analitik bu dönem için yapılandırılmamış olabilir).",
-        "ranges": { "d30": "30 gün", "d90": "90 gün", "y1": "1 yıl" },
-        "kpi": { "courses": "Dersler", "completed": "{{count}} tamamlandı", "avg_progress": "Ort. ilerleme", "time_spent": "Harcanan süre", "assignments": "Ödevler", "avg_grade": "ort. {{grade}}", "certificates": "Sertifikalar", "connections": "Bağlantılar", "last": "son {{date}}" },
-        "tabs": { "connections": "Bağlantılar", "courses": "Dersler", "assignments": "Ödevler", "code": "Kod", "community": "Topluluk", "certificates": "Sertifikalar", "behavior": "Davranış" },
-        "identity": { "verified": "Doğrulandı", "unverified": "Doğrulanmadı", "via": "{{method}} ile" },
-        "connections": { "title": "Bağlantılar", "empty": "Henüz kayıtlı bağlantı yok." },
-        "courses": { "title": "Ders ilerlemesi", "empty": "Herhangi bir derse kayıtlı değil.", "activities": "{{done}}/{{total}} etkinlik", "enrolled": "{{date}} tarihinde kaydoldu" },
-        "assignments": { "title": "Ödevler", "empty": "Ödev gönderimi yok.", "attempt": "deneme {{number}}", "feedback": "Geri bildirim:" },
-        "code": { "title": "Kod alıştırmaları", "empty": "Kod gönderimi yok.", "activity": "Etkinlik", "result": "Sonuç", "tests": "Testler", "time": "Süre", "when": "Ne zaman", "passed": "Geçti", "failed": "Başarısız" },
-        "community": { "title": "Topluluk katılımı", "empty": "Topluluk etkinliği yok.", "discussions": "Tartışmalar", "comments": "Yorumlar" },
-        "certificates": { "title": "Kazanılan sertifikalar", "empty": "Kazanılmış sertifika yok." },
-        "behavior": { "title": "Davranışsal analitik", "time_by_course": "Derse göre harcanan süre", "searches": "Aramalar" },
-        "status": { "completed": "tamamlandı", "in_progress": "devam ediyor", "paused": "duraklatıldı", "cancelled": "iptal edildi", "graded": "notlandırıldı", "submitted": "gönderildi", "pending": "beklemede", "late": "geç", "not_submitted": "gönderilmedi" },
-        "comparison": { "student": "Öğrenci", "enrolled": "Kayıtlı", "completed": "Tamamlandı", "certificates": "Sertifikalar", "last_connection": "Son bağlantı", "view": "Görüntüle" }
+        "ranges": {
+          "d30": "30 gün",
+          "d90": "90 gün",
+          "y1": "1 yıl"
+        },
+        "kpi": {
+          "courses": "Dersler",
+          "completed": "{{count}} tamamlandı",
+          "avg_progress": "Ort. ilerleme",
+          "time_spent": "Harcanan süre",
+          "assignments": "Ödevler",
+          "avg_grade": "ort. {{grade}}",
+          "certificates": "Sertifikalar",
+          "connections": "Bağlantılar",
+          "last": "son {{date}}"
+        },
+        "tabs": {
+          "connections": "Bağlantılar",
+          "courses": "Dersler",
+          "assignments": "Ödevler",
+          "code": "Kod",
+          "community": "Topluluk",
+          "certificates": "Sertifikalar",
+          "behavior": "Davranış"
+        },
+        "identity": {
+          "verified": "Doğrulandı",
+          "unverified": "Doğrulanmadı",
+          "via": "{{method}} ile"
+        },
+        "connections": {
+          "title": "Bağlantılar",
+          "empty": "Henüz kayıtlı bağlantı yok."
+        },
+        "courses": {
+          "title": "Ders ilerlemesi",
+          "empty": "Herhangi bir derse kayıtlı değil.",
+          "activities": "{{done}}/{{total}} etkinlik",
+          "enrolled": "{{date}} tarihinde kaydoldu"
+        },
+        "assignments": {
+          "title": "Ödevler",
+          "empty": "Ödev gönderimi yok.",
+          "attempt": "deneme {{number}}",
+          "feedback": "Geri bildirim:"
+        },
+        "code": {
+          "title": "Kod alıştırmaları",
+          "empty": "Kod gönderimi yok.",
+          "activity": "Etkinlik",
+          "result": "Sonuç",
+          "tests": "Testler",
+          "time": "Süre",
+          "when": "Ne zaman",
+          "passed": "Geçti",
+          "failed": "Başarısız"
+        },
+        "community": {
+          "title": "Topluluk katılımı",
+          "empty": "Topluluk etkinliği yok.",
+          "discussions": "Tartışmalar",
+          "comments": "Yorumlar"
+        },
+        "certificates": {
+          "title": "Kazanılan sertifikalar",
+          "empty": "Kazanılmış sertifika yok."
+        },
+        "behavior": {
+          "title": "Davranışsal analitik",
+          "time_by_course": "Derse göre harcanan süre",
+          "searches": "Aramalar"
+        },
+        "status": {
+          "completed": "tamamlandı",
+          "in_progress": "devam ediyor",
+          "paused": "duraklatıldı",
+          "cancelled": "iptal edildi",
+          "graded": "notlandırıldı",
+          "submitted": "gönderildi",
+          "pending": "beklemede",
+          "late": "geç",
+          "not_submitted": "gönderilmedi"
+        },
+        "comparison": {
+          "student": "Öğrenci",
+          "enrolled": "Kayıtlı",
+          "completed": "Tamamlandı",
+          "certificates": "Sertifikalar",
+          "last_connection": "Son bağlantı",
+          "view": "Görüntüle"
+        }
       },
       "active_users": {
         "title": "Aktif Kullanıcılar",

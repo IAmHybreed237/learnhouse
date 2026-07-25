@@ -228,7 +228,9 @@
     "leave_organization_title": "Organisatie verlaten?",
     "leave_organization_desc": "Je verliest toegang tot {{org}} en wordt verwijderd als lid. Je kunt later opnieuw deelnemen als je wordt uitgenodigd.",
     "leave_organization_error": "Deze organisatie kon niet worden verlaten. Probeer het opnieuw.",
-    "leaving": "Bezig met verlaten…"
+    "leaving": "Bezig met verlaten…",
+    "dismiss": "Sluiten",
+    "sign_out": "Uitloggen"
   },
   "banner": {
     "viewing_as_guest": "Je bekijkt {{name}} als gast.",
@@ -367,7 +369,24 @@
     "image_title_verify": "Verifieer je e-mailadres.",
     "image_subtitle_verify": "Eén snelle stap om je account te beveiligen en aan de slag te gaan.",
     "turnstile_failed": "Verificatie mislukt. Probeer het opnieuw.",
-    "resend_verification": "Niet ontvangen? E-mail opnieuw verzenden"
+    "resend_verification": "Niet ontvangen? E-mail opnieuw verzenden",
+    "magic_back_to_login": "Terug naar inloggen",
+    "magic_send": "Stuur me een inloglink",
+    "magic_sent_body": "Als er een account bestaat voor {{email}}, hebben we zojuist een beveiligde link gestuurd om in te loggen. Deze verloopt snel, dus gebruik hem op tijd.",
+    "magic_sent_title": "Controleer je e-mail",
+    "magic_subtitle": "Voer je e-mailadres in en we sturen je een link waarmee je inlogt, zonder wachtwoord.",
+    "magic_title": "Inloggen met een link",
+    "magic_use_password": "In plaats daarvan inloggen met een wachtwoord",
+    "mfa_back_to_login": "Terug naar inloggen",
+    "mfa_backup_code": "Back-upcode",
+    "mfa_code": "Verificatiecode",
+    "mfa_subtitle": "Voer de 6-cijferige code uit je authenticator-app in.",
+    "mfa_subtitle_backup": "Voer een van de back-upcodes in die je hebt opgeslagen.",
+    "mfa_title": "Verificatie in twee stappen",
+    "mfa_use_authenticator": "Gebruik in plaats daarvan je authenticator-app",
+    "mfa_use_backup": "Gebruik in plaats daarvan een back-upcode",
+    "mfa_verify": "Verifiëren",
+    "mfa_invalid_code": "Die code klopt niet. Controleer of de klok van je apparaat automatisch is ingesteld en probeer dan de volgende code."
   },
   "validation": {
     "required": "Verplicht",
@@ -2946,6 +2965,73 @@
         "custom_required": "A label and a URL are required",
         "plan_locked": "Requires {{plan}} plan",
         "feature_off": "Feature is off"
+      },
+      "security": {
+        "active_no_date": "Beleid is actief",
+        "active_since": "Beleid actief sinds {{date}}",
+        "admin_mfa_first": "Schakel tweefactorauthenticatie in op je eigen account voordat je het voor de organisatie verplicht stelt.",
+        "admin_mfa_first_cta": "Tweefactorauthenticatie op je account instellen",
+        "admin_mfa_first_why": "Anders zou het beleid je bij het opslaan uit je eigen organisatie sluiten, en zou er geen beheerder overblijven om het weer uit te schakelen.",
+        "badge_enrolled": "Ingesteld",
+        "badge_exempt": "Vrijgesteld — {{method}}",
+        "badge_not_enrolled": "Niet ingesteld",
+        "blocked_hint": "Bekijk deze lijst voordat je de verplichting inschakelt: dit zijn de mensen die de toegang tot deze organisatie verliezen als ze zich niet op tijd instellen.",
+        "cancel": "Annuleren",
+        "compliance_count": "{{enabled}} van {{total}} leden hebben tweefactorauthenticatie ingeschakeld",
+        "compliance_title": "Dekking tweefactorauthenticatie",
+        "confirm_button": "Ja, tweefactorauthenticatie verplichten",
+        "confirm_deadline": "{{count}} van {{total}} leden verliezen op {{date}} de toegang tot deze organisatie, tenzij ze vóór die datum tweefactorauthenticatie inschakelen.",
+        "confirm_exempt_note": "{{count}} leden zijn vrijgesteld omdat ze inloggen via een externe identiteitsprovider.",
+        "confirm_immediate": "{{count}} van {{total}} leden verliezen direct na het opslaan de toegang tot deze organisatie.",
+        "confirm_list_title": "Wie het betreft",
+        "confirm_none": "Iedereen in deze organisatie heeft tweefactorauthenticatie ingeschakeld of is vrijgesteld. Niemand verliest de toegang.",
+        "confirm_reversible": "Dit is omkeerbaar: door de verplichting uit te schakelen wordt de toegang direct hersteld.",
+        "confirm_title": "Tweefactorauthenticatie voor iedereen verplichten?",
+        "exempt_hint": "Hun identiteitsprovider regelt al multifactorauthenticatie, dus hier om een tweede factor vragen voegt niets toe.",
+        "exempt_label": "Gebruikers vrijstellen die inloggen via Google of SSO",
+        "grace_days": "{{count}} dagen",
+        "grace_hint_days": "Leden krijgen {{count}} dagen om zich in te stellen voordat ze worden geblokkeerd. Nieuwe leden krijgen dezelfde periode vanaf de dag dat ze zich aansluiten.",
+        "grace_hint_immediate": "Leden zonder tweefactorauthenticatie worden geblokkeerd zodra het beleid wordt opgeslagen.",
+        "grace_immediately": "Direct",
+        "grace_label": "Respijtperiode",
+        "load_error": "Kon de tweefactorstatus van je organisatie niet laden.",
+        "load_error_title": "Er is iets misgegaan",
+        "members_empty": "Nog geen leden in deze organisatie.",
+        "members_sorted": "niet-ingesteld eerst",
+        "members_title": "Leden",
+        "methods_description": "Kies hoe leden mogen inloggen bij deze organisatie. Laat elke methode aangevinkt om het inloggen onbeperkt te houden.",
+        "methods_empty_warning": "Zonder geselecteerde methode zou niemand kunnen inloggen bij deze organisatie. Kies er ten minste één.",
+        "methods_title": "Toegestane inlogmethoden",
+        "no_restart_note": "Het opslaan van wijzigingen in een al actief beleid start niemands aftelperiode opnieuw: bestaande deadlines blijven verankerd aan de bovenstaande datum. De aftelperiode wordt alleen gereset als je de verplichting uit- en weer inschakelt.",
+        "not_admin_body": "Alleen organisatiebeheerders kunnen de tweefactorverplichting bekijken of wijzigen.",
+        "not_admin_title": "Je hebt geen toegang tot deze instelling",
+        "policy_description": "Leden zonder tweede factor worden na afloop van hun respijtperiode geblokkeerd voor deze organisatie. Ze behouden hun account en elke andere organisatie waartoe ze behoren, en krijgen weer toegang zodra ze zich instellen.",
+        "policy_title": "Tweefactorauthenticatie verplichten",
+        "read_only": "Je kunt deze pagina bekijken, maar alleen een organisatiebeheerder kan het beleid wijzigen.",
+        "refresh": "Vernieuwen",
+        "reset_2fa": "2FA opnieuw instellen",
+        "reset_confirm": "Opnieuw instellen bevestigen?",
+        "reset_error": "Kon de tweefactorauthenticatie van dit lid niet opnieuw instellen.",
+        "reset_hint": "Wis de tweefactorauthenticatie van dit lid zodat het die opnieuw kan instellen",
+        "resetting": "Bezig met opnieuw instellen…",
+        "retry": "Opnieuw proberen",
+        "save": "Wijzigingen opslaan",
+        "save_error": "Kon het beveiligingsbeleid niet opslaan.",
+        "save_success": "Beveiligingsbeleid bijgewerkt",
+        "saving": "Beveiligingsbeleid opslaan…",
+        "saving_short": "Opslaan…",
+        "self_blocking": "Je eigen deadline is verstreken. Stel nu tweefactorauthenticatie in om de toegang tot deze organisatie te behouden.",
+        "self_days_left": "Je hebt nog {{count}} dagen om zelf tweefactorauthenticatie in te stellen.",
+        "session_sharing_hint": "Wanneer uitgeschakeld, geeft inloggen op learnhouse.io leden geen toegang tot deze organisatie: ze moeten opnieuw inloggen via de inlogpagina van deze organisatie met een toegestane methode.",
+        "session_sharing_label": "Het delen van sessies met learnhouse.io toestaan",
+        "show_all": "Alle {{count}} leden tonen",
+        "show_less": "Minder tonen",
+        "stat_blocked": "Zou worden geblokkeerd",
+        "stat_enrolled": "Ingesteld",
+        "stat_exempt": "Vrijgesteld (externe login)",
+        "subtitle": "Verplicht tweefactorauthenticatie voor iedereen in deze organisatie.",
+        "title": "Beveiliging",
+        "you": "jij"
       }
     },
     "users": {
@@ -3002,19 +3088,97 @@
         "failed_load": "Kan het studentendossier niet laden.",
         "back_to_students": "Terug naar studenten",
         "no_behavioral": "Geen gedragsgegevens (analyses zijn mogelijk niet geconfigureerd voor deze periode).",
-        "ranges": { "d30": "30 dagen", "d90": "90 dagen", "y1": "1 jaar" },
-        "kpi": { "courses": "Cursussen", "completed": "{{count}} voltooid", "avg_progress": "Gem. voortgang", "time_spent": "Bestede tijd", "assignments": "Opdrachten", "avg_grade": "gem. {{grade}}", "certificates": "Certificaten", "connections": "Verbindingen", "last": "laatst {{date}}" },
-        "tabs": { "connections": "Verbindingen", "courses": "Cursussen", "assignments": "Opdrachten", "code": "Code", "community": "Community", "certificates": "Certificaten", "behavior": "Gedrag" },
-        "identity": { "verified": "Geverifieerd", "unverified": "Niet-geverifieerd", "via": "via {{method}}" },
-        "connections": { "title": "Verbindingen", "empty": "Nog geen verbindingen geregistreerd." },
-        "courses": { "title": "Cursusvoortgang", "empty": "Niet ingeschreven voor een cursus.", "activities": "{{done}}/{{total}} activiteiten", "enrolled": "Ingeschreven op {{date}}" },
-        "assignments": { "title": "Opdrachten", "empty": "Geen ingeleverde opdrachten.", "attempt": "poging {{number}}", "feedback": "Feedback:" },
-        "code": { "title": "Code-oefeningen", "empty": "Geen ingeleverde code.", "activity": "Activiteit", "result": "Resultaat", "tests": "Tests", "time": "Tijd", "when": "Wanneer", "passed": "Geslaagd", "failed": "Mislukt" },
-        "community": { "title": "Deelname aan community", "empty": "Geen community-activiteit.", "discussions": "Discussies", "comments": "Reacties" },
-        "certificates": { "title": "Behaalde certificaten", "empty": "Geen certificaten behaald." },
-        "behavior": { "title": "Gedragsanalyses", "time_by_course": "Bestede tijd per cursus", "searches": "Zoekopdrachten" },
-        "status": { "completed": "voltooid", "in_progress": "bezig", "paused": "gepauzeerd", "cancelled": "geannuleerd", "graded": "beoordeeld", "submitted": "ingeleverd", "pending": "in afwachting", "late": "te laat", "not_submitted": "niet ingeleverd" },
-        "comparison": { "student": "Student", "enrolled": "Ingeschreven", "completed": "Voltooid", "certificates": "Certificaten", "last_connection": "Laatste verbinding", "view": "Bekijken" }
+        "ranges": {
+          "d30": "30 dagen",
+          "d90": "90 dagen",
+          "y1": "1 jaar"
+        },
+        "kpi": {
+          "courses": "Cursussen",
+          "completed": "{{count}} voltooid",
+          "avg_progress": "Gem. voortgang",
+          "time_spent": "Bestede tijd",
+          "assignments": "Opdrachten",
+          "avg_grade": "gem. {{grade}}",
+          "certificates": "Certificaten",
+          "connections": "Verbindingen",
+          "last": "laatst {{date}}"
+        },
+        "tabs": {
+          "connections": "Verbindingen",
+          "courses": "Cursussen",
+          "assignments": "Opdrachten",
+          "code": "Code",
+          "community": "Community",
+          "certificates": "Certificaten",
+          "behavior": "Gedrag"
+        },
+        "identity": {
+          "verified": "Geverifieerd",
+          "unverified": "Niet-geverifieerd",
+          "via": "via {{method}}"
+        },
+        "connections": {
+          "title": "Verbindingen",
+          "empty": "Nog geen verbindingen geregistreerd."
+        },
+        "courses": {
+          "title": "Cursusvoortgang",
+          "empty": "Niet ingeschreven voor een cursus.",
+          "activities": "{{done}}/{{total}} activiteiten",
+          "enrolled": "Ingeschreven op {{date}}"
+        },
+        "assignments": {
+          "title": "Opdrachten",
+          "empty": "Geen ingeleverde opdrachten.",
+          "attempt": "poging {{number}}",
+          "feedback": "Feedback:"
+        },
+        "code": {
+          "title": "Code-oefeningen",
+          "empty": "Geen ingeleverde code.",
+          "activity": "Activiteit",
+          "result": "Resultaat",
+          "tests": "Tests",
+          "time": "Tijd",
+          "when": "Wanneer",
+          "passed": "Geslaagd",
+          "failed": "Mislukt"
+        },
+        "community": {
+          "title": "Deelname aan community",
+          "empty": "Geen community-activiteit.",
+          "discussions": "Discussies",
+          "comments": "Reacties"
+        },
+        "certificates": {
+          "title": "Behaalde certificaten",
+          "empty": "Geen certificaten behaald."
+        },
+        "behavior": {
+          "title": "Gedragsanalyses",
+          "time_by_course": "Bestede tijd per cursus",
+          "searches": "Zoekopdrachten"
+        },
+        "status": {
+          "completed": "voltooid",
+          "in_progress": "bezig",
+          "paused": "gepauzeerd",
+          "cancelled": "geannuleerd",
+          "graded": "beoordeeld",
+          "submitted": "ingeleverd",
+          "pending": "in afwachting",
+          "late": "te laat",
+          "not_submitted": "niet ingeleverd"
+        },
+        "comparison": {
+          "student": "Student",
+          "enrolled": "Ingeschreven",
+          "completed": "Voltooid",
+          "certificates": "Certificaten",
+          "last_connection": "Laatste verbinding",
+          "view": "Bekijken"
+        }
       },
       "active_users": {
         "title": "Actieve Gebruikers",

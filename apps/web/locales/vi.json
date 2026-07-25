@@ -228,7 +228,9 @@
     "leave_organization_title": "Rời khỏi tổ chức?",
     "leave_organization_desc": "Bạn sẽ mất quyền truy cập vào {{org}} và bị xóa khỏi danh sách thành viên. Bạn có thể tham gia lại sau nếu được mời.",
     "leave_organization_error": "Không thể rời khỏi tổ chức này. Vui lòng thử lại.",
-    "leaving": "Đang rời đi…"
+    "leaving": "Đang rời đi…",
+    "dismiss": "Bỏ qua",
+    "sign_out": "Đăng xuất"
   },
   "banner": {
     "viewing_as_guest": "Bạn đang xem {{name}} với tư cách khách.",
@@ -379,7 +381,24 @@
     "image_subtitle_signup": "Tạo tài khoản và ra mắt khóa học đầu tiên của bạn chỉ trong vài phút.",
     "image_title_verify": "Xác minh email của bạn.",
     "image_subtitle_verify": "Một bước nhanh gọn để bảo mật tài khoản và bắt đầu.",
-    "turnstile_failed": "Xác minh thất bại. Vui lòng thử lại."
+    "turnstile_failed": "Xác minh thất bại. Vui lòng thử lại.",
+    "magic_back_to_login": "Quay lại đăng nhập",
+    "magic_send": "Gửi cho tôi liên kết đăng nhập",
+    "magic_sent_body": "Nếu có tài khoản cho {{email}}, chúng tôi vừa gửi một liên kết an toàn để đăng nhập. Liên kết sẽ sớm hết hạn, vì vậy hãy dùng ngay.",
+    "magic_sent_title": "Kiểm tra email của bạn",
+    "magic_subtitle": "Nhập email của bạn và chúng tôi sẽ gửi cho bạn một liên kết đăng nhập — không cần mật khẩu.",
+    "magic_title": "Đăng nhập bằng liên kết",
+    "magic_use_password": "Đăng nhập bằng mật khẩu",
+    "mfa_back_to_login": "Quay lại đăng nhập",
+    "mfa_backup_code": "Mã dự phòng",
+    "mfa_code": "Mã xác minh",
+    "mfa_subtitle": "Nhập mã 6 chữ số từ ứng dụng xác thực của bạn.",
+    "mfa_subtitle_backup": "Nhập một trong các mã dự phòng bạn đã lưu.",
+    "mfa_title": "Xác minh hai bước",
+    "mfa_use_authenticator": "Dùng ứng dụng xác thực",
+    "mfa_use_backup": "Dùng mã dự phòng",
+    "mfa_verify": "Xác minh",
+    "mfa_invalid_code": "Mã đó không đúng. Hãy kiểm tra xem đồng hồ của thiết bị có được đặt tự động không, rồi thử mã tiếp theo."
   },
   "verify_email": {
     "title": "Xác minh email",
@@ -2968,6 +2987,73 @@
         "custom_required": "A label and a URL are required",
         "plan_locked": "Requires {{plan}} plan",
         "feature_off": "Feature is off"
+      },
+      "security": {
+        "active_no_date": "Chính sách đang hoạt động",
+        "active_since": "Chính sách hoạt động từ {{date}}",
+        "admin_mfa_first": "Bật xác thực hai yếu tố trên tài khoản của bạn trước khi yêu cầu áp dụng cho tổ chức.",
+        "admin_mfa_first_cta": "Thiết lập xác thực hai yếu tố cho tài khoản của bạn",
+        "admin_mfa_first_why": "Nếu không, chính sách sẽ khóa bạn khỏi chính tổ chức của mình ngay khi được lưu — và sẽ không còn quản trị viên nào để tắt nó đi.",
+        "badge_enrolled": "Đã đăng ký",
+        "badge_exempt": "Được miễn — {{method}}",
+        "badge_not_enrolled": "Chưa đăng ký",
+        "blocked_hint": "Hãy xem lại danh sách này trước khi bật yêu cầu — đây là những người sẽ mất quyền truy cập vào tổ chức này nếu họ không đăng ký kịp thời.",
+        "cancel": "Hủy",
+        "compliance_count": "{{enabled}} trong số {{total}} thành viên đã bật xác thực hai yếu tố",
+        "compliance_title": "Mức độ phủ xác thực hai yếu tố",
+        "confirm_button": "Có, yêu cầu xác thực hai yếu tố",
+        "confirm_deadline": "{{count}} trong số {{total}} thành viên sẽ mất quyền truy cập vào tổ chức này vào {{date}} trừ khi họ bật xác thực hai yếu tố trước thời điểm đó.",
+        "confirm_exempt_note": "{{count}} thành viên được miễn vì họ đăng nhập qua nhà cung cấp danh tính bên ngoài.",
+        "confirm_immediate": "{{count}} trong số {{total}} thành viên sẽ mất quyền truy cập vào tổ chức này ngay lập tức, ngay khi bạn lưu.",
+        "confirm_list_title": "Ai bị ảnh hưởng",
+        "confirm_none": "Mọi người trong tổ chức này đều đã bật xác thực hai yếu tố hoặc được miễn. Không ai mất quyền truy cập.",
+        "confirm_reversible": "Thao tác này có thể hoàn tác: tắt yêu cầu sẽ khôi phục quyền truy cập ngay lập tức.",
+        "confirm_title": "Yêu cầu xác thực hai yếu tố cho tất cả mọi người?",
+        "exempt_hint": "Nhà cung cấp danh tính của họ đã xử lý xác thực đa yếu tố, nên yêu cầu họ nhập yếu tố thứ hai ở đây cũng không thêm được gì.",
+        "exempt_label": "Miễn cho người dùng đăng nhập qua Google hoặc SSO",
+        "grace_days": "{{count}} ngày",
+        "grace_hint_days": "Thành viên có {{count}} ngày để đăng ký trước khi bị chặn. Thành viên mới có cùng khoảng thời gian kể từ ngày họ tham gia.",
+        "grace_hint_immediate": "Thành viên không có xác thực hai yếu tố sẽ bị chặn ngay khi chính sách được lưu.",
+        "grace_immediately": "Ngay lập tức",
+        "grace_label": "Thời gian gia hạn",
+        "load_error": "Không thể tải trạng thái xác thực hai yếu tố của tổ chức bạn.",
+        "load_error_title": "Đã xảy ra lỗi",
+        "members_empty": "Chưa có thành viên nào trong tổ chức này.",
+        "members_sorted": "chưa đăng ký lên trước",
+        "members_title": "Thành viên",
+        "methods_description": "Chọn cách thành viên được phép đăng nhập vào tổ chức này. Giữ chọn tất cả phương thức để đăng nhập không bị hạn chế.",
+        "methods_empty_warning": "Nếu không chọn phương thức nào, sẽ không ai đăng nhập được vào tổ chức này. Hãy chọn ít nhất một.",
+        "methods_title": "Phương thức đăng nhập được phép",
+        "no_restart_note": "Lưu thay đổi cho một chính sách đang hoạt động không khởi động lại bộ đếm ngược của bất kỳ ai — các hạn chót hiện có vẫn gắn với ngày ở trên. Bộ đếm ngược chỉ đặt lại nếu bạn tắt rồi bật lại yêu cầu.",
+        "not_admin_body": "Chỉ quản trị viên tổ chức mới có thể xem hoặc thay đổi yêu cầu xác thực hai yếu tố.",
+        "not_admin_title": "Bạn không có quyền truy cập vào cài đặt này",
+        "policy_description": "Thành viên không có yếu tố thứ hai sẽ bị chặn khỏi tổ chức này khi thời gian gia hạn của họ kết thúc. Họ vẫn giữ tài khoản và bất kỳ tổ chức nào khác mà họ thuộc về, và lấy lại quyền truy cập ngay khi đăng ký.",
+        "policy_title": "Yêu cầu xác thực hai yếu tố",
+        "read_only": "Bạn có thể xem trang này, nhưng chỉ quản trị viên tổ chức mới có thể thay đổi chính sách.",
+        "refresh": "Làm mới",
+        "reset_2fa": "Đặt lại 2FA",
+        "reset_confirm": "Xác nhận đặt lại?",
+        "reset_error": "Không thể đặt lại xác thực hai yếu tố của thành viên này.",
+        "reset_hint": "Xóa xác thực hai yếu tố của thành viên này để họ có thể thiết lập lại",
+        "resetting": "Đang đặt lại…",
+        "retry": "Thử lại",
+        "save": "Lưu thay đổi",
+        "save_error": "Không thể lưu chính sách bảo mật.",
+        "save_success": "Đã cập nhật chính sách bảo mật",
+        "saving": "Đang lưu chính sách bảo mật…",
+        "saving_short": "Đang lưu…",
+        "self_blocking": "Hạn chót của bạn đã qua. Hãy đăng ký ngay để giữ quyền truy cập vào tổ chức này.",
+        "self_days_left": "Bạn còn {{count}} ngày để tự đăng ký xác thực hai yếu tố.",
+        "session_sharing_hint": "Khi tắt, việc đăng nhập tại learnhouse.io sẽ không cho phép thành viên vào tổ chức này — họ phải đăng nhập lại từ trang đăng nhập của tổ chức này bằng một phương thức được phép.",
+        "session_sharing_label": "Cho phép chia sẻ phiên với learnhouse.io",
+        "show_all": "Hiển thị tất cả {{count}} thành viên",
+        "show_less": "Hiển thị ít hơn",
+        "stat_blocked": "Sẽ bị chặn",
+        "stat_enrolled": "Đã đăng ký",
+        "stat_exempt": "Được miễn (đăng nhập bên ngoài)",
+        "subtitle": "Yêu cầu xác thực hai yếu tố cho tất cả mọi người trong tổ chức này.",
+        "title": "Bảo mật",
+        "you": "bạn"
       }
     },
     "users": {
@@ -3024,19 +3110,97 @@
         "failed_load": "Không thể tải hồ sơ học viên.",
         "back_to_students": "Quay lại danh sách học viên",
         "no_behavioral": "Không có dữ liệu hành vi (phân tích có thể chưa được cấu hình cho khoảng thời gian này).",
-        "ranges": { "d30": "30 ngày", "d90": "90 ngày", "y1": "1 năm" },
-        "kpi": { "courses": "Khóa học", "completed": "{{count}} đã hoàn thành", "avg_progress": "Tiến độ trung bình", "time_spent": "Thời gian đã dùng", "assignments": "Bài tập", "avg_grade": "trung bình {{grade}}", "certificates": "Chứng chỉ", "connections": "Lượt kết nối", "last": "lần cuối {{date}}" },
-        "tabs": { "connections": "Lượt kết nối", "courses": "Khóa học", "assignments": "Bài tập", "code": "Mã", "community": "Cộng đồng", "certificates": "Chứng chỉ", "behavior": "Hành vi" },
-        "identity": { "verified": "Đã xác minh", "unverified": "Chưa xác minh", "via": "qua {{method}}" },
-        "connections": { "title": "Lượt kết nối", "empty": "Chưa có lượt kết nối nào được ghi lại." },
-        "courses": { "title": "Tiến độ khóa học", "empty": "Chưa đăng ký khóa học nào.", "activities": "{{done}}/{{total}} hoạt động", "enrolled": "Đã đăng ký {{date}}" },
-        "assignments": { "title": "Bài tập", "empty": "Không có bài nộp.", "attempt": "lần thử {{number}}", "feedback": "Phản hồi:" },
-        "code": { "title": "Bài tập mã", "empty": "Không có bài nộp mã.", "activity": "Hoạt động", "result": "Kết quả", "tests": "Kiểm thử", "time": "Thời gian", "when": "Khi nào", "passed": "Đạt", "failed": "Không đạt" },
-        "community": { "title": "Tham gia cộng đồng", "empty": "Không có hoạt động cộng đồng.", "discussions": "Thảo luận", "comments": "Bình luận" },
-        "certificates": { "title": "Chứng chỉ đã đạt", "empty": "Chưa đạt chứng chỉ nào." },
-        "behavior": { "title": "Phân tích hành vi", "time_by_course": "Thời gian dùng theo khóa học", "searches": "Lượt tìm kiếm" },
-        "status": { "completed": "đã hoàn thành", "in_progress": "đang thực hiện", "paused": "đã tạm dừng", "cancelled": "đã hủy", "graded": "đã chấm điểm", "submitted": "đã nộp", "pending": "đang chờ", "late": "trễ hạn", "not_submitted": "chưa nộp" },
-        "comparison": { "student": "Học viên", "enrolled": "Đã đăng ký", "completed": "Đã hoàn thành", "certificates": "Chứng chỉ", "last_connection": "Lần kết nối cuối", "view": "Xem" }
+        "ranges": {
+          "d30": "30 ngày",
+          "d90": "90 ngày",
+          "y1": "1 năm"
+        },
+        "kpi": {
+          "courses": "Khóa học",
+          "completed": "{{count}} đã hoàn thành",
+          "avg_progress": "Tiến độ trung bình",
+          "time_spent": "Thời gian đã dùng",
+          "assignments": "Bài tập",
+          "avg_grade": "trung bình {{grade}}",
+          "certificates": "Chứng chỉ",
+          "connections": "Lượt kết nối",
+          "last": "lần cuối {{date}}"
+        },
+        "tabs": {
+          "connections": "Lượt kết nối",
+          "courses": "Khóa học",
+          "assignments": "Bài tập",
+          "code": "Mã",
+          "community": "Cộng đồng",
+          "certificates": "Chứng chỉ",
+          "behavior": "Hành vi"
+        },
+        "identity": {
+          "verified": "Đã xác minh",
+          "unverified": "Chưa xác minh",
+          "via": "qua {{method}}"
+        },
+        "connections": {
+          "title": "Lượt kết nối",
+          "empty": "Chưa có lượt kết nối nào được ghi lại."
+        },
+        "courses": {
+          "title": "Tiến độ khóa học",
+          "empty": "Chưa đăng ký khóa học nào.",
+          "activities": "{{done}}/{{total}} hoạt động",
+          "enrolled": "Đã đăng ký {{date}}"
+        },
+        "assignments": {
+          "title": "Bài tập",
+          "empty": "Không có bài nộp.",
+          "attempt": "lần thử {{number}}",
+          "feedback": "Phản hồi:"
+        },
+        "code": {
+          "title": "Bài tập mã",
+          "empty": "Không có bài nộp mã.",
+          "activity": "Hoạt động",
+          "result": "Kết quả",
+          "tests": "Kiểm thử",
+          "time": "Thời gian",
+          "when": "Khi nào",
+          "passed": "Đạt",
+          "failed": "Không đạt"
+        },
+        "community": {
+          "title": "Tham gia cộng đồng",
+          "empty": "Không có hoạt động cộng đồng.",
+          "discussions": "Thảo luận",
+          "comments": "Bình luận"
+        },
+        "certificates": {
+          "title": "Chứng chỉ đã đạt",
+          "empty": "Chưa đạt chứng chỉ nào."
+        },
+        "behavior": {
+          "title": "Phân tích hành vi",
+          "time_by_course": "Thời gian dùng theo khóa học",
+          "searches": "Lượt tìm kiếm"
+        },
+        "status": {
+          "completed": "đã hoàn thành",
+          "in_progress": "đang thực hiện",
+          "paused": "đã tạm dừng",
+          "cancelled": "đã hủy",
+          "graded": "đã chấm điểm",
+          "submitted": "đã nộp",
+          "pending": "đang chờ",
+          "late": "trễ hạn",
+          "not_submitted": "chưa nộp"
+        },
+        "comparison": {
+          "student": "Học viên",
+          "enrolled": "Đã đăng ký",
+          "completed": "Đã hoàn thành",
+          "certificates": "Chứng chỉ",
+          "last_connection": "Lần kết nối cuối",
+          "view": "Xem"
+        }
       },
       "active_users": {
         "title": "Người dùng đang hoạt động",

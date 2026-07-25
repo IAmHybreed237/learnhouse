@@ -228,7 +228,9 @@
     "leave_organization_title": "組織を退出しますか？",
     "leave_organization_desc": "{{org}} へのアクセス権が失われ、メンバーから削除されます。招待されれば後から再参加できます。",
     "leave_organization_error": "この組織を退出できませんでした。もう一度お試しください。",
-    "leaving": "退出中…"
+    "leaving": "退出中…",
+    "dismiss": "閉じる",
+    "sign_out": "サインアウト"
   },
   "banner": {
     "viewing_as_guest": "{{name}}をゲストとして閲覧しています。",
@@ -367,7 +369,24 @@
     "image_title_verify": "メールアドレスを確認。",
     "image_subtitle_verify": "アカウントを保護して始めるための、ほんの一手間です。",
     "turnstile_failed": "認証に失敗しました。もう一度お試しください。",
-    "resend_verification": "メールが届きませんか？メールを再送信"
+    "resend_verification": "メールが届きませんか？メールを再送信",
+    "magic_back_to_login": "サインインに戻る",
+    "magic_send": "ログインリンクをメールで送信",
+    "magic_sent_body": "{{email}} のアカウントが存在する場合、サインイン用の安全なリンクをお送りしました。まもなく有効期限が切れるため、お早めにご利用ください。",
+    "magic_sent_title": "メールをご確認ください",
+    "magic_subtitle": "メールアドレスを入力してください。サインインできるリンクをお送りします。パスワードは不要です。",
+    "magic_title": "リンクでサインイン",
+    "magic_use_password": "代わりにパスワードでサインイン",
+    "mfa_back_to_login": "サインインに戻る",
+    "mfa_backup_code": "バックアップコード",
+    "mfa_code": "確認コード",
+    "mfa_subtitle": "認証アプリに表示される6桁のコードを入力してください。",
+    "mfa_subtitle_backup": "保存したバックアップコードのいずれかを入力してください。",
+    "mfa_title": "二段階認証",
+    "mfa_use_authenticator": "代わりに認証アプリを使う",
+    "mfa_use_backup": "代わりにバックアップコードを使う",
+    "mfa_verify": "確認",
+    "mfa_invalid_code": "そのコードは正しくありません。デバイスの時計が自動設定になっているか確認してから、次のコードをお試しください。"
   },
   "verify_email": {
     "title": "メール確認",
@@ -2954,6 +2973,73 @@
         "custom_required": "A label and a URL are required",
         "plan_locked": "Requires {{plan}} plan",
         "feature_off": "Feature is off"
+      },
+      "security": {
+        "active_no_date": "ポリシーは有効です",
+        "active_since": "ポリシーは {{date}} から有効です",
+        "admin_mfa_first": "組織全体に必須とする前に、まずご自身のアカウントで二段階認証を有効にしてください。",
+        "admin_mfa_first_cta": "ご自身のアカウントで二段階認証を設定",
+        "admin_mfa_first_why": "そうしないと、ポリシーの保存と同時にご自身が組織から締め出され、設定を戻せる管理者が誰もいなくなってしまいます。",
+        "badge_enrolled": "登録済み",
+        "badge_exempt": "対象外 — {{method}}",
+        "badge_not_enrolled": "未登録",
+        "blocked_hint": "この要件を有効にする前にこの一覧をご確認ください。ここに表示されているメンバーは、期限までに登録しないとこの組織へのアクセスを失います。",
+        "cancel": "キャンセル",
+        "compliance_count": "{{total}} 人中 {{enabled}} 人のメンバーが二段階認証を有効にしています",
+        "compliance_title": "二段階認証のカバー率",
+        "confirm_button": "はい、二段階認証を必須にする",
+        "confirm_deadline": "{{total}} 人中 {{count}} 人のメンバーは、それまでに二段階認証を有効にしない限り、{{date}} にこの組織へのアクセスを失います。",
+        "confirm_exempt_note": "{{count}} 人のメンバーは外部のIDプロバイダーでサインインするため対象外です。",
+        "confirm_immediate": "{{total}} 人中 {{count}} 人のメンバーは、保存すると同時にこの組織へのアクセスを失います。",
+        "confirm_list_title": "影響を受けるメンバー",
+        "confirm_none": "この組織の全員が二段階認証を有効にしているか、対象外です。アクセスを失う人はいません。",
+        "confirm_reversible": "この操作は元に戻せます。要件をオフにすればアクセスはすぐに復元されます。",
+        "confirm_title": "全員に二段階認証を必須にしますか？",
+        "exempt_hint": "彼らのIDプロバイダーがすでに多要素認証を処理しているため、ここで第二要素を求めても意味がありません。",
+        "exempt_label": "Google または SSO でサインインするユーザーを対象外にする",
+        "grace_days": "{{count}} 日",
+        "grace_hint_days": "メンバーはブロックされるまで {{count}} 日以内に登録できます。新しいメンバーは参加した日から同じ期間が与えられます。",
+        "grace_hint_immediate": "二段階認証を設定していないメンバーは、ポリシーの保存と同時にブロックされます。",
+        "grace_immediately": "即時",
+        "grace_label": "猶予期間",
+        "load_error": "組織の二段階認証ステータスを読み込めませんでした。",
+        "load_error_title": "問題が発生しました",
+        "members_empty": "この組織にはまだメンバーがいません。",
+        "members_sorted": "未登録を優先",
+        "members_title": "メンバー",
+        "methods_description": "メンバーがこの組織にサインインできる方法を選択します。すべての方法にチェックを入れたままにすると、サインインは制限されません。",
+        "methods_empty_warning": "方法を1つも選択しないと、誰もこの組織にサインインできなくなります。少なくとも1つ選んでください。",
+        "methods_title": "許可するサインイン方法",
+        "no_restart_note": "すでに有効なポリシーへの変更を保存しても、誰のカウントダウンもリセットされません。既存の期限は上記の日付に固定されたままです。カウントダウンは、要件をオフにして再度オンにした場合にのみリセットされます。",
+        "not_admin_body": "組織の管理者のみが二段階認証の要件を表示または変更できます。",
+        "not_admin_title": "この設定にアクセスする権限がありません",
+        "policy_description": "第二要素を設定していないメンバーは、猶予期間の終了後にこの組織からブロックされます。アカウントや所属する他の組織はそのまま保持され、登録した時点でアクセスが復元されます。",
+        "policy_title": "二段階認証を必須にする",
+        "read_only": "このページは閲覧できますが、ポリシーを変更できるのは組織の管理者のみです。",
+        "refresh": "更新",
+        "reset_2fa": "2FAをリセット",
+        "reset_confirm": "リセットを確認しますか？",
+        "reset_error": "このメンバーの二段階認証をリセットできませんでした。",
+        "reset_hint": "このメンバーの二段階認証をクリアして、再設定できるようにします",
+        "resetting": "リセット中…",
+        "retry": "再試行",
+        "save": "変更を保存",
+        "save_error": "セキュリティポリシーを保存できませんでした。",
+        "save_success": "セキュリティポリシーを更新しました",
+        "saving": "セキュリティポリシーを保存中…",
+        "saving_short": "保存中…",
+        "self_blocking": "ご自身の期限が過ぎています。この組織へのアクセスを維持するには、今すぐ登録してください。",
+        "self_days_left": "ご自身で二段階認証に登録できる残り日数は {{count}} 日です。",
+        "session_sharing_hint": "オフの場合、learnhouse.io でサインインしてもメンバーはこの組織に入れません。許可された方法で、この組織のログインページから改めてサインインする必要があります。",
+        "session_sharing_label": "learnhouse.io とのセッション共有を許可する",
+        "show_all": "{{count}} 人のメンバーをすべて表示",
+        "show_less": "表示を減らす",
+        "stat_blocked": "ブロックされる予定",
+        "stat_enrolled": "登録済み",
+        "stat_exempt": "対象外（外部サインイン）",
+        "subtitle": "この組織の全員に二段階認証を必須にします。",
+        "title": "セキュリティ",
+        "you": "あなた"
       }
     },
     "users": {
@@ -3010,19 +3096,97 @@
         "failed_load": "受講者ドシエの読み込みに失敗しました。",
         "back_to_students": "受講者一覧に戻る",
         "no_behavioral": "行動データがありません（この期間の分析が未設定の可能性があります）。",
-        "ranges": { "d30": "30日", "d90": "90日", "y1": "1年" },
-        "kpi": { "courses": "コース", "completed": "{{count}} 件完了", "avg_progress": "平均進捗", "time_spent": "利用時間", "assignments": "課題", "avg_grade": "平均 {{grade}}", "certificates": "証明書", "connections": "接続", "last": "最終 {{date}}" },
-        "tabs": { "connections": "接続", "courses": "コース", "assignments": "課題", "code": "コード", "community": "コミュニティ", "certificates": "証明書", "behavior": "行動" },
-        "identity": { "verified": "認証済み", "unverified": "未認証", "via": "{{method}} 経由" },
-        "connections": { "title": "接続", "empty": "記録された接続はまだありません。" },
-        "courses": { "title": "コースの進捗", "empty": "登録しているコースがありません。", "activities": "{{done}}/{{total}} アクティビティ", "enrolled": "登録日 {{date}}" },
-        "assignments": { "title": "課題", "empty": "課題の提出がありません。", "attempt": "{{number}} 回目の試行", "feedback": "フィードバック：" },
-        "code": { "title": "コード演習", "empty": "コードの提出がありません。", "activity": "アクティビティ", "result": "結果", "tests": "テスト", "time": "時間", "when": "日時", "passed": "合格", "failed": "不合格" },
-        "community": { "title": "コミュニティへの参加", "empty": "コミュニティの活動がありません。", "discussions": "ディスカッション", "comments": "コメント" },
-        "certificates": { "title": "取得した証明書", "empty": "取得した証明書はありません。" },
-        "behavior": { "title": "行動分析", "time_by_course": "コース別の利用時間", "searches": "検索" },
-        "status": { "completed": "完了", "in_progress": "進行中", "paused": "一時停止", "cancelled": "キャンセル済み", "graded": "採点済み", "submitted": "提出済み", "pending": "保留中", "late": "遅延", "not_submitted": "未提出" },
-        "comparison": { "student": "受講者", "enrolled": "登録済み", "completed": "完了", "certificates": "証明書", "last_connection": "最終接続", "view": "表示" }
+        "ranges": {
+          "d30": "30日",
+          "d90": "90日",
+          "y1": "1年"
+        },
+        "kpi": {
+          "courses": "コース",
+          "completed": "{{count}} 件完了",
+          "avg_progress": "平均進捗",
+          "time_spent": "利用時間",
+          "assignments": "課題",
+          "avg_grade": "平均 {{grade}}",
+          "certificates": "証明書",
+          "connections": "接続",
+          "last": "最終 {{date}}"
+        },
+        "tabs": {
+          "connections": "接続",
+          "courses": "コース",
+          "assignments": "課題",
+          "code": "コード",
+          "community": "コミュニティ",
+          "certificates": "証明書",
+          "behavior": "行動"
+        },
+        "identity": {
+          "verified": "認証済み",
+          "unverified": "未認証",
+          "via": "{{method}} 経由"
+        },
+        "connections": {
+          "title": "接続",
+          "empty": "記録された接続はまだありません。"
+        },
+        "courses": {
+          "title": "コースの進捗",
+          "empty": "登録しているコースがありません。",
+          "activities": "{{done}}/{{total}} アクティビティ",
+          "enrolled": "登録日 {{date}}"
+        },
+        "assignments": {
+          "title": "課題",
+          "empty": "課題の提出がありません。",
+          "attempt": "{{number}} 回目の試行",
+          "feedback": "フィードバック："
+        },
+        "code": {
+          "title": "コード演習",
+          "empty": "コードの提出がありません。",
+          "activity": "アクティビティ",
+          "result": "結果",
+          "tests": "テスト",
+          "time": "時間",
+          "when": "日時",
+          "passed": "合格",
+          "failed": "不合格"
+        },
+        "community": {
+          "title": "コミュニティへの参加",
+          "empty": "コミュニティの活動がありません。",
+          "discussions": "ディスカッション",
+          "comments": "コメント"
+        },
+        "certificates": {
+          "title": "取得した証明書",
+          "empty": "取得した証明書はありません。"
+        },
+        "behavior": {
+          "title": "行動分析",
+          "time_by_course": "コース別の利用時間",
+          "searches": "検索"
+        },
+        "status": {
+          "completed": "完了",
+          "in_progress": "進行中",
+          "paused": "一時停止",
+          "cancelled": "キャンセル済み",
+          "graded": "採点済み",
+          "submitted": "提出済み",
+          "pending": "保留中",
+          "late": "遅延",
+          "not_submitted": "未提出"
+        },
+        "comparison": {
+          "student": "受講者",
+          "enrolled": "登録済み",
+          "completed": "完了",
+          "certificates": "証明書",
+          "last_connection": "最終接続",
+          "view": "表示"
+        }
       },
       "active_users": {
         "title": "アクティブユーザー",

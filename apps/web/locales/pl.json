@@ -228,7 +228,9 @@
     "leave_organization_title": "Opuścić organizację?",
     "leave_organization_desc": "Utracisz dostęp do {{org}} i zostaniesz usunięty(-a) z jej członków. Możesz dołączyć ponownie później, jeśli otrzymasz zaproszenie.",
     "leave_organization_error": "Nie udało się opuścić tej organizacji. Spróbuj ponownie.",
-    "leaving": "Opuszczanie…"
+    "leaving": "Opuszczanie…",
+    "dismiss": "Odrzuć",
+    "sign_out": "Wyloguj się"
   },
   "banner": {
     "viewing_as_guest": "Przeglądasz {{name}} jako gość.",
@@ -379,7 +381,24 @@
     "image_subtitle_signup": "Utwórz konto i uruchom swój pierwszy kurs w kilka minut.",
     "image_title_verify": "Zweryfikuj swój adres e-mail.",
     "image_subtitle_verify": "Jeden szybki krok, aby zabezpieczyć konto i zacząć.",
-    "turnstile_failed": "Weryfikacja nie powiodła się. Spróbuj ponownie."
+    "turnstile_failed": "Weryfikacja nie powiodła się. Spróbuj ponownie.",
+    "magic_back_to_login": "Powrót do logowania",
+    "magic_send": "Wyślij mi link do logowania",
+    "magic_sent_body": "Jeśli konto dla {{email}} istnieje, właśnie wysłaliśmy na nie bezpieczny link do logowania. Wygasa on wkrótce, więc użyj go szybko.",
+    "magic_sent_title": "Sprawdź swoją skrzynkę",
+    "magic_subtitle": "Podaj swój adres e-mail, a wyślemy Ci link, który Cię zaloguje — bez hasła.",
+    "magic_title": "Zaloguj się za pomocą linku",
+    "magic_use_password": "Zaloguj się za pomocą hasła",
+    "mfa_back_to_login": "Powrót do logowania",
+    "mfa_backup_code": "Kod zapasowy",
+    "mfa_code": "Kod weryfikacyjny",
+    "mfa_subtitle": "Wprowadź 6-cyfrowy kod z aplikacji uwierzytelniającej.",
+    "mfa_subtitle_backup": "Wprowadź jeden z zapisanych kodów zapasowych.",
+    "mfa_title": "Weryfikacja dwuetapowa",
+    "mfa_use_authenticator": "Użyj aplikacji uwierzytelniającej",
+    "mfa_use_backup": "Użyj kodu zapasowego",
+    "mfa_verify": "Zweryfikuj",
+    "mfa_invalid_code": "Ten kod jest nieprawidłowy. Sprawdź, czy zegar urządzenia jest ustawiany automatycznie, a następnie wypróbuj kolejny kod."
   },
   "verify_email": {
     "title": "Weryfikacja email",
@@ -2968,6 +2987,73 @@
         "custom_required": "A label and a URL are required",
         "plan_locked": "Requires {{plan}} plan",
         "feature_off": "Feature is off"
+      },
+      "security": {
+        "active_no_date": "Zasada jest aktywna",
+        "active_since": "Zasada aktywna od {{date}}",
+        "admin_mfa_first": "Włącz uwierzytelnianie dwuskładnikowe na własnym koncie, zanim będziesz go wymagać od organizacji.",
+        "admin_mfa_first_cta": "Skonfiguruj uwierzytelnianie dwuskładnikowe na swoim koncie",
+        "admin_mfa_first_why": "W przeciwnym razie zasada zablokowałaby Ci dostęp do własnej organizacji w momencie zapisania — i nie zostałby żaden administrator, który mógłby ją wyłączyć.",
+        "badge_enrolled": "Zarejestrowany",
+        "badge_exempt": "Zwolniony — {{method}}",
+        "badge_not_enrolled": "Niezarejestrowany",
+        "blocked_hint": "Przejrzyj tę listę przed włączeniem wymogu — to osoby, które stracą dostęp do tej organizacji, jeśli nie zarejestrują się na czas.",
+        "cancel": "Anuluj",
+        "compliance_count": "{{enabled}} z {{total}} członków ma włączone uwierzytelnianie dwuskładnikowe",
+        "compliance_title": "Zasięg uwierzytelniania dwuskładnikowego",
+        "confirm_button": "Tak, wymagaj uwierzytelniania dwuskładnikowego",
+        "confirm_deadline": "{{count}} z {{total}} członków straci dostęp do tej organizacji w dniu {{date}}, chyba że wcześniej włączą uwierzytelnianie dwuskładnikowe.",
+        "confirm_exempt_note": "{{count}} członków jest zwolnionych, ponieważ logują się przez zewnętrznego dostawcę tożsamości.",
+        "confirm_immediate": "{{count}} z {{total}} członków straci dostęp do tej organizacji natychmiast po zapisaniu.",
+        "confirm_list_title": "Kogo to dotyczy",
+        "confirm_none": "Wszyscy w tej organizacji mają włączone uwierzytelnianie dwuskładnikowe lub są zwolnieni. Nikt nie traci dostępu.",
+        "confirm_reversible": "To jest odwracalne: wyłączenie wymogu natychmiast przywraca dostęp.",
+        "confirm_title": "Wymagać uwierzytelniania dwuskładnikowego od wszystkich?",
+        "exempt_hint": "Ich dostawca tożsamości już obsługuje uwierzytelnianie wieloskładnikowe, więc proszenie ich tutaj o drugi składnik nic nie wnosi.",
+        "exempt_label": "Zwolnij użytkowników logujących się przez Google lub SSO",
+        "grace_days": "{{count}} dni",
+        "grace_hint_days": "Członkowie mają {{count}} dni na rejestrację, zanim zostaną zablokowani. Nowi członkowie mają ten sam okres od dnia dołączenia.",
+        "grace_hint_immediate": "Członkowie bez uwierzytelniania dwuskładnikowego są blokowani zaraz po zapisaniu zasady.",
+        "grace_immediately": "Natychmiast",
+        "grace_label": "Okres karencji",
+        "load_error": "Nie udało się załadować statusu uwierzytelniania dwuskładnikowego Twojej organizacji.",
+        "load_error_title": "Coś poszło nie tak",
+        "members_empty": "W tej organizacji nie ma jeszcze żadnych członków.",
+        "members_sorted": "najpierw niezarejestrowani",
+        "members_title": "Członkowie",
+        "methods_description": "Wybierz, w jaki sposób członkowie mogą logować się do tej organizacji. Pozostaw wszystkie metody zaznaczone, aby logowanie było bez ograniczeń.",
+        "methods_empty_warning": "Bez wybranej metody nikt nie mógłby zalogować się do tej organizacji. Wybierz co najmniej jedną.",
+        "methods_title": "Dozwolone metody logowania",
+        "no_restart_note": "Zapisanie zmian w już aktywnej zasadzie nie resetuje niczyjego odliczania — istniejące terminy pozostają powiązane z powyższą datą. Odliczanie resetuje się tylko wtedy, gdy wyłączysz i ponownie włączysz wymóg.",
+        "not_admin_body": "Tylko administratorzy organizacji mogą wyświetlać lub zmieniać wymóg uwierzytelniania dwuskładnikowego.",
+        "not_admin_title": "Nie masz dostępu do tego ustawienia",
+        "policy_description": "Członkowie bez drugiego składnika zostają zablokowani w tej organizacji po zakończeniu okresu karencji. Zachowują swoje konto i wszelkie inne organizacje, do których należą, i odzyskują dostęp w chwili rejestracji.",
+        "policy_title": "Wymagaj uwierzytelniania dwuskładnikowego",
+        "read_only": "Możesz przeglądać tę stronę, ale tylko administrator organizacji może zmienić zasadę.",
+        "refresh": "Odśwież",
+        "reset_2fa": "Zresetuj 2FA",
+        "reset_confirm": "Potwierdzić reset?",
+        "reset_error": "Nie udało się zresetować uwierzytelniania dwuskładnikowego tego członka.",
+        "reset_hint": "Wyczyść uwierzytelnianie dwuskładnikowe tego członka, aby mógł skonfigurować je ponownie",
+        "resetting": "Resetowanie…",
+        "retry": "Spróbuj ponownie",
+        "save": "Zapisz zmiany",
+        "save_error": "Nie udało się zapisać zasady bezpieczeństwa.",
+        "save_success": "Zasada bezpieczeństwa zaktualizowana",
+        "saving": "Zapisywanie zasady bezpieczeństwa…",
+        "saving_short": "Zapisywanie…",
+        "self_blocking": "Twój termin już minął. Zarejestruj się teraz, aby zachować dostęp do tej organizacji.",
+        "self_days_left": "Masz jeszcze {{count}} dni na samodzielną rejestrację w uwierzytelnianiu dwuskładnikowym.",
+        "session_sharing_hint": "Gdy wyłączone, zalogowanie się w learnhouse.io nie wpuści członków do tej organizacji — muszą zalogować się ponownie ze strony logowania tej organizacji przy użyciu dozwolonej metody.",
+        "session_sharing_label": "Zezwól na współdzielenie sesji z learnhouse.io",
+        "show_all": "Pokaż wszystkich {{count}} członków",
+        "show_less": "Pokaż mniej",
+        "stat_blocked": "Zostaliby zablokowani",
+        "stat_enrolled": "Zarejestrowani",
+        "stat_exempt": "Zwolnieni (logowanie zewnętrzne)",
+        "subtitle": "Wymagaj uwierzytelniania dwuskładnikowego od wszystkich w tej organizacji.",
+        "title": "Bezpieczeństwo",
+        "you": "Ty"
       }
     },
     "users": {
@@ -3024,19 +3110,97 @@
         "failed_load": "Nie udało się załadować teczki studenta.",
         "back_to_students": "Powrót do studentów",
         "no_behavioral": "Brak danych behawioralnych (analityka może być nieskonfigurowana dla tego okresu).",
-        "ranges": { "d30": "30 dni", "d90": "90 dni", "y1": "1 rok" },
-        "kpi": { "courses": "Kursy", "completed": "{{count}} ukończonych", "avg_progress": "Śr. postęp", "time_spent": "Spędzony czas", "assignments": "Zadania", "avg_grade": "śr. {{grade}}", "certificates": "Certyfikaty", "connections": "Połączenia", "last": "ostatnie {{date}}" },
-        "tabs": { "connections": "Połączenia", "courses": "Kursy", "assignments": "Zadania", "code": "Kod", "community": "Społeczność", "certificates": "Certyfikaty", "behavior": "Zachowanie" },
-        "identity": { "verified": "Zweryfikowany", "unverified": "Niezweryfikowany", "via": "przez {{method}}" },
-        "connections": { "title": "Połączenia", "empty": "Brak zarejestrowanych połączeń." },
-        "courses": { "title": "Postęp kursu", "empty": "Nie zapisano na żaden kurs.", "activities": "{{done}}/{{total}} aktywności", "enrolled": "Zapisano {{date}}" },
-        "assignments": { "title": "Zadania", "empty": "Brak przesłanych zadań.", "attempt": "próba {{number}}", "feedback": "Opinia:" },
-        "code": { "title": "Ćwiczenia z kodu", "empty": "Brak przesłanego kodu.", "activity": "Aktywność", "result": "Wynik", "tests": "Testy", "time": "Czas", "when": "Kiedy", "passed": "Zaliczone", "failed": "Niezaliczone" },
-        "community": { "title": "Udział w społeczności", "empty": "Brak aktywności w społeczności.", "discussions": "Dyskusje", "comments": "Komentarze" },
-        "certificates": { "title": "Zdobyte certyfikaty", "empty": "Brak zdobytych certyfikatów." },
-        "behavior": { "title": "Analityka behawioralna", "time_by_course": "Czas spędzony według kursu", "searches": "Wyszukiwania" },
-        "status": { "completed": "ukończone", "in_progress": "w toku", "paused": "wstrzymane", "cancelled": "anulowane", "graded": "ocenione", "submitted": "przesłane", "pending": "oczekujące", "late": "spóźnione", "not_submitted": "nieprzesłane" },
-        "comparison": { "student": "Student", "enrolled": "Zapisano", "completed": "Ukończono", "certificates": "Certyfikaty", "last_connection": "Ostatnie połączenie", "view": "Zobacz" }
+        "ranges": {
+          "d30": "30 dni",
+          "d90": "90 dni",
+          "y1": "1 rok"
+        },
+        "kpi": {
+          "courses": "Kursy",
+          "completed": "{{count}} ukończonych",
+          "avg_progress": "Śr. postęp",
+          "time_spent": "Spędzony czas",
+          "assignments": "Zadania",
+          "avg_grade": "śr. {{grade}}",
+          "certificates": "Certyfikaty",
+          "connections": "Połączenia",
+          "last": "ostatnie {{date}}"
+        },
+        "tabs": {
+          "connections": "Połączenia",
+          "courses": "Kursy",
+          "assignments": "Zadania",
+          "code": "Kod",
+          "community": "Społeczność",
+          "certificates": "Certyfikaty",
+          "behavior": "Zachowanie"
+        },
+        "identity": {
+          "verified": "Zweryfikowany",
+          "unverified": "Niezweryfikowany",
+          "via": "przez {{method}}"
+        },
+        "connections": {
+          "title": "Połączenia",
+          "empty": "Brak zarejestrowanych połączeń."
+        },
+        "courses": {
+          "title": "Postęp kursu",
+          "empty": "Nie zapisano na żaden kurs.",
+          "activities": "{{done}}/{{total}} aktywności",
+          "enrolled": "Zapisano {{date}}"
+        },
+        "assignments": {
+          "title": "Zadania",
+          "empty": "Brak przesłanych zadań.",
+          "attempt": "próba {{number}}",
+          "feedback": "Opinia:"
+        },
+        "code": {
+          "title": "Ćwiczenia z kodu",
+          "empty": "Brak przesłanego kodu.",
+          "activity": "Aktywność",
+          "result": "Wynik",
+          "tests": "Testy",
+          "time": "Czas",
+          "when": "Kiedy",
+          "passed": "Zaliczone",
+          "failed": "Niezaliczone"
+        },
+        "community": {
+          "title": "Udział w społeczności",
+          "empty": "Brak aktywności w społeczności.",
+          "discussions": "Dyskusje",
+          "comments": "Komentarze"
+        },
+        "certificates": {
+          "title": "Zdobyte certyfikaty",
+          "empty": "Brak zdobytych certyfikatów."
+        },
+        "behavior": {
+          "title": "Analityka behawioralna",
+          "time_by_course": "Czas spędzony według kursu",
+          "searches": "Wyszukiwania"
+        },
+        "status": {
+          "completed": "ukończone",
+          "in_progress": "w toku",
+          "paused": "wstrzymane",
+          "cancelled": "anulowane",
+          "graded": "ocenione",
+          "submitted": "przesłane",
+          "pending": "oczekujące",
+          "late": "spóźnione",
+          "not_submitted": "nieprzesłane"
+        },
+        "comparison": {
+          "student": "Student",
+          "enrolled": "Zapisano",
+          "completed": "Ukończono",
+          "certificates": "Certyfikaty",
+          "last_connection": "Ostatnie połączenie",
+          "view": "Zobacz"
+        }
       },
       "active_users": {
         "title": "Aktywni użytkownicy",
