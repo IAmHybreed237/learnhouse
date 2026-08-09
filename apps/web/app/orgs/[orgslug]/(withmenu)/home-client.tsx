@@ -11,6 +11,7 @@ import HomePopularPrograms from '@components/Landings/Hybreed/HomePopularProgram
 import HomeStartHere from '@components/Landings/Hybreed/HomeStartHere'
 import HomeHomeworkVideo from '@components/Landings/Hybreed/HomeHomeworkVideo'
 import HomeGoals from '@components/Landings/Hybreed/HomeGoals'
+import HomeGraduateStories from '@components/Landings/Hybreed/HomeGraduateStories'
 import HomeFooter from '@components/Landings/Hybreed/HomeFooter'
 import { JsonLd } from '@components/SEO/JsonLd'
 import { getUriWithOrg } from '@services/config/config'
@@ -72,6 +73,7 @@ export default function HomeClient({ orgslug }: { orgslug: string }) {
           <HomeStartHere orgslug={orgslug} />
           <HomeHomeworkVideo />
           <HomeGoals />
+          <HomeGraduateStories />
           <HomeFooter orgslug={orgslug} />
           <LandingClassic
             courses={courses || []}

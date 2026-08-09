@@ -383,19 +383,33 @@ def _is_transient_connect_error(exc: BaseException) -> bool:
 
 async def _bootstrap_schema():
     async with engine.begin() as conn:
-        # Enable pgvector extension for vector similarity search (optional — RAG feature)
+        # Enable pgvector extension for vector similarity search (optional — RAG feature).
+        # Wrapped in a savepoint so that a failure (missing extension) does not abort
+        # the outer transaction and prevent table creation.
+        _has_pgvector = False
         try:
             from sqlalchemy import text
-            await conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector"))
+            async with conn.begin_nested():
+                await conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector"))
+            _has_pgvector = True
         except Exception as e:
             logging.warning(
                 "pgvector extension not available — RAG features will be disabled. "
                 "Install pgvector on your PostgreSQL server to enable course chatbot. "
                 "Error: %s", e
             )
-        # Create all tables
+        # Create all tables (skip course_embedding if pgvector is unavailable)
         if not is_testing:
-            await conn.run_sync(SQLModel.metadata.create_all)
+            tables_to_create = None
+            if not _has_pgvector:
+                tables_to_create = [
+                    t for t in SQLModel.metadata.sorted_tables
+                    if t.name != "course_embedding"
+                ]
+            await conn.run_sync(
+                SQLModel.metadata.create_all,
+                tables=tables_to_create,
+            )
 
 
 async def connect_to_db(app: FastAPI):

@@ -61,7 +61,19 @@ async def _install_async(short: bool) -> None:
 
     # Schema DDL runs on a sync engine (SQLModel.metadata.create_all is sync).
     sync_engine = create_engine(_to_sync_url(sql_url), echo=False, pool_pre_ping=True)
-    SQLModel.metadata.create_all(sync_engine)
+    # Skip course_embedding table if pgvector extension is not available
+    _skip_tables = set()
+    try:
+        with sync_engine.connect() as _conn:
+            _conn.execute(__import__("sqlalchemy").text("CREATE EXTENSION IF NOT EXISTS vector"))
+            _conn.commit()
+    except Exception:
+        _skip_tables.add("course_embedding")
+    tables_arg = (
+        [t for t in SQLModel.metadata.sorted_tables if t.name not in _skip_tables]
+        if _skip_tables else None
+    )
+    SQLModel.metadata.create_all(sync_engine, tables=tables_arg)
     sync_engine.dispose()
 
     # The install_* coroutines use sqlmodel.ext.asyncio.session.AsyncSession.

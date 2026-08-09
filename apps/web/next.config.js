@@ -2,6 +2,9 @@ const { withSentryConfig } = require("@sentry/nextjs");
 
 /** @type {import('common.next').NextConfig} */
 const nextConfig = {
+  // Allows the local dev proxy/browser preview (127.0.0.1) to reach Next.js
+  // dev resources (HMR, static chunks) when accessing via that host.
+  allowedDevOrigins: ['127.0.0.1'],
   // Required by PostHog's reverse-proxy rewrites below so the trailing-slash
   // handling on /ingest/* doesn't 308-redirect ingestion requests.
   skipTrailingSlashRedirect: true,
