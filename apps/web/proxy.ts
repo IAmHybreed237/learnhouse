@@ -214,7 +214,8 @@ export const config = {
      * 3. /fonts (inside /public)
      * 4. Umami Analytics
      * 5. /examples (inside /public)
-     * 6. all root files inside /public (e.g. /favicon.ico)
+     * 6. any static file inside /public, at any depth (e.g. /favicon.ico,
+     *    /images/home/photo.webp)
      * 7. /embed (activity embeds)
      * 8. /ingest (PostHog reverse proxy — must reach the next.config rewrite
      *    untouched; otherwise the middleware mis-routes it and ingestion 404s)
@@ -228,8 +229,26 @@ export const config = {
 }
 
 export default async function proxy(req: NextRequest) {
-  const instance = await getInstanceInfo()
   const { pathname, search } = req.nextUrl
+
+  // Static files nested inside /public (e.g. /images/home/photo.webp) have no
+  // dedicated app route. Root-level static files (e.g. /favicon.ico) are
+  // already excluded via the matcher's negative-lookahead above, but that
+  // regex can't safely exclude paths containing a slash before the filename
+  // — so nested assets fell through to the tenant rewrite below and 404'd.
+  // Bypass tenant rewriting for any non-API path ending in a file extension.
+  // sitemap.xml/robots.txt are excluded — they have dedicated tenant-aware
+  // rewrite logic further down in this function.
+  const STATIC_BYPASS_EXCEPTIONS = new Set(['/sitemap.xml', '/robots.txt'])
+  if (
+    !pathname.startsWith('/api')
+    && !STATIC_BYPASS_EXCEPTIONS.has(pathname)
+    && /\.[a-zA-Z0-9]+$/.test(pathname)
+  ) {
+    return NextResponse.next()
+  }
+
+  const instance = await getInstanceInfo()
   const fullhost = req.headers.get('host')
 
   // SEO: canonicalize mixed-case top-level route names (/Login → /login). Scoped

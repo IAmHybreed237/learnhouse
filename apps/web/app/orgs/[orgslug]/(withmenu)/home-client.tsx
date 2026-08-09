@@ -4,6 +4,14 @@ import { useOrg } from '@components/Contexts/OrgContext'
 import { useCourses } from '@/hooks/queries/useCourses'
 import LandingClassic from '@components/Landings/LandingClassic'
 import LandingCustom from '@components/Landings/LandingCustom'
+import HomeHero from '@components/Landings/Hybreed/HomeHero'
+import HomeCategories from '@components/Landings/Hybreed/HomeCategories'
+import HomeCourseSelections from '@components/Landings/Hybreed/HomeCourseSelections'
+import HomePopularPrograms from '@components/Landings/Hybreed/HomePopularPrograms'
+import HomeStartHere from '@components/Landings/Hybreed/HomeStartHere'
+import HomeHomeworkVideo from '@components/Landings/Hybreed/HomeHomeworkVideo'
+import HomeGoals from '@components/Landings/Hybreed/HomeGoals'
+import HomeFooter from '@components/Landings/Hybreed/HomeFooter'
 import { JsonLd } from '@components/SEO/JsonLd'
 import { getUriWithOrg } from '@services/config/config'
 import { getOrgLogoMediaDirectory } from '@services/media/media'
@@ -56,11 +64,21 @@ export default function HomeClient({ orgslug }: { orgslug: string }) {
       {hasCustomLanding ? (
         <LandingCustom landing={landingConfig} orgslug={orgslug} />
       ) : (
-        <LandingClassic
-          courses={courses || []}
-          orgslug={orgslug}
-          org_id={org.id}
-        />
+        <>
+          <HomeHero orgslug={orgslug} />
+          <HomeCategories orgslug={orgslug} />
+          <HomeCourseSelections orgslug={orgslug} />
+          <HomePopularPrograms orgslug={orgslug} />
+          <HomeStartHere orgslug={orgslug} />
+          <HomeHomeworkVideo />
+          <HomeGoals />
+          <HomeFooter orgslug={orgslug} />
+          <LandingClassic
+            courses={courses || []}
+            orgslug={orgslug}
+            org_id={org.id}
+          />
+        </>
       )}
     </div>
   )
