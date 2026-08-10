@@ -1,0 +1,8 @@
+https://netology.ru/programs/front-end-basic -w -O . -n -r1 -s0 -s0 -T60 -R3 +*.css +*.js +*.woff* +*.png +*.jpg +*.svg -F "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+File generated automatically on Mon, 10 Aug 2026 03:47:55, do NOT edit
+
+To update a mirror, just launch httrack without any parameters
+The existing cache will be used (and modified)
+To have other options, retype all parameters and launch HTTrack
+To continue an interrupted mirror, just launch httrack without any parameters
+

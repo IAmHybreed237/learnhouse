@@ -6,45 +6,39 @@ import { Play } from 'lucide-react'
 
 export default function HomeHomeworkVideo() {
   return (
-    <section className="w-full bg-white">
-      <div className="max-w-(--breakpoint-2xl) mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col lg:flex-row gap-8 items-start lg:items-center">
-          {/* Left: text */}
-          <div className="flex-1">
-            <h2 className="text-3xl sm:text-5xl sm:text-6xl font-bold sm:font-black tracking-tight text-[#080808] mb-4 sm:mb-8">
-              From homework to new projects
-            </h2>
-            <p className="text-base sm:text-xl text-gray-600 leading-7">
-              In just 2 minutes, we&apos;ll tell you about our students&apos; journey: through challenges to solutions and real results.
-            </p>
-          </div>
+    <section className="w-full mt-[100px] px-[42px] flex gap-5 items-center max-[1239px]:mt-[60px] max-[767px]:flex-col max-[767px]:mt-12 max-[767px]:px-3">
+      {/* Left: text */}
+      <div className="flex-1">
+        <h2 className="text-[40px] font-semibold leading-[46px] text-black mb-10 mt-0 max-[1239px]:text-[32px] max-[1239px]:leading-[38px] max-[1239px]:mb-7 max-[767px]:text-2xl max-[767px]:leading-[30px] max-[767px]:mb-6">
+          From homework to new projects
+        </h2>
+        <p className="text-xl leading-7 text-[#27292d] m-0 max-[767px]:text-base max-[767px]:leading-6">
+          In just 2 minutes, we&apos;ll tell you about our students&apos; journey: through challenges to solutions and real results.
+        </p>
+      </div>
 
-          {/* Right: video */}
-          <div
-            className="relative rounded-3xl overflow-hidden cursor-pointer group w-full sm:w-[670px] sm:flex-shrink-0"
-            style={{ height: 'auto', aspectRatio: '670 / 440' }}
-          >
-            <Image
-              src="/images/home/sf-homework-poster-1.png"
-              alt="From homework to new projects"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 600px"
-              priority
-            />
+      {/* Right: video */}
+      <div className="relative min-w-[570px] h-[380px] rounded-[20px] overflow-hidden cursor-pointer group flex items-center justify-center flex-shrink-0 max-[1239px]:min-w-[460px] max-[1239px]:h-[306px] max-[1023px]:min-w-[340px] max-[1023px]:h-[226px] max-[767px]:min-w-0 max-[767px]:max-w-[351px] max-[767px]:h-[234px] max-[767px]:w-full">
+        <Image
+          src="/images/home/sf-homework-poster-1.png"
+          alt="From homework to new projects"
+          fill
+          className="object-cover"
+          sizes="(max-width: 767px) 351px, (max-width: 1023px) 340px, (max-width: 1239px) 460px, 570px"
+          priority
+        />
 
-            {/* Play button */}
-            <div className="absolute inset-0 flex items-center justify-center z-10">
-              <div className="w-16 h-16 rounded-full bg-black/80 flex items-center justify-center group-hover:bg-black transition-colors">
-                <Play size={28} className="text-white ml-1" fill="white" />
-              </div>
-            </div>
+        {/* Play button */}
+        <div className="absolute flex items-center h-12 pl-[18px] pr-5 bg-black rounded-xl border-0 z-10">
+          <Play size={20} className="text-white fill-white" />
+          <span className="ml-1.5 text-white font-semibold text-base leading-5 hidden group-hover:block">
+            Watch
+          </span>
+        </div>
 
-            {/* Time badge */}
-            <div className="absolute right-5 bottom-5 z-10 flex items-center h-6 px-2 rounded-md bg-black text-white text-xs font-medium">
-              2:10
-            </div>
-          </div>
+        {/* Time badge */}
+        <div className="absolute right-5 bottom-5 z-10 flex items-center h-6 px-2 rounded-md bg-black text-white text-xs leading-[14px]">
+          2:10
         </div>
       </div>
     </section>

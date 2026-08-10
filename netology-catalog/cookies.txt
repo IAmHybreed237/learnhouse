@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.netology.ru	TRUE	/	FALSE	1999999999	_yasc	bw3uKPMxet1cnxJLTjJ9bQlGQzKWiFCBmxmZyUIhwmvrmzFycx5AvzEKHiTJzRf3xc9Q
+netology.ru	TRUE	/	FALSE	1999999999	SameSite	None
+.mail.ru	TRUE	/	FALSE	1999999999	tmr_lvid	306f20f514c94f634cd9b17c4bba3a04
+.mail.ru	TRUE	/	FALSE	1999999999	tmr_lvidTS	1786319210000
+

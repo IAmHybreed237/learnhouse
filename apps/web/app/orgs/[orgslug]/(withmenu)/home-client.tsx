@@ -2,10 +2,9 @@
 import React from 'react'
 import { useOrg } from '@components/Contexts/OrgContext'
 import { useCourses } from '@/hooks/queries/useCourses'
-import LandingClassic from '@components/Landings/LandingClassic'
 import LandingCustom from '@components/Landings/LandingCustom'
 import HomeHero from '@components/Landings/Hybreed/HomeHero'
-import HomeCategories from '@components/Landings/Hybreed/HomeCategories'
+
 import HomeCourseSelections from '@components/Landings/Hybreed/HomeCourseSelections'
 import HomePopularPrograms from '@components/Landings/Hybreed/HomePopularPrograms'
 import HomeStartHere from '@components/Landings/Hybreed/HomeStartHere'
@@ -13,6 +12,8 @@ import HomeHomeworkVideo from '@components/Landings/Hybreed/HomeHomeworkVideo'
 import HomeGoals from '@components/Landings/Hybreed/HomeGoals'
 import HomeGraduateStories from '@components/Landings/Hybreed/HomeGraduateStories'
 import HomeFooter from '@components/Landings/Hybreed/HomeFooter'
+import HybreedHeader from '@components/Landings/Hybreed/HybreedHeader'
+import HybreedPromoBanner from '@components/Landings/Hybreed/HybreedPromoBanner'
 import { JsonLd } from '@components/SEO/JsonLd'
 import { getUriWithOrg } from '@services/config/config'
 import { getOrgLogoMediaDirectory } from '@services/media/media'
@@ -20,7 +21,7 @@ import GeneralWrapperStyled from '@components/Objects/StyledElements/Wrappers/Ge
 
 export default function HomeClient({ orgslug }: { orgslug: string }) {
   const org = useOrg() as any
-  const { data: courses, isLoading: coursesLoading } = useCourses(orgslug)
+  const { isLoading: coursesLoading } = useCourses(orgslug)
 
   const landingConfig = org?.config?.config?.customization?.landing || org?.config?.config?.landing
   const hasCustomLanding = landingConfig?.enabled
@@ -66,20 +67,18 @@ export default function HomeClient({ orgslug }: { orgslug: string }) {
         <LandingCustom landing={landingConfig} orgslug={orgslug} />
       ) : (
         <>
-          <HomeHero orgslug={orgslug} />
-          <HomeCategories orgslug={orgslug} />
-          <HomeCourseSelections orgslug={orgslug} />
-          <HomePopularPrograms orgslug={orgslug} />
-          <HomeStartHere orgslug={orgslug} />
-          <HomeHomeworkVideo />
-          <HomeGoals />
-          <HomeGraduateStories />
+          <HybreedPromoBanner orgslug={orgslug} />
+          <HybreedHeader orgslug={orgslug} />
+          <div className="w-full max-w-[1240px] mx-auto box-border pb-[90px] max-[767px]:pb-[30px]">
+            <HomeHero orgslug={orgslug} />
+            <HomeCourseSelections orgslug={orgslug} />
+            <HomePopularPrograms orgslug={orgslug} />
+            <HomeStartHere orgslug={orgslug} />
+            <HomeHomeworkVideo />
+            <HomeGoals />
+            <HomeGraduateStories />
+          </div>
           <HomeFooter orgslug={orgslug} />
-          <LandingClassic
-            courses={courses || []}
-            orgslug={orgslug}
-            org_id={org.id}
-          />
         </>
       )}
     </div>

@@ -1,0 +1,25 @@
+HTTrack3.49-2+htsswf+htsjava launched on Mon, 10 Aug 2026 03:47:55 at https://netology.ru/programs/front-end-basic +*.css +*.js +*.woff* +*.png +*.jpg +*.svg
+("C:\Program Files\WinHTTrack\httrack.exe" https://netology.ru/programs/front-end-basic -w -O . -n -r1 -s0 -s0 -T60 -R3 +*.css +*.js +*.woff* +*.png +*.jpg +*.svg -F "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+03:48:36	Warning: 	Warning: store text/css without scan: ./cdn-app.sberdevices.ru/shared-static/0.0.0/styles/SBSansDisplay.0.2.0.css
+03:48:36	Warning: 	Warning: store text/css without scan: ./cdn-app.sberdevices.ru/shared-static/0.0.0/styles/SBSansText.0.2.0.css
+03:48:36	Warning: 	Warning: store image/svg+xml without scan: ./u.netology.ru/backend/uploads/page_assets/images/file/95420/desktop_bg_oca.svg
+03:48:36	Warning: 	Warning: store image/svg+xml without scan: ./u.netology.ru/backend/uploads/page_assets/images/file/95187/mobile_bg-onecmid_b.svg
+03:48:36	Warning: 	Warning: store text/html without scan: ./netology.ru/index.html
+03:48:36	Warning: 	Warning: store text/css without scan: ./netology.ru/_next/static/css/6ea9d1e4c04571ea.css
+03:48:36	Warning: 	Warning: store text/css without scan: ./netology.ru/_next/static/css/9236c469239853ab.css
+03:48:36	Warning: 	Warning: store text/css without scan: ./netology.ru/_next/static/css/75a3438236d8e06a.css
+03:48:36	Warning: 	Warning: store text/css without scan: ./netology.ru/_next/static/css/824c731af5c34f41.css
+03:48:36	Warning: 	Warning: store text/css without scan: ./netology.ru/_next/static/css/eb7f74ab64b8c568.css
+03:48:36	Warning: 	Warning: store text/css without scan: ./netology.ru/_next/static/css/f864dd9d37e8ae98.css
+03:48:36	Warning: 	Warning: store text/css without scan: ./netology.ru/_next/static/css/bbcee5504bf22339.css
+03:48:36	Warning: 	Warning: store text/css without scan: ./netology.ru/_next/static/css/71320f01039d9b27.css
+03:48:36	Warning: 	Warning: store image/svg+xml without scan: ./u.netology.ru/backend/uploads/page_assets/images/file/80561/Befront_Logo_1.svg
+
+HTTrack Website Copier/3.49-2 mirror complete in 41 seconds : 69 links scanned, 69 files written (9883971 bytes overall) [5983606 bytes received at 145941 bytes/sec], 4599693 bytes transferred using HTTP compression in 16 files, ratio 14%, 1.4 requests per connection
+(No errors, 14 warnings, 0 messages)

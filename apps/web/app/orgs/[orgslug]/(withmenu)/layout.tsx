@@ -105,6 +105,12 @@ function LayoutContent({ children, orgslug }: { children: ReactNode; orgslug: st
   const noFooterPaths = ['copilot']
   const isFullBleedPage = noFooterPaths.some((p) => pathParts.includes(p))
 
+  // Pages that use the Hybreed header/footer — hide the default OrgMenu & OrgFooter
+  const isHomePage = pathname === `/${orgslug}` || pathname === `/${orgslug}/` || pathname?.endsWith('/home') || pathParts.length <= 1
+  const isCoursesPage = pathname?.endsWith('/courses')
+  const isCourseAboutPage = pathname?.endsWith('/about') && pathParts.includes('course')
+  const usesHybreedHeader = isHomePage || isCoursesPage || isCourseAboutPage
+
   return (
     <div
       className="flex flex-col min-h-screen"
@@ -114,15 +120,15 @@ function LayoutContent({ children, orgslug }: { children: ReactNode; orgslug: st
       }}
     >
       <PageViewTracker />
-      {!chromeless && <OrgJoinBanner />}
-      {!chromeless && <OrgMenu orgslug={orgslug} />}
+      {!chromeless && !usesHybreedHeader && <OrgJoinBanner />}
+      {!chromeless && !usesHybreedHeader && <OrgMenu orgslug={orgslug} />}
       {/* Org-wide 2FA policy: renders nothing unless this user is non-compliant. */}
-      {!chromeless && <OrgMFAPolicyGate />}
+      {!chromeless && !usesHybreedHeader && <OrgMFAPolicyGate />}
       <div className="flex-1 relative" style={{ zIndex: 'var(--z-content)' }}>
         {children}
       </div>
-      {!isFullBleedPage && !chromeless && <OrgFooter />}
-      {!isFullBleedPage && !chromeless && <Watermark />}
+      {!isFullBleedPage && !chromeless && !usesHybreedHeader && <OrgFooter />}
+      {!isFullBleedPage && !chromeless && !usesHybreedHeader && <Watermark />}
     </div>
   )
 }

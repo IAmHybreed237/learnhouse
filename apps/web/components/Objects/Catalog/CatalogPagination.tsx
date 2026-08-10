@@ -12,16 +12,16 @@ import {
   getCatalogPageNumbers,
 } from './catalogPaginationUtils'
 
-const paginationWrapperClassName = 'flex items-center justify-center gap-2'
+const paginationWrapperClassName = 'flex items-center justify-center gap-1'
 const paginationNavButtonClassName =
-  'flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-600 bg-white nice-shadow rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors'
+  'flex items-center gap-1 w-[40px] h-[40px] justify-center text-[14px] font-medium text-[#1B2126] bg-white rounded-[12px] border border-[#ccc] hover:border-[#1B2126] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-[#ccc] transition-colors'
 const paginationPagesClassName = 'flex items-center gap-1'
-const paginationEllipsisClassName = 'px-2 py-1 text-gray-400'
+const paginationEllipsisClassName = 'w-[40px] h-[40px] flex items-center justify-center text-[#8e8e8e] text-[14px]'
 const paginationPageButtonBaseClassName =
-  'px-3 py-2 text-sm font-medium rounded-lg transition-colors'
-const paginationActivePageButtonClassName = 'bg-black text-white'
+  'w-[40px] h-[40px] flex items-center justify-center text-[14px] font-medium rounded-[12px] transition-colors'
+const paginationActivePageButtonClassName = 'bg-[#1B2126] text-white'
 const paginationInactivePageButtonClassName =
-  'bg-white text-gray-600 nice-shadow hover:bg-gray-50'
+  'bg-white text-[#1B2126] border border-[#ccc] hover:border-[#1B2126]'
 
 type CatalogPaginationProps = {
   currentPage: number

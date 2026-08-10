@@ -151,16 +151,16 @@ function CourseThumbnail({ course, orgslug, customLink, isDashboard = false, isS
     ? getCourseThumbnailMediaDirectory(org?.org_uuid, course.course_uuid, course.thumbnail_image)
     : '/empty_thumbnail.png'
 
-  const courseLink = customLink ? customLink : getUriWithOrg(orgslug, `/course/${removeCoursePrefix(course.course_uuid)}`)
+  const courseLink = customLink ? customLink : getUriWithOrg(orgslug, `/course/${removeCoursePrefix(course.course_uuid)}${isDashboard ? '' : '/about'}`)
 
   return (
-    <div onMouseEnter={handleMouseEnter} className={`group relative flex flex-col bg-white rounded-xl nice-shadow overflow-hidden w-full transition-all duration-300 hover:scale-[1.01] ${isSelected ? 'ring-2 ring-black ring-offset-2' : ''}`}>
+    <div onMouseEnter={handleMouseEnter} className={`group relative bg-white rounded-[24px] w-full transition-all duration-200 hover:outline hover:outline-1 hover:outline-[#ccc] ${isSelected ? 'ring-2 ring-black ring-offset-2' : ''}`}>
       {/* Selection checkbox - visible on hover or when selected (dashboard only) */}
       {isDashboard && onToggleSelect && (
         <button
           onClick={handleSelectClick}
           aria-label={isSelected ? 'Deselect course' : 'Select course'}
-          className={`absolute top-2 left-2 z-20 p-1.5 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white transition-all shadow-md ${
+          className={`absolute top-4 left-4 z-20 p-1.5 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white transition-all shadow-md ${
             isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
           }`}
         >
@@ -182,10 +182,10 @@ function CourseThumbnail({ course, orgslug, customLink, isDashboard = false, isS
         isDashboard={isDashboard}
       />
 
-      <Link prefetch={false} href={courseLink} onClick={handleCardOpen} className="block relative aspect-video overflow-hidden bg-gray-50">
-        {/* Hidden img gives the browser a real resource hint so it can fetch the background-image early as an LCP candidate */}
+      {/* Main card link area - horizontal layout with image on left */}
+      <Link prefetch={false} href={courseLink} onClick={handleCardOpen} className="flex p-5 max-[767px]:p-4 no-underline text-inherit relative">
+        {/* Hidden img for LCP priority */}
         {isPriority && (
-           
           <img
             src={thumbnailImage}
             alt=""
@@ -194,46 +194,54 @@ function CourseThumbnail({ course, orgslug, customLink, isDashboard = false, isS
             className="absolute w-0 h-0 opacity-0 pointer-events-none"
           />
         )}
-        <div
-          className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-          style={{ backgroundImage: `url(${thumbnailImage})` }}
-        />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
-        {isDashboard && (
-          <div className="absolute bottom-2 left-2">
-            {course.published ? (
-              <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide bg-green-100 text-green-700 rounded-full">
-                {t('courses.published')}
-              </span>
-            ) : (
-              <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide bg-yellow-100 text-yellow-700 rounded-full">
-                {t('courses.unpublished')}
-              </span>
+
+        {/* Thumbnail image (left side, smaller on mobile) */}
+        <div className="mr-5 max-[767px]:mr-3 shrink-0 relative">
+          <div
+            className="w-[124px] h-[124px] max-[1023px]:w-[100px] max-[1023px]:h-[100px] max-[767px]:w-[72px] max-[767px]:h-[72px] bg-cover bg-center bg-no-repeat rounded-[12px] max-[767px]:rounded-[8px]"
+            style={{ backgroundImage: `url(${thumbnailImage})` }}
+          />
+        </div>
+
+        {/* Content area (right side) */}
+        <div className="flex flex-col flex-1 min-w-0">
+          {/* Badges row */}
+          <div className="flex flex-wrap items-center gap-2 mb-3 max-[767px]:mb-2 min-h-[22px] pr-10 max-[767px]:pr-0">
+            {isDashboard && (
+              course.published ? (
+                <span className="text-[12px] leading-[14px] text-[#1B2126] whitespace-nowrap px-3 h-[22px] flex items-center rounded-full border border-[#4BD0A0] bg-[#d4f6ec] box-border">
+                  {t('courses.published')}
+                </span>
+              ) : (
+                <span className="text-[12px] leading-[14px] text-[#1B2126] whitespace-nowrap px-3 h-[22px] flex items-center rounded-full border border-[#ffd401] bg-[#fff8d4] box-border">
+                  {t('courses.unpublished')}
+                </span>
+              )
             )}
+            <span className="text-[12px] leading-[14px] text-[#000] whitespace-nowrap px-3 h-[22px] flex items-center rounded-full border border-[#ccc] box-border">
+              {t('courses.course', 'Course')}
+            </span>
           </div>
-        )}
+
+          {/* Course title */}
+          <h3 className="text-[20px] max-[767px]:text-[16px] font-semibold leading-[26px] max-[767px]:leading-[20px] text-[#000] mb-1 max-w-[640px] group-hover:text-[#4BD0A0] transition-colors line-clamp-2">
+            {course.name}
+          </h3>
+
+          {/* Description / Duration */}
+          {course.description && (
+            <p className="text-[14px] max-[767px]:text-[12px] leading-[20px] max-[767px]:leading-[16px] text-[#8e8e8e] max-w-[400px] line-clamp-2 max-[767px]:line-clamp-1 mb-0">
+              {course.description}
+            </p>
+          )}
+        </div>
       </Link>
 
-      <div className="p-3 flex flex-col space-y-1.5">
-        <div className="flex items-start justify-between">
-          <Link
-            prefetch={false}
-            href={courseLink}
-            onClick={handleCardOpen}
-            className="text-base font-bold text-gray-900 leading-tight hover:text-black transition-colors line-clamp-1"
-          >
-            {course.name}
-          </Link>
-        </div>
-        
-        {course.description && (
-          <p className="text-[11px] text-gray-500 line-clamp-2 min-h-[1.5rem]">
-            {course.description}
-          </p>
-        )}
-
-        <div className="pt-1.5 flex items-center justify-between border-t border-gray-100">
-          <div className="flex items-center gap-2">
+      {/* Bottom section with authors and date */}
+      <div className="px-5 max-[767px]:px-4 py-3 relative">
+        <div className="absolute left-5 max-[767px]:left-4 right-5 max-[767px]:right-4 top-0 h-[1px] bg-[#ccc]/30" />
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
             {displayedAuthors.length > 0 && (
               <div className="flex -space-x-2 items-center">
                 {displayedAuthors.map((author, index) => (
@@ -247,7 +255,7 @@ function CourseThumbnail({ course, orgslug, customLink, isDashboard = false, isS
                       rounded="rounded-full"
                       avatar_url={author.user.avatar_image ? getUserAvatarMediaDirectory(author.user.user_uuid, author.user.avatar_image) : ''}
                       predefined_avatar={author.user.avatar_image ? undefined : 'empty'}
-                      width={20}
+                      width={24}
                       showProfilePopup={true}
                       userId={author.user.id}
                     />
@@ -255,7 +263,7 @@ function CourseThumbnail({ course, orgslug, customLink, isDashboard = false, isS
                 ))}
                 {hasMoreAuthors && (
                   <div className="relative z-0">
-                    <div className="flex items-center justify-center w-[20px] h-[20px] text-[8px] font-bold text-gray-600 bg-gray-100 border-2 border-white rounded-full">
+                    <div className="flex items-center justify-center w-[24px] h-[24px] text-[9px] font-bold text-[#8e8e8e] bg-[#f5f5f5] border-2 border-white rounded-full">
                       +{remainingAuthorsCount}
                     </div>
                   </div>
@@ -264,8 +272,8 @@ function CourseThumbnail({ course, orgslug, customLink, isDashboard = false, isS
             )}
             
             {course.update_date && (
-              <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">
-                {new Date(course.update_date).toLocaleDateString(i18n.language === 'fr' ? 'fr-FR' : 'en-US', { month: 'short', day: 'numeric' })}
+              <span className="text-[12px] font-medium text-[#8e8e8e]">
+                {new Date(course.update_date).toLocaleDateString(i18n.language === 'fr' ? 'fr-FR' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
               </span>
             )}
           </div>
@@ -274,7 +282,7 @@ function CourseThumbnail({ course, orgslug, customLink, isDashboard = false, isS
             prefetch={false}
             href={courseLink}
             onClick={handleCardOpen}
-            className="text-[10px] font-bold text-gray-400 hover:text-gray-900 transition-colors uppercase tracking-wider"
+            className="text-[12px] font-semibold text-[#8e8e8e] hover:text-[#4BD0A0] transition-colors"
           >
             {t('courses.start_learning')}
           </Link>

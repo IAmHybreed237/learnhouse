@@ -1,73 +1,165 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
+import { ChevronDown } from 'lucide-react'
 
 const GOALS = [
   {
     title: 'Consolidating the theory with real-life cases',
-    description: "In addition to the usual tasks, you'll receive hands-on training from partners—business games, meetups, hackathons, and pet projects. You'll gain valuable experience and stand out in the market.",
-    image: '/images/home/sf-goals-1.webp',
+    description:
+      "In addition to the usual tasks, you'll receive hands-on training from partners—business games, meetups, hackathons, and pet projects. You'll gain valuable experience and stand out in the market.",
+    image: '/images/home/goals-1.webp',
   },
   {
     title: 'Over 100 free materials',
-    description: 'Educational products that help 5,000 students find their development path each year. Find the format that suits you best.',
+    description:
+      'Educational products that help 5,000 students find their development path each year. Find the format that suits you best.',
     image: null,
   },
   {
     title: 'Convenient platform',
-    description: 'Everything you need for effective studying: a planner, calendar, games, and exercise tools. And with the mobile app, your materials are always at hand.',
-    image: '/images/home/sf-goals-2.webp',
+    description:
+      'Everything you need for effective studying: a planner, calendar, games, and exercise tools. And with the mobile app, your materials are always at hand.',
+    image: '/images/home/goals-2.webp',
   },
   {
     title: 'Support for the entire team',
-    description: "Prompt communication with faculty, coordinators, graduate students, and technical specialists. You won't be left alone with any difficulties.",
-    image: '/images/home/sf-goals-3.webp',
+    description:
+      "Prompt communication with faculty, coordinators, graduate students, and technical specialists. You won't be left alone with any difficulties.",
+    image: '/images/home/goals-3.webp',
   },
 ]
 
 export default function HomeGoals() {
-  return (
-    <section className="w-full bg-[#f3f4f7]">
-      <div className="max-w-(--breakpoint-2xl) mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl sm:text-4xl font-bold sm:font-black tracking-tight text-[#080808] mb-6 sm:mb-8">
-          How Hybreed helps you achieve your goals
-        </h2>
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
-        <div
-          className="grid gap-5 grid-cols-1 lg:grid-cols-[minmax(0,370px)_1fr_1fr]"
-        >
-          {GOALS.map((goal, index) => (
-            <div
-              key={goal.title}
-              className={`rounded-3xl bg-[#f3f4f7] border border-white p-4 sm:p-5 flex items-center ${index === 3 ? 'lg:col-span-3' : ''}`}
-            >
-              <div className={`w-full ${index === 3 ? 'flex flex-col sm:flex-row gap-5 items-center' : ''}`}>
-                {goal.image && (
-                  <div className={`relative mb-4 sm:mb-5 ${index === 3 ? 'sm:mb-0 sm:flex-shrink-0' : 'w-full'}`} style={{ height: index === 3 ? '120px' : '180px', width: index === 3 ? '100%' : '100%' }}>
-                    <Image
-                      src={goal.image}
-                      alt={goal.title}
-                      fill
-                      className="object-cover rounded-2xl cursor-pointer"
-                      sizes="(max-width: 768px) 100vw, 370px"
-                    />
-                  </div>
-                )}
-                <div className={index === 3 ? 'w-full sm:flex-1' : ''}>
-                  <div className="flex items-center justify-between">
-                    <h3 className={`font-semibold text-black leading-tight m-0 mb-2 sm:mb-3 ${index === 3 ? 'text-2xl sm:text-4xl' : 'text-xl sm:text-2xl'}`}>
-                      {goal.title}
-                    </h3>
-                  </div>
-                  <p className={`text-[#27292d] leading-6 sm:leading-7 m-0 ${index === 3 ? 'text-base sm:text-xl' : 'text-sm'}`} style={{ maxWidth: '650px' }}>
-                    {goal.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
+  const toggleCard = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
+  return (
+    <section className="w-full mt-[100px] px-10 max-[1239px]:mt-[60px] max-[767px]:mt-12 max-[767px]:px-3">
+      <h2 className="text-[40px] font-semibold leading-[46px] max-w-[670px] m-0 mb-10 max-[1239px]:text-[32px] max-[1239px]:leading-[38px] max-[1239px]:mb-7 max-[1239px]:max-w-[550px] max-[767px]:text-2xl max-[767px]:leading-[30px] max-[767px]:mb-6">
+        How Hybreed helps you achieve your goals
+      </h2>
+
+      {/* Desktop grid */}
+      <div className="hidden min-[768px]:grid grid-cols-[370px_1fr_1fr] gap-5 max-[1239px]:grid-cols-[325px_1fr_1fr]">
+        {/* Card 1: spans 2 rows in column 1 */}
+        <div className="row-span-2 rounded-3xl bg-[#f3f4f7] p-5 flex flex-col">
+          <div className="relative w-[330px] h-[180px] mb-5 max-[1239px]:w-full max-[1239px]:h-auto">
+            <Image
+              src={GOALS[0].image!}
+              alt={GOALS[0].title}
+              width={330}
+              height={180}
+              className="rounded-2xl object-cover w-[330px] h-[180px] max-[1239px]:w-full max-[1239px]:h-auto"
+              style={{ width: 'auto', height: 'auto' }}
+            />
+          </div>
+          <h3 className="text-2xl font-semibold leading-[30px] m-0 mb-3">
+            {GOALS[0].title}
+          </h3>
+          <p className="text-xl leading-7 text-[#27292d] m-0">
+            {GOALS[0].description}
+          </p>
         </div>
+
+        {/* Card 2: spans 2 columns in row 1 */}
+        <div className="col-span-2 rounded-3xl bg-[#f3f4f7] p-5 flex items-center">
+          <div>
+            <h3 className="text-2xl font-semibold leading-[30px] m-0 mb-3">
+              {GOALS[1].title}
+            </h3>
+            <p className="text-xl leading-7 text-[#27292d] m-0 max-w-[650px]">
+              {GOALS[1].description}
+            </p>
+          </div>
+        </div>
+
+        {/* Card 3: spans 2 columns in row 2, image right */}
+        <div className="col-span-2 rounded-3xl bg-[#f3f4f7] p-5 flex flex-row-reverse items-center">
+          <div className="min-w-[360px] ml-5 max-[1239px]:min-w-[250px]">
+            <Image
+              src={GOALS[2].image!}
+              alt={GOALS[2].title}
+              width={360}
+              height={200}
+              className="rounded-2xl object-cover w-full"
+              style={{ height: 'auto' }}
+            />
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold leading-[30px] m-0 mb-3">
+              {GOALS[2].title}
+            </h3>
+            <p className="text-xl leading-7 text-[#27292d] m-0">
+              {GOALS[2].description}
+            </p>
+          </div>
+        </div>
+
+        {/* Card 4: spans all 3 columns */}
+        <div className="col-span-3 rounded-3xl bg-[#f3f4f7] p-5 flex items-center">
+          <div className="max-w-[370px] mr-5 flex-shrink-0 max-[1239px]:max-w-[322px]">
+            <Image
+              src={GOALS[3].image!}
+              alt={GOALS[3].title}
+              width={370}
+              height={200}
+              className="rounded-2xl object-cover w-full"
+              style={{ height: 'auto' }}
+            />
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold leading-[30px] m-0 mb-3">
+              {GOALS[3].title}
+            </h3>
+            <p className="text-xl leading-7 text-[#27292d] m-0 max-w-[680px]">
+              {GOALS[3].description}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile accordion */}
+      <div className="flex flex-col gap-5 min-[768px]:hidden">
+        {GOALS.map((goal, index) => (
+          <div
+            key={goal.title}
+            className="rounded-3xl bg-[#f3f4f7] p-5"
+          >
+            <button
+              onClick={() => toggleCard(index)}
+              className="w-full flex justify-between items-start text-left bg-transparent border-none cursor-pointer p-0"
+            >
+              <h3 className="text-xl font-semibold leading-6 m-0 max-w-[233px]">
+                {goal.title}
+              </h3>
+              <ChevronDown
+                className={`w-6 h-6 text-[#8e8e8e] transition-transform duration-200 flex-shrink-0 ml-3 ${openIndex === index ? 'rotate-180' : ''}`}
+              />
+            </button>
+            {openIndex === index && (
+              <div className="mt-3">
+                {goal.image && (
+                  <Image
+                    src={goal.image}
+                    alt={goal.title}
+                    width={330}
+                    height={180}
+                    className="rounded-2xl object-cover w-full mb-3"
+                    style={{ height: 'auto' }}
+                  />
+                )}
+                <p className="text-base leading-6 text-[#27292d] m-0">
+                  {goal.description}
+                </p>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   )

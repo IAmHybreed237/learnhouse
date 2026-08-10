@@ -3,106 +3,147 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
 import { getUriWithOrg } from '@services/config/config'
 
 interface HomeStartHereProps {
   orgslug: string
 }
 
-const FREE_LINKS = [
-  { label: 'Courses', href: '/courses' },
-  { label: 'Open classes', href: '/courses' },
-  { label: 'Guides and checklists', href: '/courses' },
-]
-
 export default function HomeStartHere({ orgslug }: HomeStartHereProps) {
   const coursesHref = getUriWithOrg(orgslug, '/courses')
 
   return (
-    <section className="w-full bg-white">
-      <div className="max-w-(--breakpoint-2xl) mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl sm:text-4xl font-bold sm:font-black tracking-tight text-[#080808] mb-6 sm:mb-8">
-          If you don&apos;t know where to start
-        </h2>
+    <section className="w-full mt-[100px] px-[42px] max-[1239px]:mt-[60px] max-[1023px]:px-[34px] max-[767px]:mt-12 max-[767px]:px-0">
+      <h2 className="text-[40px] font-semibold leading-[46px] m-0 mb-10 max-[1239px]:text-[32px] max-[1239px]:leading-[38px] max-[1239px]:mb-7 max-[767px]:text-2xl max-[767px]:leading-[30px] max-[767px]:mb-6 max-[767px]:px-3">
+        If you don&apos;t know where to start
+      </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          {/* Card 1: Express consultation */}
-          <div className="relative overflow-hidden rounded-3xl bg-[#f3f4f7] p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4 min-h-[200px] sm:min-h-[260px]">
-            {/* Decorative blurred ellipses */}
-            <div className="absolute w-32 h-32 rounded-full bg-emerald-200 opacity-30 blur-[50px] -top-10 -right-10 pointer-events-none" />
+      <div className="grid grid-cols-2 gap-5 max-[767px]:grid-cols-1">
+        {/* Card 1: Express consultation (testCard) */}
+        <div className="relative overflow-hidden rounded-3xl bg-[#f3f4f7] p-[24px_35px_36px] flex flex-col z-0 max-[1023px]:p-[24px_20px_36px] max-[767px]:p-[24px_12px_36px]">
+          {/* Decorative ellipses */}
+          <div
+            className="absolute z-[-2] pointer-events-none"
+            style={{
+              filter: 'blur(50px)',
+              left: -100,
+              top: -15,
+              width: 320,
+              height: 200,
+              borderRadius: 320,
+              background: 'linear-gradient(0deg, rgba(64,239,176,0.36), rgba(64,239,176,0.36)), rgba(255,255,255,0.8)',
+              transform: 'rotate(135deg)',
+            }}
+          />
+          <div
+            className="absolute z-[-2] pointer-events-none"
+            style={{
+              filter: 'blur(50px)',
+              width: 550,
+              height: 233,
+              borderRadius: 550,
+              background: 'linear-gradient(0deg, rgba(0,102,255,0.17), rgba(0,102,255,0.17)), rgba(255,255,255,0.8)',
+              left: -28,
+              top: -148,
+              transform: 'rotate(-156deg)',
+            }}
+          />
+          <div
+            className="absolute z-[-2] pointer-events-none"
+            style={{
+              filter: 'blur(50px)',
+              width: 281,
+              height: 212,
+              transform: 'rotate(120deg)',
+              left: 400,
+              top: -28,
+              borderRadius: 281,
+              background: 'linear-gradient(0deg, rgba(64,239,176,0.36), rgba(64,239,176,0.36)), rgba(255,255,255,0.8)',
+            }}
+          />
 
-            <div className="relative z-10 flex-1 min-w-0">
-              <h3 className="text-xl sm:text-3xl font-semibold text-black leading-tight mb-2 sm:mb-3">
-                Decide on a career with an express consultation
-              </h3>
-              <p className="text-sm sm:text-lg text-[#070707] leading-6 m-0 mb-4 sm:mb-5">
-                Fill out the form and receive free recommendations from the Hybreed neural network.
-              </p>
-              <Link
-                href={coursesHref}
-                className="inline-flex items-center gap-2 px-4 sm:px-6 h-11 sm:h-14 bg-black text-white rounded-xl text-sm sm:text-lg font-medium hover:bg-gray-800 transition-colors"
-              >
-                Choose a profession
-                <ArrowRight size={16} className="sm:hidden" />
-                <ArrowRight size={18} className="hidden sm:block" />
-              </Link>
-            </div>
+          {/* Content */}
+          <h3 className="text-[32px] font-semibold leading-[38px] m-0 mb-3 max-[1239px]:text-2xl max-[1239px]:leading-[30px] max-[767px]:text-lg max-[767px]:leading-[22px]">
+            Decide on a career with an express consultation
+          </h3>
+          <p className="text-base font-medium leading-5 text-[#070707] m-0 max-[767px]:mb-3">
+            Fill out the form and receive free recommendations from the Hybreed neural network.
+          </p>
+          <Link
+            href={coursesHref}
+            className="inline-flex items-center w-fit h-12 px-6 mt-auto text-base font-medium leading-6 text-white bg-[#06f] rounded-full no-underline whitespace-nowrap hover:bg-[#0052cc] transition-colors max-[767px]:mt-4"
+          >
+            Choose a profession
+          </Link>
 
-            <div className="relative w-full h-[160px] sm:w-[200px] sm:h-[200px] flex-shrink-0">
-              <Image
-                src="/images/home/sf-start-1.webp"
-                alt="Express consultation"
-                fill
-                className="object-cover rounded-lg"
-                sizes="160px"
-              />
-            </div>
-          </div>
+          {/* Card image — absolute bottom-right */}
+          <Image
+            src="/images/home/start-consultation.webp"
+            alt="Express consultation"
+            width={320}
+            height={235}
+            className="absolute right-0 bottom-0 z-[-1] h-[235px] w-auto max-[1239px]:h-[205px] max-[1023px]:h-[175px] max-[1023px]:right-[-25px] max-[767px]:h-[170px] max-[767px]:right-[-15px]"
+            style={{ width: 'auto' }}
+            sizes="320px"
+          />
+        </div>
 
-          {/* Card 2: Start with free materials */}
-          <div className="relative overflow-hidden rounded-3xl bg-[#f3f4f7] p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4 min-h-[200px] sm:min-h-[260px]">
-            {/* Decorative blurred ellipses */}
-            <div className="absolute w-32 h-32 rounded-full bg-blue-200 opacity-30 blur-[50px] -bottom-10 -left-10 pointer-events-none" />
+        {/* Card 2: Free materials (materialsCard) */}
+        <div className="relative overflow-hidden rounded-3xl bg-[#f3f4f7] p-[24px_35px_36px] flex flex-col z-0 max-[1023px]:p-[24px_20px_36px] max-[767px]:p-[24px_12px_36px]">
+          {/* Decorative ellipses */}
+          <div
+            className="absolute z-[-2] pointer-events-none"
+            style={{
+              filter: 'blur(50px)',
+              left: -186,
+              top: -160,
+              borderRadius: 723,
+              width: 723,
+              height: 371,
+              transform: 'rotate(-27deg)',
+              background: 'linear-gradient(0deg, rgba(137,245,219,0.6), rgba(137,245,219,0.6)), rgba(255,255,255,0.8)',
+            }}
+          />
+          <div
+            className="absolute z-[-2] pointer-events-none"
+            style={{
+              filter: 'blur(50px)',
+              left: 279,
+              top: -236,
+              width: 675,
+              height: 261,
+              transform: 'rotate(-48deg)',
+              borderRadius: 675,
+              background: 'linear-gradient(0deg, rgba(137,245,219,0.6), rgba(137,245,219,0.6)), rgba(255,255,255,0.8)',
+            }}
+          />
 
-            <div className="relative z-10 flex-1 min-w-0">
-              <h3 className="text-xl sm:text-3xl font-semibold text-black leading-tight mb-2 sm:mb-3">
-                Start with free materials
-              </h3>
-              <ul className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2 mb-4 sm:mb-5">
-                {FREE_LINKS.map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      href={getUriWithOrg(orgslug, item.href)}
-                      className="inline-flex items-center gap-1.5 text-sm sm:text-lg font-medium text-[#070707] hover:text-blue-700 transition-colors"
-                    >
-                      {item.label}
-                      <ArrowRight size={10} className="sm:hidden" />
-                      <ArrowRight size={12} className="hidden sm:block" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href={coursesHref}
-                className="inline-flex items-center gap-2 px-4 sm:px-6 h-11 sm:h-14 bg-black text-white rounded-xl text-sm sm:text-lg font-medium hover:bg-gray-800 transition-colors"
-              >
-                Start for free
-                <ArrowRight size={16} className="sm:hidden" />
-                <ArrowRight size={18} className="hidden sm:block" />
-              </Link>
-            </div>
+          {/* Content */}
+          <h3 className="text-[32px] font-semibold leading-[38px] m-0 mb-3 max-[1239px]:text-2xl max-[1239px]:leading-[30px] max-[767px]:text-lg max-[767px]:leading-[22px]">
+            Start with free materials
+          </h3>
+          <ul className="text-base font-medium leading-5 text-[#070707] list-disc pl-5 m-0 mb-7 max-[767px]:mb-3 max-[767px]:font-normal">
+            <li>Courses</li>
+            <li>Open classes</li>
+            <li>Guides and checklists</li>
+          </ul>
+          <Link
+            href={coursesHref}
+            className="inline-flex items-center w-fit h-12 px-6 mt-auto text-base font-medium leading-6 text-white bg-[#06f] rounded-full no-underline whitespace-nowrap hover:bg-[#0052cc] transition-colors max-[767px]:mt-4"
+          >
+            Start for free
+          </Link>
 
-            <div className="relative w-full h-[160px] sm:w-[200px] sm:h-[200px] flex-shrink-0">
-              <Image
-                src="/images/home/sf-start-2.webp"
-                alt="Free materials"
-                fill
-                className="object-cover rounded-lg"
-                sizes="160px"
-              />
-            </div>
-          </div>
+          {/* Card image — absolute bottom-right */}
+          <Image
+            src="/images/home/start-free.webp"
+            alt="Free materials"
+            width={320}
+            height={320}
+            className="absolute right-0 bottom-0 z-[-1] w-[320px] h-[320px]"
+            style={{ width: '320px', height: '320px' }}
+            sizes="320px"
+          />
         </div>
       </div>
     </section>

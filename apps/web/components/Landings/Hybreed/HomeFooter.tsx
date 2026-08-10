@@ -1,7 +1,8 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
+import { ChevronDown } from 'lucide-react'
 import { getUriWithOrg } from '@services/config/config'
 
 interface HomeFooterProps {
@@ -58,159 +59,167 @@ const PROJECT_LINKS = [
   { label: 'Community at Hybreed', href: '/community' },
 ]
 
+function FooterLinkColumn({
+  title,
+  links,
+  orgslug,
+}: {
+  title: string
+  links: { label: string; href: string }[]
+  orgslug: string
+}) {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <div className="max-[767px]:border-b max-[767px]:border-white max-[767px]:w-full">
+      {/* Desktop: static header */}
+      <div
+        className="font-medium text-[17px] leading-[30px] text-white pb-5 relative
+                   max-[767px]:cursor-pointer max-[767px]:py-5 max-[767px]:pb-[26px]"
+        onClick={() => setOpen(!open)}
+      >
+        {title}
+        <ChevronDown
+          className={`hidden max-[767px]:block absolute right-5 top-1/2 -mt-2 w-4 h-4 text-white/80 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+        />
+      </div>
+      {/* Desktop: always visible links. Mobile: accordion */}
+      <div className={`flex flex-col max-[767px]:pb-5 max-[767px]:pl-2.5 ${open ? 'max-[767px]:flex' : 'max-[767px]:hidden'} min-[768px]:flex`}>
+        {links.map((link) => (
+          <Link
+            key={link.label + link.href}
+            href={getUriWithOrg(orgslug, link.href)}
+            className="text-base leading-5 text-[#a0a0a0] no-underline mt-3 hover:opacity-70 transition-opacity"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function HomeFooter({ orgslug }: HomeFooterProps) {
   return (
-    <footer className="relative flex flex-col items-center justify-center bg-black text-white px-0 py-0">
-      <div className="w-full box-border px-4 sm:px-8 py-6 sm:py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Column 1: Logo + social + app QR */}
-          <div className="flex flex-col">
-            <Link href={getUriWithOrg(orgslug, '/')} className="text-white text-2xl font-bold mb-4">
-              Hybreed
-            </Link>
+    <footer className="relative flex flex-col items-center justify-center bg-black text-white px-[30px] max-[767px]:px-5">
+      {/* Main columns container */}
+      <div className="flex w-full max-w-[1240px] py-20 mb-10 max-[1239px]:max-w-[980px] max-[767px]:flex-col-reverse max-[767px]:pt-6 max-[767px]:pb-[200px]">
+        {/* First column: Logo + social + QR + contacts + copyright */}
+        <div className="flex flex-col w-[280px] mr-5 max-[1239px]:w-[220px] max-[767px]:w-full">
+          {/* Logo */}
+          <Link
+            href={getUriWithOrg(orgslug, '/')}
+            className="text-white text-2xl font-bold mt-10 hover:opacity-70 transition-opacity no-underline max-[767px]:mt-6"
+          >
+            Hybreed
+          </Link>
 
-            {/* Social icons */}
-            <div className="flex items-center gap-3 mb-6">
-              {['VK', 'YouTube', 'TG', 'OK'].map((s) => (
+          {/* Social icons */}
+          <div className="flex mt-[35px] gap-3">
+            {['VK', 'YT', 'TG', 'OK'].map((s) => (
+              <a
+                key={s}
+                href="#"
+                className="w-6 h-6 inline-flex items-center justify-center text-[#a0a0a0] hover:opacity-70 transition-opacity text-xs rounded-full border border-white/30"
+              >
+                {s}
+              </a>
+            ))}
+          </div>
+
+          {/* QR code + app download */}
+          <div className="mt-8 flex flex-col gap-3">
+            <div className="w-[154px] h-[154px] bg-white/10 rounded-lg" />
+            <p className="text-sm text-white max-w-[190px] leading-5 m-0">
+              Point your camera and download the free{' '}
+              <a href="#" className="text-[#a0a0a0] hover:opacity-70 no-underline">Hybreed</a>{' '}
+              <a href="#" className="text-[#a0a0a0] hover:opacity-70 no-underline">app</a>
+            </p>
+            <div className="flex gap-3 mt-2">
+              {[1, 2, 3, 4].map((i) => (
                 <a
-                  key={s}
+                  key={i}
                   href="#"
-                  className="w-5 h-4 inline-flex items-center justify-center text-gray-400 hover:opacity-80 transition-opacity text-xs"
+                  className="w-10 h-10 border border-white/50 rounded-[10px] flex items-center justify-center text-[#a0a0a0] text-xs hover:opacity-70 transition-opacity"
                 >
-                  {s}
+                  App
                 </a>
               ))}
             </div>
-
-            {/* QR + app text */}
-            <div className="flex flex-col gap-3">
-              <div className="w-[154px] h-[154px] bg-white/10 rounded-lg" />
-              <p className="text-sm text-white max-w-[190px] leading-5">
-                Point your camera and download the free{' '}
-                <a href="#" className="text-gray-400 hover:opacity-80">Hybreed</a>{' '}
-                <a href="#" className="text-gray-400 hover:opacity-80">app</a>
-              </p>
-              <div className="flex gap-3 mt-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="w-10 h-10 border border-white/56 rounded-[10px] flex items-center justify-center text-gray-400 text-xs hover:opacity-80 transition-opacity"
-                  >
-                    App
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
 
-          {/* Column 2: Info */}
-          <div className="flex flex-col">
-            <h4 className="text-lg font-medium text-white pb-5 relative mb-0">
-              Information
-            </h4>
-            <div className="flex flex-col gap-3">
-              {INFO_LINKS.map((link) => (
-                <Link
-                  key={link.label}
-                  href={getUriWithOrg(orgslug, link.href)}
-                  className="text-sm text-[#a0a0a0] hover:opacity-80 transition-opacity no-underline"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 3: Education */}
-          <div className="flex flex-col">
-            <h4 className="text-lg font-medium text-white pb-5 relative mb-0">
-              Education
-            </h4>
-            <div className="flex flex-col gap-3">
-              {EDU_LINKS.map((link) => (
-                <Link
-                  key={link.label}
-                  href={getUriWithOrg(orgslug, link.href)}
-                  className="text-sm text-[#a0a0a0] hover:opacity-80 transition-opacity no-underline"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 4: Projects + contacts + license */}
-          <div className="flex flex-col">
-            <h4 className="text-lg font-medium text-white pb-5 relative mb-0">
-              Projects
-            </h4>
-            <div className="flex flex-col gap-3">
-              {PROJECT_LINKS.map((link) => (
-                <Link
-                  key={link.label}
-                  href={getUriWithOrg(orgslug, link.href)}
-                  className="text-sm text-[#a0a0a0] hover:opacity-80 transition-opacity no-underline"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-
-            {/* Contact info */}
-            <div className="mt-8 flex flex-col gap-2">
-              <a href="tel:+79651788020" className="text-sm text-[#a0a0a0] no-underline">
+          {/* Subscribe + contact info */}
+          <div className="mt-8 flex flex-col">
+            <a href="#" className="text-base leading-5 text-[#a0a0a0] no-underline mt-3 hover:opacity-70">
+              Subscribe to our newsletter
+            </a>
+            <div className="mt-4">
+              <a href="tel:+79651788020" className="text-base text-[#a0a0a0] no-underline hover:opacity-70">
                 +7 (965) 178-80-20
               </a>
-              <span className="text-xs text-[#a0a0a0]">For questions about purchasing courses</span>
-              <a href="tel:+79672118828" className="text-sm text-[#a0a0a0] no-underline mt-2">
+              <div className="text-xs text-[#a0a0a0] mt-1 opacity-60">For questions about purchasing courses</div>
+            </div>
+            <div className="mt-3">
+              <a href="tel:+79672118828" className="text-base text-[#a0a0a0] no-underline hover:opacity-70">
                 +7 (967) 211-88-28
               </a>
-              <span className="text-xs text-[#a0a0a0]">For corporate clients</span>
-              <p className="text-sm text-[#a0a0a0] mt-2">
-                Write in chat or email:{' '}
-                <a href="mailto:support@hybreed.ru" className="text-sm text-[#a0a0a0] no-underline">
-                  support@hybreed.ru
-                </a>
-              </p>
-              <p className="text-xs text-[#a0a0a0] mt-2">
-                Moscow, Varshavskoe shosse, 1, building 6, 3rd floor, office 315A
-              </p>
+              <div className="text-xs text-[#a0a0a0] mt-1 opacity-60">For corporate clients</div>
             </div>
+            <div className="mt-3 text-base text-[#a0a0a0]">
+              <a href="#" className="text-[#a0a0a0] no-underline hover:opacity-70">Write in chat</a>
+              {' '}or email:{' '}
+              <a href="mailto:support@hybreed.ru" className="text-[#a0a0a0] no-underline hover:opacity-70">
+                support@hybreed.ru
+              </a>
+              <div className="text-xs mt-1 opacity-60">For current students</div>
+            </div>
+            <div className="mt-3 text-sm text-[#a0a0a0]">
+              Moscow, Varshavskoe shosse, 1, building 6, 3rd floor, office 315A
+            </div>
+          </div>
 
-            {/* License + government links */}
+          {/* Copyright */}
+          <span className="text-sm text-[#828181] mt-[146px] max-[767px]:mt-12">
+            &copy; Hybreed, 2011&ndash;2026
+          </span>
+        </div>
+
+        {/* Link columns */}
+        <div className="flex max-[767px]:flex-col max-[767px]:pb-2.5">
+          {/* Information */}
+          <div className="w-[220px] mr-5 max-[1239px]:w-[180px] max-[767px]:w-full max-[767px]:mr-0">
+            <FooterLinkColumn title="Information" links={INFO_LINKS} orgslug={orgslug} />
+          </div>
+
+          {/* Education */}
+          <div className="w-[340px] mr-5 max-[1239px]:w-[280px] max-[767px]:w-full max-[767px]:mr-0">
+            <FooterLinkColumn title="Education" links={EDU_LINKS} orgslug={orgslug} />
+          </div>
+
+          {/* Projects */}
+          <div className="w-[240px] max-[1239px]:w-[200px] max-[767px]:w-full">
+            <FooterLinkColumn title="Projects" links={PROJECT_LINKS} orgslug={orgslug} />
+
+            {/* Additional: license, ministry links, etc. */}
             <div className="mt-6 flex flex-col gap-3">
-              <Link
+              <a
                 href="#"
-                className="flex items-center gap-2 text-sm text-[#a0a0a0] no-underline hover:opacity-80 transition-opacity"
+                className="flex items-center gap-2 text-base text-[#a0a0a0] no-underline hover:opacity-70"
               >
                 <span className="w-8 h-8 border border-white/30 rounded flex items-center justify-center text-xs">L</span>
-                State license
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-[#a0a0a0] no-underline hover:opacity-80 transition-opacity"
-              >
+                <span>State<br />license</span>
+              </a>
+              <a href="#" className="text-base leading-5 text-[#a0a0a0] no-underline mt-3 hover:opacity-70">
                 Website of the Ministry of Education and Science of Russia
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-[#a0a0a0] no-underline hover:opacity-80 transition-opacity"
-              >
+              </a>
+              <a href="#" className="text-base leading-5 text-[#a0a0a0] no-underline mt-3 hover:opacity-70">
                 Website of the Ministry of Education of Russia
-              </Link>
-              <div className="flex items-center gap-2 mt-4 cursor-pointer">
-                <span className="text-sm text-[#a0a0a0]">Version for the visually impaired</span>
+              </a>
+              <div className="flex items-center gap-2 mt-9 cursor-pointer text-base text-[#a0a0a0]">
+                Version for the visually impaired
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="mt-8 pt-6 border-t border-white/10">
-          <p className="text-xs text-[#828181]">
-            &copy; Hybreed, 2011&dash;2026
-          </p>
         </div>
       </div>
     </footer>
