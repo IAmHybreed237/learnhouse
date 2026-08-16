@@ -6,38 +6,38 @@ import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
 
 const STORIES = [
   {
-    title: 'From Violinist to Python Developer',
-    subtitle: 'How to See the Creativity in Python and Overcome Fears',
+    title: 'From Teacher to Web Developer',
+    subtitle: 'How I found creativity in coding and overcame my fear of tech',
     duration: '2:46',
     image: '/images/home/story-1.webp',
   },
   {
-    title: 'From Factory to UX/UI Design',
-    subtitle: 'How to get into the dream team immediately after training',
+    title: 'From Retail to UX/UI Design',
+    subtitle: 'How I landed my first design role right after completing the course',
     duration: '2:14',
     image: '/images/home/story-2.webp',
   },
   {
-    title: 'From Aviation to BI Analytics',
-    subtitle: 'How to choose a profession that is in demand and that you will enjoy',
+    title: 'From Hospitality to Data Analytics',
+    subtitle: 'How to pick a career path that is in demand and truly fulfilling',
     duration: '3:36',
     image: '/images/home/story-3.webp',
   },
   {
-    title: 'From Law to Marketing',
-    subtitle: 'Why Taking a Risk Can Make You a Leader',
+    title: 'From Accounting to Digital Marketing',
+    subtitle: 'Why taking a bold step can transform your career trajectory',
     duration: '3:39',
     image: '/images/home/story-4.webp',
   },
   {
-    title: 'Going digital after 35',
-    subtitle: 'How to apply experience in a new field and make age an advantage',
+    title: 'Switching careers after 30',
+    subtitle: 'How to leverage your past experience and turn age into an asset',
     duration: '3:16',
     image: '/images/home/story-5.webp',
   },
   {
-    title: 'From a small town to a Moscow company',
-    subtitle: 'How to work in two cities and enjoy studying',
+    title: 'From a small town to remote work',
+    subtitle: 'How I built a global career while staying close to home',
     duration: '3:10',
     image: '/images/home/story-6.webp',
   },
@@ -71,7 +71,7 @@ export default function HomeGraduateStories() {
       {/* Title + nav buttons wrapper (relative for absolute button positioning) */}
       <div className="flex items-start justify-between mb-10 max-[1239px]:mb-7 max-[767px]:mb-6">
         <h2 className="text-[40px] font-semibold leading-[46px] m-0 max-[1239px]:text-[32px] max-[1239px]:leading-[38px] max-[767px]:text-2xl max-[767px]:leading-[30px]">
-          Get inspired by the stories of our graduates
+          Get inspired by our Hybreeds&apos; success stories
         </h2>
 
         {/* Navigation buttons */}

@@ -10,53 +10,53 @@ interface HomeFooterProps {
 }
 
 const INFO_LINKS = [
-  { label: 'About the company', href: '/about' },
-  { label: 'Bring a friend', href: '/affiliate' },
-  { label: 'Affiliate program', href: '/affiliate' },
-  { label: 'For experts', href: '/experts' },
-  { label: 'Work at Hybreed', href: '/team' },
-  { label: 'Hybreed Vacancies', href: '/job' },
+  { label: 'About Hybreed Academy', href: '/about' },
+  { label: 'Refer a friend', href: '/affiliate' },
+  { label: 'Partner program', href: '/affiliate' },
+  { label: 'For instructors', href: '/experts' },
+  { label: 'Join our team', href: '/team' },
+  { label: 'Career opportunities', href: '/job' },
   { label: 'Legal information', href: '/legal' },
-  { label: 'Information about the educational organization', href: '/official-info' },
-  { label: 'Contacts', href: '/contacts' },
-  { label: 'Reviews', href: '/reviews' },
+  { label: 'About our platform', href: '/official-info' },
+  { label: 'Contact us', href: '/contacts' },
+  { label: 'Hybreed reviews', href: '/reviews' },
 ]
 
 const EDU_LINKS = [
-  { label: 'Study for free', href: '/free' },
-  { label: 'Course Catalog', href: '/navigation' },
-  { label: 'Popular courses', href: '/popular' },
-  { label: 'Tests', href: '/tests' },
-  { label: 'Marketing', href: '/marketing' },
-  { label: 'Business and Management', href: '/management' },
-  { label: 'Design and UX', href: '/design' },
-  { label: 'Programming', href: '/development' },
-  { label: 'Analytics', href: '/data-science' },
-  { label: 'Team management', href: '/soft-skills' },
-  { label: 'Higher education', href: '/degree' },
-  { label: 'Creative professions', href: '/creative' },
-  { label: 'Professions in education', href: '/edmarket' },
-  { label: 'Corporate training', href: '/programs/b2b' },
-  { label: 'New professions', href: '/new-courses' },
-  { label: 'Marketplaces', href: '/marketplaces' },
-  { label: 'Finance and Investments', href: '/finance' },
-  { label: 'Computer games', href: '/gamedesign-academy' },
-  { label: 'Medicine and health', href: '/medicine' },
-  { label: 'Neural networks', href: '/ai-courses' },
-  { label: 'Psychology', href: '/programs/psychology' },
-  { label: 'Programs with universities', href: '/degree' },
-  { label: 'Online college', href: '/programs/kolledzh' },
+  { label: 'Free courses', href: '/free' },
+  { label: 'Course catalog', href: '/courses' },
+  { label: 'Popular courses', href: '/courses' },
+  { label: 'Skill tests', href: '/tests' },
+  { label: 'Digital Marketing', href: '/courses' },
+  { label: 'Business and Management', href: '/courses' },
+  { label: 'Design and UX', href: '/courses' },
+  { label: 'Programming', href: '/courses' },
+  { label: 'Data Analytics', href: '/courses' },
+  { label: 'Soft skills', href: '/courses' },
+  { label: 'Partner school programs', href: '/courses' },
+  { label: 'Creative professions', href: '/courses' },
+  { label: 'Careers in education', href: '/courses' },
+  { label: 'Training for teams', href: '/courses' },
+  { label: 'New courses', href: '/courses' },
+  { label: 'E-commerce', href: '/courses' },
+  { label: 'Finance and Investing', href: '/courses' },
+  { label: 'Game development', href: '/courses' },
+  { label: 'Health and Wellbeing', href: '/courses' },
+  { label: 'AI and Machine Learning', href: '/courses' },
+  { label: 'Personal Development', href: '/courses' },
+  { label: 'School partnerships', href: '/courses' },
+  { label: 'Online learning', href: '/courses' },
 ]
 
 const PROJECT_LINKS = [
-  { label: 'Media Hybreed', href: '/blog/' },
-  { label: 'Career Development Center', href: '/students' },
-  { label: 'For business: find a contractor', href: '/partnership' },
-  { label: 'Universities and colleges: online courses', href: '/programs/discipliny-i-moduli' },
-  { label: 'Gift certificate', href: '/sertificate' },
-  { label: 'Glossary', href: '/glossariy' },
-  { label: 'Training for NGOs', href: '/learn-to-help' },
-  { label: 'Community at Hybreed', href: '/community' },
+  { label: 'Hybreed Blog', href: '/blog/' },
+  { label: 'Career Support Center', href: '/students' },
+  { label: 'For business: hire talent', href: '/partnership' },
+  { label: 'Schools: online learning programs', href: '/courses' },
+  { label: 'Gift a course', href: '/sertificate' },
+  { label: 'Learning glossary', href: '/glossariy' },
+  { label: 'Training for nonprofits', href: '/learn-to-help' },
+  { label: 'Hybreed Community', href: '/community' },
 ]
 
 function FooterLinkColumn({
@@ -111,12 +111,12 @@ export default function HomeFooter({ orgslug }: HomeFooterProps) {
             href={getUriWithOrg(orgslug, '/')}
             className="text-white text-2xl font-bold mt-10 hover:opacity-70 transition-opacity no-underline max-[767px]:mt-6"
           >
-            Hybreed
+            Hybreed Academy
           </Link>
 
           {/* Social icons */}
           <div className="flex mt-[35px] gap-3">
-            {['VK', 'YT', 'TG', 'OK'].map((s) => (
+            {['FB', 'YT', 'IG', 'X'].map((s) => (
               <a
                 key={s}
                 href="#"
@@ -131,8 +131,8 @@ export default function HomeFooter({ orgslug }: HomeFooterProps) {
           <div className="mt-8 flex flex-col gap-3">
             <div className="w-[154px] h-[154px] bg-white/10 rounded-lg" />
             <p className="text-sm text-white max-w-[190px] leading-5 m-0">
-              Point your camera and download the free{' '}
-              <a href="#" className="text-[#a0a0a0] hover:opacity-70 no-underline">Hybreed</a>{' '}
+              Scan to download the free{' '}
+              <a href="#" className="text-[#a0a0a0] hover:opacity-70 no-underline">Hybreed Academy</a>{' '}
               <a href="#" className="text-[#a0a0a0] hover:opacity-70 no-underline">app</a>
             </p>
             <div className="flex gap-3 mt-2">
@@ -154,33 +154,33 @@ export default function HomeFooter({ orgslug }: HomeFooterProps) {
               Subscribe to our newsletter
             </a>
             <div className="mt-4">
-              <a href="tel:+79651788020" className="text-base text-[#a0a0a0] no-underline hover:opacity-70">
-                +7 (965) 178-80-20
+              <a href="tel:+79896472811" className="text-base text-[#a0a0a0] no-underline hover:opacity-70">
+                +7 989 647 28 11
               </a>
-              <div className="text-xs text-[#a0a0a0] mt-1 opacity-60">For questions about purchasing courses</div>
+              <div className="text-xs text-[#a0a0a0] mt-1 opacity-60">For questions about enrollment</div>
             </div>
             <div className="mt-3">
-              <a href="tel:+79672118828" className="text-base text-[#a0a0a0] no-underline hover:opacity-70">
-                +7 (967) 211-88-28
+              <a href="tel:+237654146237" className="text-base text-[#a0a0a0] no-underline hover:opacity-70">
+                +237 654 146 237
               </a>
-              <div className="text-xs text-[#a0a0a0] mt-1 opacity-60">For corporate clients</div>
+              <div className="text-xs text-[#a0a0a0] mt-1 opacity-60">For partnerships and teams</div>
             </div>
             <div className="mt-3 text-base text-[#a0a0a0]">
-              <a href="#" className="text-[#a0a0a0] no-underline hover:opacity-70">Write in chat</a>
+              <a href="#" className="text-[#a0a0a0] no-underline hover:opacity-70">Chat with us</a>
               {' '}or email:{' '}
-              <a href="mailto:support@hybreed.ru" className="text-[#a0a0a0] no-underline hover:opacity-70">
-                support@hybreed.ru
+              <a href="mailto:support@hybreedacademy.com" className="text-[#a0a0a0] no-underline hover:opacity-70">
+                support@hybreedacademy.com
               </a>
-              <div className="text-xs mt-1 opacity-60">For current students</div>
+              <div className="text-xs mt-1 opacity-60">For current learners</div>
             </div>
             <div className="mt-3 text-sm text-[#a0a0a0]">
-              Moscow, Varshavskoe shosse, 1, building 6, 3rd floor, office 315A
+              Cameroon — serving learners across Africa and beyond
             </div>
           </div>
 
           {/* Copyright */}
           <span className="text-sm text-[#828181] mt-[146px] max-[767px]:mt-12">
-            &copy; Hybreed, 2011&ndash;2026
+            &copy; Hybreed Academy, 2024&ndash;2026
           </span>
         </div>
 
@@ -207,16 +207,16 @@ export default function HomeFooter({ orgslug }: HomeFooterProps) {
                 className="flex items-center gap-2 text-base text-[#a0a0a0] no-underline hover:opacity-70"
               >
                 <span className="w-8 h-8 border border-white/30 rounded flex items-center justify-center text-xs">L</span>
-                <span>State<br />license</span>
+                <span>Operating<br />license</span>
               </a>
               <a href="#" className="text-base leading-5 text-[#a0a0a0] no-underline mt-3 hover:opacity-70">
-                Website of the Ministry of Education and Science of Russia
+                Ministry of Higher Education, Cameroon
               </a>
               <a href="#" className="text-base leading-5 text-[#a0a0a0] no-underline mt-3 hover:opacity-70">
-                Website of the Ministry of Education of Russia
+                Ministry of Employment and Vocational Training
               </a>
               <div className="flex items-center gap-2 mt-9 cursor-pointer text-base text-[#a0a0a0]">
-                Version for the visually impaired
+                Accessibility mode
               </div>
             </div>
           </div>

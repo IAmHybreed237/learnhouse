@@ -15,7 +15,7 @@ export default function HomeStartHere({ orgslug }: HomeStartHereProps) {
   return (
     <section className="w-full mt-[100px] px-[42px] max-[1239px]:mt-[60px] max-[1023px]:px-[34px] max-[767px]:mt-12 max-[767px]:px-0">
       <h2 className="text-[40px] font-semibold leading-[46px] m-0 mb-10 max-[1239px]:text-[32px] max-[1239px]:leading-[38px] max-[1239px]:mb-7 max-[767px]:text-2xl max-[767px]:leading-[30px] max-[767px]:mb-6 max-[767px]:px-3">
-        If you don&apos;t know where to start
+        If you&apos;re not sure where to start
       </h2>
 
       <div className="grid grid-cols-2 gap-5 max-[767px]:grid-cols-1">
@@ -64,22 +64,22 @@ export default function HomeStartHere({ orgslug }: HomeStartHereProps) {
 
           {/* Content */}
           <h3 className="text-[32px] font-semibold leading-[38px] m-0 mb-3 max-[1239px]:text-2xl max-[1239px]:leading-[30px] max-[767px]:text-lg max-[767px]:leading-[22px]">
-            Decide on a career with an express consultation
+            Find your path with a free career consultation
           </h3>
           <p className="text-base font-medium leading-5 text-[#070707] m-0 max-[767px]:mb-3">
-            Fill out the form and receive free recommendations from the Hybreed neural network.
+            Fill out the form and get personalized course recommendations from our Hybreed advisor tool.
           </p>
           <Link
             href={coursesHref}
             className="inline-flex items-center w-fit h-12 px-6 mt-auto text-base font-medium leading-6 text-white bg-[#06f] rounded-full no-underline whitespace-nowrap hover:bg-[#0052cc] transition-colors max-[767px]:mt-4"
           >
-            Choose a profession
+            Find your career path
           </Link>
 
           {/* Card image — absolute bottom-right */}
           <Image
             src="/images/home/start-consultation.webp"
-            alt="Express consultation"
+            alt="Free career consultation"
             width={320}
             height={235}
             className="absolute right-0 bottom-0 z-[-1] h-[235px] w-auto max-[1239px]:h-[205px] max-[1023px]:h-[175px] max-[1023px]:right-[-25px] max-[767px]:h-[170px] max-[767px]:right-[-15px]"
@@ -120,24 +120,24 @@ export default function HomeStartHere({ orgslug }: HomeStartHereProps) {
 
           {/* Content */}
           <h3 className="text-[32px] font-semibold leading-[38px] m-0 mb-3 max-[1239px]:text-2xl max-[1239px]:leading-[30px] max-[767px]:text-lg max-[767px]:leading-[22px]">
-            Start with free materials
+            Start with free learning resources
           </h3>
           <ul className="text-base font-medium leading-5 text-[#070707] list-disc pl-5 m-0 mb-7 max-[767px]:mb-3 max-[767px]:font-normal">
-            <li>Courses</li>
-            <li>Open classes</li>
-            <li>Guides and checklists</li>
+            <li>Intro courses</li>
+            <li>Open lessons</li>
+            <li>Guides and templates</li>
           </ul>
           <Link
             href={coursesHref}
             className="inline-flex items-center w-fit h-12 px-6 mt-auto text-base font-medium leading-6 text-white bg-[#06f] rounded-full no-underline whitespace-nowrap hover:bg-[#0052cc] transition-colors max-[767px]:mt-4"
           >
-            Start for free
+            Start learning free
           </Link>
 
           {/* Card image — absolute bottom-right */}
           <Image
             src="/images/home/start-free.webp"
-            alt="Free materials"
+            alt="Free learning resources"
             width={320}
             height={320}
             className="absolute right-0 bottom-0 z-[-1] w-[320px] h-[320px]"

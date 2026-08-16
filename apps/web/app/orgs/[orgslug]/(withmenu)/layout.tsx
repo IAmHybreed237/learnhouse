@@ -109,7 +109,12 @@ function LayoutContent({ children, orgslug }: { children: ReactNode; orgslug: st
   const isHomePage = pathname === `/${orgslug}` || pathname === `/${orgslug}/` || pathname?.endsWith('/home') || pathParts.length <= 1
   const isCoursesPage = pathname?.endsWith('/courses')
   const isCourseAboutPage = pathname?.endsWith('/about') && pathParts.includes('course')
-  const usesHybreedHeader = isHomePage || isCoursesPage || isCourseAboutPage
+  const isCheckoutPage = pathname?.endsWith('/checkout') && pathParts.includes('course')
+  const usesHybreedHeader = isHomePage || isCoursesPage || isCourseAboutPage || isCheckoutPage
+
+  // Pages with their own full chrome (sidebar + topbar) — skip OrgMenu/OrgFooter
+  const isMyLearningPage = pathParts.includes('my-learning')
+  const hasCustomChrome = usesHybreedHeader || isMyLearningPage
 
   return (
     <div
@@ -120,15 +125,15 @@ function LayoutContent({ children, orgslug }: { children: ReactNode; orgslug: st
       }}
     >
       <PageViewTracker />
-      {!chromeless && !usesHybreedHeader && <OrgJoinBanner />}
-      {!chromeless && !usesHybreedHeader && <OrgMenu orgslug={orgslug} />}
+      {!chromeless && !hasCustomChrome && <OrgJoinBanner />}
+      {!chromeless && !hasCustomChrome && <OrgMenu orgslug={orgslug} />}
       {/* Org-wide 2FA policy: renders nothing unless this user is non-compliant. */}
-      {!chromeless && !usesHybreedHeader && <OrgMFAPolicyGate />}
+      {!chromeless && !hasCustomChrome && <OrgMFAPolicyGate />}
       <div className="flex-1 relative" style={{ zIndex: 'var(--z-content)' }}>
         {children}
       </div>
-      {!isFullBleedPage && !chromeless && !usesHybreedHeader && <OrgFooter />}
-      {!isFullBleedPage && !chromeless && !usesHybreedHeader && <Watermark />}
+      {!isFullBleedPage && !chromeless && !hasCustomChrome && <OrgFooter />}
+      {!isFullBleedPage && !chromeless && !hasCustomChrome && <Watermark />}
     </div>
   )
 }

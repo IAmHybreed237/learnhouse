@@ -17,7 +17,7 @@ export default function HybreedPromoBanner({ orgslug }: HybreedPromoBannerProps)
         <div className="w-full max-[767px]:flex max-[767px]:items-center max-[767px]:justify-between">
           {/* Desktop title */}
           <div className="text-[#13181B] font-semibold text-xl leading-6 mr-auto text-left max-[1023px]:text-base max-[1023px]:leading-[22px] max-[767px]:hidden">
-            Discounts up to 50% and generous gifts — we&apos;re holding prices on courses until August 31st.
+            Early enrollment is open — be among the first to join Hybreed Academy and shape your future.
           </div>
 
           {/* Mobile title (clickable link with chevron) */}
@@ -25,7 +25,7 @@ export default function HybreedPromoBanner({ orgslug }: HybreedPromoBannerProps)
             href={getUriWithOrg(orgslug, '/courses')}
             className="hidden max-[767px]:flex items-center gap-1 text-[#13181B] font-semibold text-sm leading-5 no-underline"
           >
-            <span>Discounts up to 50% and generous gifts</span>
+            <span>Early enrollment is now open</span>
             <ChevronRight size={16} className="mt-[3px] shrink-0" />
           </Link>
         </div>
@@ -35,7 +35,7 @@ export default function HybreedPromoBanner({ orgslug }: HybreedPromoBannerProps)
           href="#"
           className="text-[#13181B] text-[10px] leading-3 whitespace-nowrap ml-6 hover:text-black no-underline max-[1023px]:hidden"
         >
-          Terms of the promotion
+          Learn more about enrollment
         </a>
 
         {/* Desktop button: Select a course — hidden on mobile */}
@@ -43,7 +43,7 @@ export default function HybreedPromoBanner({ orgslug }: HybreedPromoBannerProps)
           href={getUriWithOrg(orgslug, '/courses')}
           className="h-10 bg-[#080808] rounded-[10px] flex items-center text-white font-semibold justify-center no-underline whitespace-nowrap ml-6 min-w-[156px] px-4 hover:bg-[#27292D] transition-colors max-[767px]:hidden"
         >
-          Select a course
+          Browse courses
         </Link>
 
         {/* Desktop image area — hidden on mobile */}

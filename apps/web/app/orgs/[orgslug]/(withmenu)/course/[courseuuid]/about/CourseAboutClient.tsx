@@ -10,6 +10,12 @@ import { getUriWithOrg } from '@services/config/config'
 import { getCourseThumbnailMediaDirectory } from '@services/media/media'
 import HybreedHeader from '@components/Landings/Hybreed/HybreedHeader'
 import HybreedPromoBanner from '@components/Landings/Hybreed/HybreedPromoBanner'
+import DigitalMarketingLanding from './DigitalMarketingLanding'
+
+// Course UUIDs that have custom landing pages
+const CUSTOM_COURSE_PAGES: Record<string, React.ComponentType<{ courseuuid: string; orgslug: string }>> = {
+  '1df3527b-ed86-449a-9f45-e4de0bb306a1': DigitalMarketingLanding,
+}
 
 interface CourseAboutClientProps {
   courseuuid: string
@@ -29,6 +35,12 @@ export default function CourseAboutClient({ courseuuid, orgslug }: CourseAboutCl
   }
 
   const course = courseMeta
+
+  // Check if this course has a custom landing page
+  const CustomPage = CUSTOM_COURSE_PAGES[courseuuid]
+  if (CustomPage) {
+    return <CustomPage courseuuid={courseuuid} orgslug={orgslug} />
+  }
 
   return (
     <div className="min-h-screen bg-[#f5f5f5]">
@@ -74,7 +86,7 @@ function HeroSection({ course, orgslug, orgUuid }: { course: any; orgslug: strin
           <div className="flex flex-col max-w-[553px] max-[767px]:max-w-none max-[767px]:w-full relative z-[1]">
             {/* Subtitle badges row */}
             <div className="flex gap-2 justify-start flex-wrap w-[85%] max-[767px]:w-full max-[767px]:mb-4 max-[767px]:pt-[20px]">
-              {/* Job hunt badge - blue bg like Netology */}
+              {/* Job hunt badge - blue bg */}
               <div className="flex items-center px-[15px] py-[6px] min-h-[24px] rounded-full bg-[#0b3a82] text-white text-[16px] max-[767px]:text-[14px] leading-[20px] max-[767px]:leading-[18px] w-fit border-0">
                 Includes career program
               </div>
@@ -118,8 +130,8 @@ function HeroSection({ course, orgslug, orgUuid }: { course: any; orgslug: strin
             </div>
           </div>
 
-          {/* RIGHT COLUMN - Background graphic + Registration block (like Netology) */}
-          {/* In Netology the graphic_hero_fe.webp is inside this column, positioned absolute behind the form */}
+          {/* RIGHT COLUMN - Background graphic + Registration block */}
+          {/* The graphic_hero_fe.webp is inside this column, positioned absolute behind the form */}
           <div className="flex flex-col relative max-[767px]:w-full max-[767px]:mt-8">
             {/* 3D Hero graphic - absolute, behind the form, only on large desktop */}
             {/* Shifted left so it peeks out from behind the form card */}
@@ -198,7 +210,7 @@ function HeroSection({ course, orgslug, orgUuid }: { course: any; orgslug: strin
                       </label>
                     </div>
 
-                    {/* Submit button - green like Netology */}
+                    {/* Submit button - green */}
                     <button
                       type="submit"
                       className="w-full h-[52px] mt-2 bg-[#4BD0A0] hover:bg-[#37bc8c] text-[#1B2126] text-[16px] font-semibold rounded-[12px] border-0 cursor-pointer transition-colors"
@@ -212,7 +224,7 @@ function HeroSection({ course, orgslug, orgUuid }: { course: any; orgslug: strin
           </div>
         </div>
 
-        {/* STATS CARDS - 4 column grid of white rounded cards (Netology style) */}
+        {/* STATS CARDS - 4 column grid of white rounded cards */}
         <div className="grid grid-cols-4 max-[1023px]:grid-cols-2 gap-7 max-[767px]:gap-2 mt-[60px] max-[767px]:mt-[40px]">
           {stats.map((stat, i) => (
             <div key={i} className="flex h-full bg-white rounded-[32px] box-border relative">
@@ -793,7 +805,7 @@ function ModuleAccordion({ module, index }: { module: any; index: number }) {
 }
 
 /* ============================================================
-   PRICING SECTION - Plan cards (Netology style dark bg)
+   PRICING SECTION - Plan cards (dark bg)
    ============================================================ */
 function PricingSection({ course, orgslug }: { course: any; orgslug: string }) {
   return (

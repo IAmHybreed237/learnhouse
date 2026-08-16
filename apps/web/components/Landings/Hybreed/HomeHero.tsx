@@ -13,35 +13,35 @@ interface HomeHeroProps {
 const HERO_SLIDES = [
   {
     image: '/images/home/slide1.webp',
-    caption: '4.88 out of 5 stars for our support team, based on a survey of 200,000 students',
+    caption: 'Rated 4.9 out of 5 by our first Hybreeds for quality teaching and mentor support',
   },
   {
     image: '/images/home/slide2.webp',
-    caption: '1.5 million people have chosen Hybreed courses to achieve their goals.',
+    caption: 'Join a growing community of African Hybreeds building skills for the digital economy',
   },
   {
     image: '/images/home/slide3.webp',
-    caption: '4,000 partners have already offered internships and made offers to the best students.',
+    caption: 'Our hiring partners are ready to connect with top Hybreeds across Cameroon and beyond',
   },
   {
     image: '/images/home/slide4.webp',
-    caption: 'A live chat with experts to discuss issues and complex topics',
+    caption: 'Live mentorship sessions with industry professionals to guide your learning journey',
   },
 ]
 
 const QUICK_CARDS = [
-  { label: 'Master a profession', image: '/images/home/hero-card1.svg' },
-  { label: 'Master the skills', image: '/images/home/hero-card2.svg' },
-  { label: 'Decide on a profession', image: '/images/home/hero-card3.svg' },
+  { label: 'Build a career', image: '/images/home/hero-card1.svg' },
+  { label: 'Gain practical skills', image: '/images/home/hero-card2.svg' },
+  { label: 'Find your path', image: '/images/home/hero-card3.svg' },
 ]
 
 const TAGS = [
-  'Professions with neural networks',
-  'Neural networks',
+  'Digital skills for Africa',
+  'Web development',
   'Remote work',
-  'Create websites',
-  'Self-development',
-  'Become a freelancer',
+  'Data analytics',
+  'Career growth',
+  'Start freelancing',
 ]
 
 export default function HomeHero({ orgslug }: HomeHeroProps) {
@@ -70,7 +70,7 @@ export default function HomeHero({ orgslug }: HomeHeroProps) {
             <div className="flex-shrink-0 w-[560px] max-[1239px]:w-[460px] max-[1023px]:w-auto max-[1023px]:grid max-[1023px]:grid-cols-[1fr_min-content] max-[1023px]:grid-rows-[min-content_1fr] max-[1023px]:gap-x-[22px] max-[767px]:!flex max-[767px]:!flex-col max-[767px]:!w-full">
               {/* Title */}
               <h1 className="text-[50px] font-semibold leading-[54px] m-0 mb-4 max-[1239px]:text-[38px] max-[1239px]:leading-[42px] max-[1023px]:mb-6 max-[767px]:text-[28px] max-[767px]:leading-[32px] max-[767px]:text-center max-[767px]:px-2.5 max-[767px]:mb-4">
-                We teach and help at every stage
+                Learn skills. Build things. Grow your career.
               </h1>
 
               {/* Slider */}
@@ -176,11 +176,11 @@ export default function HomeHero({ orgslug }: HomeHeroProps) {
                   className="flex-1 relative overflow-hidden bg-[#1a56db] rounded-3xl p-5 flex flex-col justify-between min-h-[166px] max-[1239px]:min-h-[136px] group"
                 >
                   <p className="relative z-10 text-white text-xl font-medium leading-6 max-w-[65%] m-0">
-                    <span className="font-bold">Grow with AI –</span>
-                    {' '}in your profession, career, and income
+                    <span className="font-bold">Build with tech –</span>
+                    {' '}boost your skills, career, and earning potential
                   </p>
                   <span className="relative z-10 inline-flex self-start items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black text-sm font-bold group-hover:bg-gray-100 transition-colors">
-                    Select a course
+                    Explore courses
                     <ArrowRight size={14} />
                   </span>
                   <div className="absolute right-0 top-0 bottom-0 w-[149px] h-[163px] z-0">
@@ -195,7 +195,8 @@ export default function HomeHero({ orgslug }: HomeHeroProps) {
                   href={coursesHref}
                   className="flex-1 relative overflow-hidden bg-white rounded-3xl p-5 flex flex-col justify-between min-h-[166px] max-[1239px]:min-h-[136px] border border-[#f3f4f7] hover:border-[#8e8e8e] transition-colors"
                 >
-                  <span className="text-xl font-medium leading-6 text-black max-w-[70%]">Programs with universities</span>
+                  <span className="text-xl font-medium leading-6 text-black max-w-[70%]">Partner programs with schools</span>
+
                   <span className="flex items-center h-[30px] px-4 rounded-full bg-[#f3f4f7] self-start">
                     <ArrowRight size={14} />
                   </span>
@@ -204,7 +205,7 @@ export default function HomeHero({ orgslug }: HomeHeroProps) {
                   href={coursesHref}
                   className="flex-1 relative overflow-hidden bg-white rounded-3xl p-5 flex flex-col justify-between min-h-[166px] max-[1239px]:min-h-[136px] border border-[#f3f4f7] hover:border-[#8e8e8e] transition-colors"
                 >
-                  <span className="text-xl font-medium leading-6 text-black max-w-[45%]">Corporate training</span>
+                  <span className="text-xl font-medium leading-6 text-black max-w-[45%]">Training for teams</span>
                   <span className="flex items-center h-[30px] px-4 rounded-full bg-[#f3f4f7] self-start">
                     <ArrowRight size={14} />
                   </span>
@@ -220,11 +221,11 @@ export default function HomeHero({ orgslug }: HomeHeroProps) {
                 className="flex min-[768px]:hidden relative overflow-hidden bg-[#1a56db] rounded-3xl p-4 flex-col justify-between min-h-[120px] mt-2 group"
               >
                 <p className="relative z-10 text-white text-base leading-snug max-w-[65%] m-0">
-                  <span className="font-bold">Grow with AI –</span>
-                  <br />in your profession, career, and income
+                  <span className="font-bold">Build with tech –</span>
+                  <br />boost your skills, career, and earning potential
                 </p>
                 <span className="relative z-10 inline-flex self-start items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black text-sm font-bold mt-3 group-hover:bg-gray-100 transition-colors">
-                  Select a course <ArrowRight size={14} />
+                  Explore courses <ArrowRight size={14} />
                 </span>
                 <div className="absolute right-0 top-0 bottom-0 w-32 opacity-95">
                   <Image src="/images/home/ai-image.webp" alt="" fill className="object-cover object-left" sizes="128px" />
@@ -242,24 +243,24 @@ export default function HomeHero({ orgslug }: HomeHeroProps) {
   )
 }
 
-/* Categories data */
+/* Categories data — Hybreed Academy course categories */
 const DIRECTIONS_LEFT_1 = [
-  { label: 'Programming', count: '43 courses', href: '/courses' },
-  { label: 'Analytics', count: '39 courses', href: '/courses' },
-  { label: 'Design and UX', count: '28 courses', href: '/courses' },
+  { label: 'Web & Software Dev', count: 'Courses', href: '/courses' },
+  { label: 'Design & Creative', count: 'Courses', href: '/courses' },
+  { label: 'Digital Marketing', count: 'Courses', href: '/courses' },
 ]
 
 const DIRECTIONS_LEFT_2 = [
-  { label: 'Business and Management', count: '44 courses', href: '/courses' },
-  { label: 'Marketing', count: '31 courses', href: '/courses' },
-  { label: 'Finance and Investments', count: '16 courses', href: '/courses' },
+  { label: 'Workplace Skills', count: 'Courses', href: '/courses' },
+  { label: 'Electronics', count: 'Courses', href: '/courses' },
+  { label: 'Career Upgrade', count: 'Courses', href: '/courses' },
 ]
 
 const DIRECTIONS_RIGHT = [
-  { label: 'Neural networks', count: '9 courses', href: '/courses' },
-  { label: 'Marketplaces', count: '7 courses', href: '/courses' },
-  { label: 'Health', count: '22 courses', href: '/courses' },
-  { label: 'Psychology', count: '5 courses', href: '/courses' },
+  { label: 'Digital Literacy', count: 'Courses', href: '/courses' },
+  { label: 'Microsoft Office', count: 'Courses', href: '/courses' },
+  { label: 'SEO Training', count: 'Courses', href: '/courses' },
+  { label: 'Arduino & IoT', count: 'Courses', href: '/courses' },
 ]
 
 function DirectionsGrid({ orgslug }: { orgslug: string }) {
@@ -289,7 +290,7 @@ function DirectionsGrid({ orgslug }: { orgslug: string }) {
           href={coursesHref}
           className="flex items-center justify-between w-full h-24 max-[1239px]:h-20 max-[1023px]:h-[108px] max-[767px]:hidden px-5 rounded-3xl bg-white border border-white hover:border-[#8e8e8e] transition-colors no-underline text-black box-border flex-shrink-0"
         >
-          <span className="text-xl font-medium leading-6 max-[1239px]:text-base max-[1239px]:leading-5">Full catalog</span>
+          <span className="text-xl font-medium leading-6 max-[1239px]:text-base max-[1239px]:leading-5">Browse all courses</span>
           <span className="flex items-center justify-center flex-shrink-0 h-[30px] w-[50px] rounded-full bg-[#f3f4f7]">
             <ArrowRight size={15} className="text-black" />
           </span>
@@ -308,7 +309,7 @@ function DirectionsGrid({ orgslug }: { orgslug: string }) {
         href={coursesHref}
         className="hidden max-[767px]:flex items-center justify-between w-full h-[50px] mt-2 px-3 rounded-3xl bg-white border border-white hover:border-[#8e8e8e] transition-colors no-underline text-black box-border"
       >
-        <span className="text-sm font-medium leading-[18px]">Full catalog</span>
+        <span className="text-sm font-medium leading-[18px]">Browse all courses</span>
         <span className="flex items-center justify-center flex-shrink-0 h-[30px] w-[50px] rounded-full bg-[#f3f4f7]">
           <ArrowRight size={15} className="text-black" />
         </span>

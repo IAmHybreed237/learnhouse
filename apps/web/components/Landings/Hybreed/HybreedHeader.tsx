@@ -64,13 +64,27 @@ export default function HybreedHeader({ orgslug }: HybreedHeaderProps) {
             </Link>
 
             {/* Right side links */}
-            <div className="flex items-center">
+            <div className="flex items-center gap-6">
               <Link
                 href={getUriWithOrg(orgslug, '/free')}
                 className="no-underline text-base leading-6 font-medium text-black cursor-pointer transition-all duration-200 whitespace-nowrap hover:opacity-80"
               >
                 Study for free
               </Link>
+              <Link
+                href={getUriWithOrg(orgslug, '/blog')}
+                className="no-underline text-base leading-6 font-medium text-black cursor-pointer transition-all duration-200 whitespace-nowrap hover:opacity-80"
+              >
+                Blog
+              </Link>
+              {isAuthenticated && (
+                <Link
+                  href={getUriWithOrg(orgslug, '/my-learning')}
+                  className="no-underline text-base leading-6 font-medium text-[#4BD0A0] cursor-pointer transition-all duration-200 whitespace-nowrap hover:opacity-80"
+                >
+                  My Learning
+                </Link>
+              )}
             </div>
           </div>
         </div>

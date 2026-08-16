@@ -6,27 +6,27 @@ import { ChevronDown } from 'lucide-react'
 
 const GOALS = [
   {
-    title: 'Consolidating the theory with real-life cases',
+    title: 'Bridging theory with real-world practice',
     description:
-      "In addition to the usual tasks, you'll receive hands-on training from partners—business games, meetups, hackathons, and pet projects. You'll gain valuable experience and stand out in the market.",
+      "Beyond regular lessons, you'll work on real projects from local businesses—case studies, workshops, and hands-on challenges. You'll build a portfolio that makes you stand out to employers.",
     image: '/images/home/goals-1.webp',
   },
   {
-    title: 'Over 100 free materials',
+    title: 'Growing library of free resources',
     description:
-      'Educational products that help 5,000 students find their development path each year. Find the format that suits you best.',
+      'Learning materials designed to help every Hybreed discover their path in the digital economy. Find the format that works best for your goals and schedule.',
     image: null,
   },
   {
-    title: 'Convenient platform',
+    title: 'Built for African Hybreeds',
     description:
-      'Everything you need for effective studying: a planner, calendar, games, and exercise tools. And with the mobile app, your materials are always at hand.',
+      'Everything you need to study effectively: structured lessons, progress tracking, and practical exercises. Access your courses anytime, from any device, anywhere.',
     image: '/images/home/goals-2.webp',
   },
   {
-    title: 'Support for the entire team',
+    title: 'Mentorship at every step',
     description:
-      "Prompt communication with faculty, coordinators, graduate students, and technical specialists. You won't be left alone with any difficulties.",
+      "Direct access to instructors, mentors, and a supportive community of fellow Hybreeds. You'll never feel stuck—help is always just a message away.",
     image: '/images/home/goals-3.webp',
   },
 ]
@@ -41,7 +41,7 @@ export default function HomeGoals() {
   return (
     <section className="w-full mt-[100px] px-10 max-[1239px]:mt-[60px] max-[767px]:mt-12 max-[767px]:px-3">
       <h2 className="text-[40px] font-semibold leading-[46px] max-w-[670px] m-0 mb-10 max-[1239px]:text-[32px] max-[1239px]:leading-[38px] max-[1239px]:mb-7 max-[1239px]:max-w-[550px] max-[767px]:text-2xl max-[767px]:leading-[30px] max-[767px]:mb-6">
-        How Hybreed helps you achieve your goals
+        How Hybreed Academy helps you reach your goals
       </h2>
 
       {/* Desktop grid */}

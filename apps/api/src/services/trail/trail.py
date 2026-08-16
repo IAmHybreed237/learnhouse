@@ -450,6 +450,102 @@ async def remove_activity_from_trail(
     return await _build_trail_read(trail, list(trail_runs_raw), db_session, user_id=user.id)
 
 
+async def get_user_assignments(
+    request: Request,
+    user: PublicUser | AnonymousUser,
+    org_id: int,
+    db_session: AsyncSession,
+) -> list:
+    """
+    Aggregate all assignment-type activities from courses the user is enrolled
+    in (via trail runs), cross-referenced with trail steps to determine
+    completion status. Returns a flat list of assignment dicts.
+    """
+    if isinstance(user, AnonymousUser):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Anonymous users cannot access this endpoint",
+        )
+
+    # 1. Get the user's trail for this org
+    trail = await check_trail_presence(
+        org_id=org_id,
+        user_id=user.id,
+        request=request,
+        user=user,
+        db_session=db_session,
+    )
+
+    # 2. Get all trail runs (enrolled courses)
+    statement = select(TrailRun).where(
+        TrailRun.trail_id == trail.id, TrailRun.user_id == user.id
+    )
+    trail_runs_raw = (await db_session.execute(statement)).scalars().all()
+
+    if not trail_runs_raw:
+        return []
+
+    course_ids = [tr.course_id for tr in trail_runs_raw if tr.course_id is not None]
+    trail_run_ids = [tr.id for tr in trail_runs_raw if tr.id is not None]
+
+    if not course_ids:
+        return []
+
+    # 3. Batch fetch courses
+    courses = (await db_session.execute(
+        select(Course).where(Course.id.in_(course_ids))  # type: ignore
+    )).scalars().all()
+    course_map = {c.id: c for c in courses}
+
+    # 4. Batch fetch all assignment-type activities for these courses
+    #    via ChapterActivity join → Activity
+    assignment_activities = (await db_session.execute(
+        select(Activity, ChapterActivity.order)
+        .join(ChapterActivity, ChapterActivity.activity_id == Activity.id)
+        .where(
+            Activity.course_id.in_(course_ids),  # type: ignore
+            Activity.activity_type == ActivityTypeEnum.TYPE_ASSIGNMENT,
+            Activity.published == True,  # noqa: E712
+        )
+        .order_by(ChapterActivity.order)
+    )).all()
+
+    if not assignment_activities:
+        return []
+
+    activity_ids = [row[0].id for row in assignment_activities if row[0].id is not None]
+
+    # 5. Batch fetch trail steps for these activities (completion status)
+    steps = (await db_session.execute(
+        select(TrailStep).where(
+            TrailStep.activity_id.in_(activity_ids),  # type: ignore
+            TrailStep.user_id == user.id,
+        )
+    )).scalars().all()
+    completed_activity_ids = {s.activity_id for s in steps if s.complete}
+
+    # 6. Build the result list
+    assignments = []
+    for activity, order in assignment_activities:
+        course = course_map.get(activity.course_id)
+        if not course:
+            continue
+        assignments.append({
+            "activity_uuid": activity.activity_uuid,
+            "activity_name": activity.name,
+            "activity_type": activity.activity_type.value if activity.activity_type else "TYPE_ASSIGNMENT",
+            "activity_sub_type": activity.activity_sub_type.value if activity.activity_sub_type else None,
+            "course_uuid": course.course_uuid,
+            "course_name": course.name,
+            "course_id": course.id,
+            "order": order,
+            "completed": activity.id in completed_activity_ids,
+            "details": activity.details,
+        })
+
+    return assignments
+
+
 async def add_course_to_trail(
     request: Request,
     user: PublicUser | AnonymousUser,

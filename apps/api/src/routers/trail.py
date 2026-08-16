@@ -10,6 +10,7 @@ from src.services.trail.trail import (
     create_user_trail,
     get_user_trails,
     get_user_trail_with_orgid,
+    get_user_assignments,
     remove_course_from_trail,
     remove_activity_from_trail,
 )
@@ -186,3 +187,24 @@ async def api_remove_activity_from_trail(
     Remove Activity from trail
     """
     return await remove_activity_from_trail(request, user, activity_uuid, db_session)
+
+
+@router.get(
+    "/org/{org_id}/assignments",
+    summary="Get user assignments by organization",
+    description="Retrieve all assignment-type activities from courses the current user is enrolled in, with completion status.",
+    responses={
+        200: {"description": "Assignments retrieved."},
+        401: {"description": "Authentication required"},
+    },
+)
+async def api_get_user_assignments(
+    request: Request,
+    org_id: int,
+    user=Depends(get_current_user),
+    db_session=Depends(get_db_session),
+) -> list:
+    """
+    Get all assignments for the current user within an organization
+    """
+    return await get_user_assignments(request, user, org_id=org_id, db_session=db_session)

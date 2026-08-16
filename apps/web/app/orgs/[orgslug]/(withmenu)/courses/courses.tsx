@@ -96,13 +96,30 @@ function Courses(props: CourseProps) {
   // Search state
   const [searchQuery, setSearchQuery] = useState('')
 
-  // Filter courses based on search and usergroup
+  // Sidebar filter state
+  const [selectedCategory, setSelectedCategory] = useState<string>('all')
+  const [selectedPricing, setSelectedPricing] = useState<string>('')
+  const [showFiltersOnMobile, setShowFiltersOnMobile] = useState(false)
+
+  // Filter courses based on search, usergroup, category, and pricing
   const filteredCourses = useMemo(() => {
     let courses = allCourses
 
     // Usergroup filter
     if (usergroupResourceUuids) {
       courses = courses.filter((course: any) => usergroupResourceUuids.has(course.course_uuid))
+    }
+
+    // Category filter (from extra_metadata.category)
+    if (selectedCategory !== 'all') {
+      courses = courses.filter((course: any) => course.extra_metadata?.category === selectedCategory)
+    }
+
+    // Pricing filter
+    if (selectedPricing === 'paid') {
+      courses = courses.filter((course: any) => course.extra_metadata?.paid === true)
+    } else if (selectedPricing === 'free') {
+      courses = courses.filter((course: any) => !course.extra_metadata?.paid)
     }
 
     // Search filter
@@ -113,7 +130,7 @@ function Courses(props: CourseProps) {
     }
 
     return courses
-  }, [allCourses, searchQuery, usergroupResourceUuids])
+  }, [allCourses, searchQuery, usergroupResourceUuids, selectedPricing, selectedCategory])
 
   // Track non-empty searches (debounced so we don't fire on every keystroke)
   useEffect(() => {
@@ -140,19 +157,13 @@ function Courses(props: CourseProps) {
   // Reset to page 1 when search or filter changes
   React.useEffect(() => {
     resetPage()
-  }, [searchQuery, selectedUsergroupId, resetPage])
+  }, [searchQuery, selectedUsergroupId, selectedPricing, selectedCategory, resetPage])
 
   async function closeNewCourseModal() {
     setNewCourseModal(false)
   }
 
-  // Sidebar filter state
-  const [selectedCategory, setSelectedCategory] = useState<string>('all')
-  const [selectedPricing, setSelectedPricing] = useState<string>('')
-  const [showFiltersOnMobile, setShowFiltersOnMobile] = useState(false)
-  const [skillSearchQuery, setSkillSearchQuery] = useState('')
-
-  // Default direction categories (always shown, like Netology's navigation)
+  // Default direction categories (always shown, Hybreed Academy navigation)
   const defaultDirections = [
     'AI & Neural Networks',
     'Marketing',
@@ -168,26 +179,16 @@ function Courses(props: CourseProps) {
     'Health & Psychology',
   ]
 
-  // Categories derived from course tags (if available), fallback to defaults
+  // Categories derived from course extra_metadata.category (clean 6 categories)
   const categories = useMemo(() => {
     const cats = new Set<string>()
     allCourses.forEach((course: any) => {
-      if (course.tags) {
-        const tagList = Array.isArray(course.tags) ? course.tags : course.tags.split(',')
-        tagList.forEach((tag: string) => cats.add(tag.trim()))
-      }
+      const cat = course.extra_metadata?.category
+      if (cat) cats.add(cat)
     })
-    const fromTags = Array.from(cats).filter(Boolean).sort()
-    return fromTags.length > 0 ? fromTags : defaultDirections
+    const fromMeta = Array.from(cats).filter(Boolean).sort()
+    return fromMeta.length > 0 ? fromMeta : defaultDirections
   }, [allCourses])
-
-  // Filtered skills based on skill search
-  const filteredSkills = useMemo(() => {
-    if (!skillSearchQuery.trim()) return categories
-    return categories.filter((cat) =>
-      cat.toLowerCase().includes(skillSearchQuery.toLowerCase())
-    )
-  }, [categories, skillSearchQuery])
 
   if (coursesLoading && !coursesData) {
     return (
@@ -310,7 +311,7 @@ function Courses(props: CourseProps) {
           </AuthenticatedClientElement>
         </div>
 
-        {/* Directions / Category tabs - Netology style */}
+        {/* Directions / Category tabs - Hybreed Academy style */}
         <div className="mb-10 max-[767px]:mb-4 max-[1239px]:-mx-[150px] max-[1239px]:px-[150px] max-[1023px]:-mx-[34px] max-[1023px]:px-[34px] max-[767px]:-mx-3 max-[767px]:px-3 overflow-x-auto max-[1239px]:overflow-x-auto scrollbar-hide">
           <div className="flex flex-wrap gap-2 max-[1023px]:flex-nowrap max-[1023px]:min-w-0">
             {/* All Courses tab */}
@@ -344,7 +345,7 @@ function Courses(props: CourseProps) {
         {/* Main layout: Sidebar + Cards */}
         <div className="flex gap-5 items-start">
 
-          {/* LEFT SIDEBAR - Filters (Netology style) */}
+          {/* LEFT SIDEBAR - Filters (Hybreed Academy style) */}
           <aside className={`w-[260px] shrink-0 max-[1023px]:fixed max-[1023px]:inset-0 max-[1023px]:z-[100] max-[1023px]:w-auto max-[1023px]:bg-white max-[1023px]:overflow-auto max-[1023px]:p-5 ${showFiltersOnMobile ? 'max-[1023px]:block' : 'max-[1023px]:hidden'}`}>
             {/* Mobile close button */}
             <div className="hidden max-[1023px]:flex items-center justify-between mb-6">
@@ -368,7 +369,7 @@ function Courses(props: CourseProps) {
                     className="w-[18px] h-[18px] rounded-[4px] border-2 border-[#ccc] appearance-none cursor-pointer checked:bg-[#29a680] checked:border-[#29a680] relative after:content-[''] after:absolute after:left-[5px] after:top-[2px] after:w-[5px] after:h-[9px] after:border-white after:border-r-2 after:border-b-2 after:rotate-45 after:opacity-0 checked:after:opacity-100 max-[1023px]:hidden"
                   />
                   <span className="ml-2 text-[16px] leading-[24px] text-[#1B2126] max-[1023px]:ml-0 max-[1023px]:text-[14px]">
-                    {t('courses.free', 'Free')} <span className="text-[#8e8e8e]">({allCourses.length})</span>
+                    {t('courses.free', 'Free')} <span className="text-[#8e8e8e]">({allCourses.filter((c: any) => !c.extra_metadata?.paid).length})</span>
                   </span>
                 </label>
                 <label className="flex items-center cursor-pointer max-[1023px]:inline-flex max-[1023px]:items-center max-[1023px]:px-4 max-[1023px]:py-2 max-[1023px]:rounded-full max-[1023px]:bg-[#e6e9ef]">
@@ -379,51 +380,35 @@ function Courses(props: CourseProps) {
                     className="w-[18px] h-[18px] rounded-[4px] border-2 border-[#ccc] appearance-none cursor-pointer checked:bg-[#29a680] checked:border-[#29a680] relative after:content-[''] after:absolute after:left-[5px] after:top-[2px] after:w-[5px] after:h-[9px] after:border-white after:border-r-2 after:border-b-2 after:rotate-45 after:opacity-0 checked:after:opacity-100 max-[1023px]:hidden"
                   />
                   <span className="ml-2 text-[16px] leading-[24px] text-[#1B2126] max-[1023px]:ml-0 max-[1023px]:text-[14px]">
-                    {t('courses.paid', 'Paid')} <span className="text-[#8e8e8e]">(0)</span>
+                    {t('courses.paid', 'Paid')} <span className="text-[#8e8e8e]">({allCourses.filter((c: any) => c.extra_metadata?.paid).length})</span>
                   </span>
                 </label>
               </div>
             </div>
 
-            {/* SKILLS / TAGS Section */}
+            {/* CATEGORIES Section */}
             {categories.length > 0 && (
               <div className="mb-10 max-[1023px]:mb-8">
                 <div className="flex items-center mb-4 max-[1023px]:mb-3">
-                  <h3 className="text-[20px] leading-[24px] font-medium text-[#1B2126]">{t('courses.skills', 'Skills')}</h3>
+                  <h3 className="text-[20px] leading-[24px] font-medium text-[#1B2126]">{t('courses.categories', 'Categories')}</h3>
                 </div>
-                {/* Search skills input */}
-                <div className="relative mb-3">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8e8e8e]" />
-                  <input
-                    type="text"
-                    value={skillSearchQuery}
-                    onChange={(e) => setSkillSearchQuery(e.target.value)}
-                    placeholder={t('courses.search_skills', 'Search skills')}
-                    className="w-full h-[40px] pl-9 pr-3 bg-white border border-[#ccc] rounded-[8px] text-[14px] text-[#1B2126] placeholder:text-[#8e8e8e] focus:outline-none focus:border-[#29a680]"
-                  />
-                </div>
-                {/* Scrollable skills list */}
-                <div className="border-t border-b border-[#ccc] mr-3.5">
-                  <div className="max-h-[385px] overflow-y-auto py-6 -mr-3.5 pr-3.5 scrollbar-thin scrollbar-thumb-[#d4d6d8] scrollbar-thumb-rounded">
-                    <div className="max-[1023px]:flex max-[1023px]:flex-wrap max-[1023px]:gap-2">
-                      {filteredSkills.map((cat) => (
-                        <label key={cat} className="flex items-center cursor-pointer min-[1024px]:mb-4 last:min-[1024px]:mb-0 max-[1023px]:inline-flex max-[1023px]:items-center max-[1023px]:px-4 max-[1023px]:py-2 max-[1023px]:rounded-full max-[1023px]:bg-[#e6e9ef]">
-                          <input
-                            type="checkbox"
-                            checked={selectedCategory === cat}
-                            onChange={() => setSelectedCategory(selectedCategory === cat ? 'all' : cat)}
-                            className="w-[18px] h-[18px] rounded-[4px] border-2 border-[#ccc] appearance-none cursor-pointer checked:bg-[#29a680] checked:border-[#29a680] relative after:content-[''] after:absolute after:left-[5px] after:top-[2px] after:w-[5px] after:h-[9px] after:border-white after:border-r-2 after:border-b-2 after:rotate-45 after:opacity-0 checked:after:opacity-100 max-[1023px]:hidden"
-                          />
-                          <span className="ml-2 text-[16px] leading-[24px] text-[#1B2126] max-[1023px]:ml-0 max-[1023px]:text-[14px]">
-                            {cat}
-                          </span>
-                        </label>
-                      ))}
-                      {filteredSkills.length === 0 && (
-                        <p className="text-[14px] text-[#8e8e8e] py-2">{t('courses.no_skills_found', 'No skills found')}</p>
-                      )}
-                    </div>
-                  </div>
+                <div className="max-[1023px]:flex max-[1023px]:flex-wrap max-[1023px]:gap-2">
+                  {categories.map((cat) => {
+                    const count = allCourses.filter((c: any) => c.extra_metadata?.category === cat).length
+                    return (
+                      <label key={cat} className="flex items-center cursor-pointer min-[1024px]:mb-4 last:min-[1024px]:mb-0 max-[1023px]:inline-flex max-[1023px]:items-center max-[1023px]:px-4 max-[1023px]:py-2 max-[1023px]:rounded-full max-[1023px]:bg-[#e6e9ef]">
+                        <input
+                          type="checkbox"
+                          checked={selectedCategory === cat}
+                          onChange={() => setSelectedCategory(selectedCategory === cat ? 'all' : cat)}
+                          className="w-[18px] h-[18px] rounded-[4px] border-2 border-[#ccc] appearance-none cursor-pointer checked:bg-[#29a680] checked:border-[#29a680] relative after:content-[''] after:absolute after:left-[5px] after:top-[2px] after:w-[5px] after:h-[9px] after:border-white after:border-r-2 after:border-b-2 after:rotate-45 after:opacity-0 checked:after:opacity-100 max-[1023px]:hidden"
+                        />
+                        <span className="ml-2 text-[16px] leading-[24px] text-[#1B2126] max-[1023px]:ml-0 max-[1023px]:text-[14px]">
+                          {cat} <span className="text-[#8e8e8e]">({count})</span>
+                        </span>
+                      </label>
+                    )
+                  })}
                 </div>
               </div>
             )}
@@ -510,7 +495,7 @@ function Courses(props: CourseProps) {
               </div>
             )}
 
-            {/* Course cards list - Netology catalog style (one per row, stacked) */}
+            {/* Course cards list - Hybreed Academy catalog style (one per row, stacked) */}
             <div className="flex flex-col gap-5">
             {paginatedCourses.map((course: any, index: number) => (
               <div key={course.course_uuid}>

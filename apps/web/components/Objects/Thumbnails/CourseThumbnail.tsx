@@ -36,6 +36,7 @@ type Course = {
   update_date: string
   public?: boolean
   published?: boolean
+  extra_metadata?: any
   authors?: Array<{
     user: {
       id: string
@@ -221,6 +222,12 @@ function CourseThumbnail({ course, orgslug, customLink, isDashboard = false, isS
             <span className="text-[12px] leading-[14px] text-[#000] whitespace-nowrap px-3 h-[22px] flex items-center rounded-full border border-[#ccc] box-border">
               {t('courses.course', 'Course')}
             </span>
+            {/* Paid badge */}
+            {course.extra_metadata?.paid && (
+              <span className="text-[12px] leading-[14px] text-[#038255] whitespace-nowrap px-3 h-[22px] flex items-center rounded-full border border-[#4BD0A0] bg-[#d4f6ec] box-border font-medium">
+                Paid
+              </span>
+            )}
           </div>
 
           {/* Course title */}
@@ -278,14 +285,22 @@ function CourseThumbnail({ course, orgslug, customLink, isDashboard = false, isS
             )}
           </div>
           
-          <Link
-            prefetch={false}
-            href={courseLink}
-            onClick={handleCardOpen}
-            className="text-[12px] font-semibold text-[#8e8e8e] hover:text-[#4BD0A0] transition-colors"
-          >
-            {t('courses.start_learning')}
-          </Link>
+          <div className="flex items-center gap-3">
+            {/* Price display */}
+            {course.extra_metadata?.paid && course.extra_metadata?.price && (
+              <span className="text-[14px] font-semibold text-[#1B2126]">
+                {course.extra_metadata.price.toLocaleString()} {course.extra_metadata.currency || 'FCFA'}
+              </span>
+            )}
+            <Link
+              prefetch={false}
+              href={courseLink}
+              onClick={handleCardOpen}
+              className="text-[12px] font-semibold text-[#8e8e8e] hover:text-[#4BD0A0] transition-colors"
+            >
+              {t('courses.start_learning')}
+            </Link>
+          </div>
         </div>
       </div>
     </div>

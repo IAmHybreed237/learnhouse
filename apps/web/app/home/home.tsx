@@ -4,7 +4,7 @@ import { canManageOrgFromSession } from '@components/Hooks/useAdminStatus'
 import { useLHAnalytics } from '@services/analytics/useLHAnalytics'
 import { AnalyticsEvent } from '@services/analytics/events'
 import UserAvatar from '@components/Objects/UserAvatar'
-import { getAPIUrl, getUriWithOrg, getLEARNHOUSE_PLATFORM_URL_VAL } from '@services/config/config'
+import { getAPIUrl, getUriWithOrg, getLEARNHOUSE_PLATFORM_URL_VAL, getTenancy } from '@services/config/config'
 import { apiFetch } from '@services/utils/ts/requests'
 import { signOut } from '@components/Contexts/AuthContext'
 import { getOrgLogoMediaDirectory } from '@services/media/media'
@@ -69,6 +69,20 @@ function HomeClient() {
       router.replace('/new')
     }
   }, [isAuthenticated, orgs, router])
+
+  // Single-tenancy: there is only one org, so the picker is pure friction.
+  // Skip it and land the user directly on the org's home page.
+  useEffect(() => {
+    if (
+      isAuthenticated &&
+      !orgsLoading &&
+      Array.isArray(orgs) &&
+      orgs.length === 1 &&
+      getTenancy() === 'single'
+    ) {
+      router.replace(getUriWithOrg(orgs[0].slug, '/'))
+    }
+  }, [isAuthenticated, orgs, orgsLoading, router])
 
   return (
     <div className="fixed inset-0 z-[100] bg-white overflow-y-auto">

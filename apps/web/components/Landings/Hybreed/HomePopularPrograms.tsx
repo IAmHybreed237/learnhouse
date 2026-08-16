@@ -10,79 +10,79 @@ interface HomePopularProgramsProps {
   orgslug: string
 }
 
-const TABS = ['Professions and skills', 'Free programs']
+const TABS = ['Careers and skills', 'Free courses']
 
 const PROGRAMS = [
   {
-    category: 'Programming',
-    type: 'Profession',
-    discount: '- 40%',
-    title: '1C Programmer: Advanced Course',
-    startDate: 'Start August 17',
-    duration: '17 months',
+    category: 'Web Development',
+    type: 'Career track',
+    discount: 'New',
+    title: 'Modern Website Development',
+    startDate: 'Enrolling now',
+    duration: 'Self-paced',
     image: '/images/home/sf-prog-1.webp',
   },
   {
-    category: 'Design and UX',
-    type: 'Profession',
-    discount: '- 45%',
-    title: 'Graphic Designer: Advanced Course',
-    startDate: 'Start August 17',
-    duration: '17 months',
+    category: 'Design',
+    type: 'Career track',
+    discount: 'New',
+    title: 'Graphic Design & Visual Content',
+    startDate: 'Enrolling now',
+    duration: 'Self-paced',
     image: '/images/home/sf-prog-2.webp',
   },
   {
-    category: 'Analytics',
+    category: 'Workplace Skills',
     type: 'Course',
-    discount: '- 45%',
-    title: 'Excel: From Basics to Data Analysis',
-    startDate: 'Starts August 10',
-    duration: '9 weeks',
+    discount: 'New',
+    title: 'Microsoft Office Mastery',
+    startDate: 'Enrolling now',
+    duration: 'Self-paced',
     image: '/images/home/sf-prog-3.webp',
   },
   {
-    category: 'Design and UX',
-    type: 'Profession',
-    discount: '- 45%',
-    title: 'Interior designer',
-    startDate: 'Start August 6',
-    duration: '13 months',
+    category: 'Design',
+    type: 'Career track',
+    discount: 'New',
+    title: 'UI/UX Design with Figma',
+    startDate: 'Enrolling now',
+    duration: 'Self-paced',
     image: '/images/home/sf-prog-4.webp',
   },
   {
-    category: 'Analytics',
-    type: 'Profession',
-    discount: '- 45%',
-    title: 'Data Scientist: Advanced Course',
-    startDate: 'Start August 20',
-    duration: '18 months',
+    category: 'Web Development',
+    type: 'Career track',
+    discount: 'New',
+    title: 'React.js Development',
+    startDate: 'Enrolling now',
+    duration: 'Self-paced',
     image: '/images/home/sf-prog-5.webp',
   },
   {
     category: 'Marketing',
-    type: 'Profession',
-    discount: '- 50%',
-    title: 'Internet Marketer: Advanced',
-    startDate: 'Start August 7',
-    duration: '14 months',
+    type: 'Career track',
+    discount: 'New',
+    title: 'Digital Marketing',
+    startDate: 'Enrolling now',
+    duration: 'Self-paced',
     image: '/images/home/sf-prog-6.webp',
   },
   {
-    category: 'Marketplaces',
+    category: 'Career Upgrade',
     type: 'Course',
-    discount: '- 45%',
-    title: 'Marketplace Manager: Advanced',
-    startDate: 'Start August 10',
-    duration: '6 months',
+    discount: 'New',
+    title: 'Digital Accounting Skills',
+    startDate: 'Enrolling now',
+    duration: 'Self-paced',
     image: '/images/home/sf-prog-7.webp',
   },
   {
     category: 'Marketing',
     type: 'Course',
-    discount: '- 45%',
-    title: 'Basics of Trading and Investing',
-    startDate: 'Start August 25',
-    duration: '6 months',
+    discount: 'New',
+    title: 'Search Engine Optimization',
+    startDate: 'Enrolling now',
+    duration: 'Self-paced',
     image: '/images/home/sf-prog-7.webp',
   },
 ]
@@ -116,7 +116,7 @@ export default function HomePopularPrograms({ orgslug }: HomePopularProgramsProp
     <section className="w-full mt-[100px] px-10 max-[1239px]:mt-[60px] max-[767px]:mt-12 max-[767px]:px-3">
       {/* Title */}
       <h2 className="text-[40px] font-semibold leading-[46px] m-0 mb-7 max-[1239px]:text-[32px] max-[1239px]:leading-[38px] max-[1239px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[30px] max-[767px]:mb-3">
-        Our most popular programs
+        Explore our featured programs
       </h2>
 
       {/* Tabs */}
@@ -228,7 +228,7 @@ export default function HomePopularPrograms({ orgslug }: HomePopularProgramsProp
         href={coursesHref}
         className="inline-flex items-center gap-1.5 mt-6 text-base font-medium text-[#06f] hover:text-blue-800 transition-colors no-underline max-[767px]:mt-4"
       >
-        View all programs
+        View all courses
         <ArrowRight size={16} />
       </Link>
     </section>

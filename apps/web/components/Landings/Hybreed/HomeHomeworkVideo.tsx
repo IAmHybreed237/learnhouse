@@ -10,10 +10,10 @@ export default function HomeHomeworkVideo() {
       {/* Left: text */}
       <div className="flex-1">
         <h2 className="text-[40px] font-semibold leading-[46px] text-black mb-10 mt-0 max-[1239px]:text-[32px] max-[1239px]:leading-[38px] max-[1239px]:mb-7 max-[767px]:text-2xl max-[767px]:leading-[30px] max-[767px]:mb-6">
-          From homework to new projects
+          From lessons to real projects
         </h2>
         <p className="text-xl leading-7 text-[#27292d] m-0 max-[767px]:text-base max-[767px]:leading-6">
-          In just 2 minutes, we&apos;ll tell you about our students&apos; journey: through challenges to solutions and real results.
+          In just 2 minutes, discover how Hybreeds turn new skills into real projects and career breakthroughs.
         </p>
       </div>
 
@@ -21,7 +21,7 @@ export default function HomeHomeworkVideo() {
       <div className="relative min-w-[570px] h-[380px] rounded-[20px] overflow-hidden cursor-pointer group flex items-center justify-center flex-shrink-0 max-[1239px]:min-w-[460px] max-[1239px]:h-[306px] max-[1023px]:min-w-[340px] max-[1023px]:h-[226px] max-[767px]:min-w-0 max-[767px]:max-w-[351px] max-[767px]:h-[234px] max-[767px]:w-full">
         <Image
           src="/images/home/sf-homework-poster-1.png"
-          alt="From homework to new projects"
+          alt="From lessons to real projects"
           fill
           className="object-cover"
           sizes="(max-width: 767px) 351px, (max-width: 1023px) 340px, (max-width: 1239px) 460px, 570px"

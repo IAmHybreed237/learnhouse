@@ -9,6 +9,7 @@ from src.routers import instance
 from src.routers import plans
 from src.routers import usergroups
 from src.routers import dev, trail, users, auth, orgs, roles, search
+from src.routers import course_schedules as course_schedules_router
 from src.routers import mfa as mfa_router_module
 from src.routers import monitoring
 from src.routers import stream
@@ -251,6 +252,12 @@ v1_router.include_router(
     trail.router,
     prefix="/trail",
     tags=["trail"],
+    dependencies=[Depends(require_authenticated_user)]
+)
+v1_router.include_router(
+    course_schedules_router.router,
+    prefix="/schedules",
+    tags=["schedules"],
     dependencies=[Depends(require_authenticated_user)]
 )
 v1_router.include_router(

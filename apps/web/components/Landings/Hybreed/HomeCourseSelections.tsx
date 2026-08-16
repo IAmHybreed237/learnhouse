@@ -12,75 +12,75 @@ interface HomeCourseSelectionsProps {
 
 const SELECTION_CARDS = [
   {
-    count: 30,
-    title: 'Neural networks for work',
-    description: 'Along with your new profession, gain AI skills.',
+    count: 5,
+    title: 'Web & Software Development',
+    description: 'Build websites and web apps with HTML, CSS, JavaScript and React.',
     image: '/images/home/collection-1.webp',
   },
   {
-    count: 17,
-    title: 'Neural networks for life',
-    description: 'Master artificial intelligence and easily solve any problem.',
+    count: 3,
+    title: 'Digital & Workplace Skills',
+    description: 'Master computer basics, Office tools and modern workplace skills.',
     image: '/images/home/collection-2.webp',
   },
   {
-    count: 75,
-    title: 'Remote work',
-    description: 'Master professions that generate income from anywhere in the world.',
+    count: 2,
+    title: 'Design & Creative Tech',
+    description: 'Create professional graphics and design modern interfaces with Figma.',
     image: '/images/home/collection-3.webp',
   },
   {
-    count: 9,
-    title: 'Website creation',
-    description: 'Learn how to create websites from scratch for any purpose.',
+    count: 2,
+    title: 'Business & Marketing',
+    description: 'Learn digital marketing and SEO to grow businesses online effectively.',
     image: '/images/home/collection-4.webp',
   },
   {
-    count: 17,
-    title: 'Self-development',
-    description: 'Develop skills for life balance and productive work.',
+    count: 1,
+    title: 'Electronics & IoT',
+    description: 'Build practical electronics projects with Arduino and sensors.',
     image: '/images/home/collection-5.webp',
   },
   {
-    count: 48,
-    title: 'Freelance work',
-    description: "You'll learn how to build a career with a flexible schedule.",
+    count: 10,
+    title: 'Graduate Career Upgrade',
+    description: 'Bridge the gap between your degree and the digital workplace.',
     image: '/images/home/collection-6.webp',
   },
   {
-    count: 54,
-    title: 'Working in digital',
-    description: 'You can earn additional or primary income by working online.',
+    count: 5,
+    title: 'Start freelancing',
+    description: 'Build skills that let you earn income online on your own schedule.',
     image: '/images/home/collection-7.webp',
   },
   {
-    count: 7,
-    title: 'Marketplaces in practice',
-    description: 'Learn how to sell and promote products on popular platforms.',
+    count: 3,
+    title: 'Build websites from scratch',
+    description: 'Learn to create professional websites for any purpose or client.',
     image: '/images/home/collection-8.webp',
   },
   {
-    count: 15,
-    title: 'Professional growth',
-    description: 'Learn additional skills to accelerate your career development.',
+    count: 5,
+    title: 'Accelerate your career',
+    description: 'Add valuable digital skills that help you move forward faster.',
     image: '/images/home/collection-9.webp',
   },
   {
-    count: 25,
-    title: 'Working for yourself',
-    description: 'You will understand how to build a business, manage your time and income.',
+    count: 4,
+    title: 'Become your own boss',
+    description: 'Learn how to start a business, manage your time, and grow income.',
     image: '/images/home/collection-10.webp',
   },
   {
-    count: 18,
-    title: 'Career in creativity',
-    description: 'You can turn your hobby into a source of income.',
+    count: 3,
+    title: 'Turn creativity into income',
+    description: 'Transform your passion and hobby into a sustainable source of revenue.',
     image: '/images/home/collection-11.webp',
   },
   {
-    count: 6,
-    title: 'Start in game development',
-    description: 'Master the fundamentals of the gaming industry and take your first steps in development.',
+    count: 2,
+    title: 'Master modern Office tools',
+    description: 'Learn Word, Excel and PowerPoint for professional workplace tasks.',
     image: '/images/home/collection-12.webp',
   },
 ]
@@ -113,7 +113,7 @@ export default function HomeCourseSelections({ orgslug }: HomeCourseSelectionsPr
     <section className="w-full mt-[100px] px-10 max-[1239px]:mt-[60px] max-[767px]:mt-12 max-[767px]:px-3">
       <div className="relative">
         <h2 className="text-[40px] font-semibold leading-[46px] max-w-[670px] m-0 mb-10 max-[1239px]:text-[32px] max-[1239px]:leading-[38px] max-[1239px]:mb-7 max-[1239px]:max-w-[550px] max-[767px]:text-2xl max-[767px]:leading-[30px] max-[767px]:mb-6">
-          Course selections for any purpose
+          Course collections for every Hybreed
         </h2>
 
         {/* Navigation buttons — top right */}
