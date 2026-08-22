@@ -11,10 +11,58 @@ import { getCourseThumbnailMediaDirectory } from '@services/media/media'
 import HybreedHeader from '@components/Landings/Hybreed/HybreedHeader'
 import HybreedPromoBanner from '@components/Landings/Hybreed/HybreedPromoBanner'
 import DigitalMarketingLanding from './DigitalMarketingLanding'
+import ArduinoElectronicsLanding from './ArduinoElectronicsLanding'
+import DataAnalysisLanding from './DataAnalysisLanding'
+import DigitalAccountingLanding from './DigitalAccountingLanding'
+import DigitalAdminLanding from './DigitalAdminLanding'
+import DigitalBusinessAdminLanding from './DigitalBusinessAdminLanding'
+import DigitalFinanceLanding from './DigitalFinanceLanding'
+import DigitalHRLanding from './DigitalHRLanding'
+import DigitalLiteracyLanding from './DigitalLiteracyLanding'
+import DigitalMarketingGradLanding from './DigitalMarketingGradLanding'
+import DigitalMediaLanding from './DigitalMediaLanding'
+import DigitalTeachersLanding from './DigitalTeachersLanding'
+import DigitalWorkplaceLanding from './DigitalWorkplaceLanding'
+import EngineeringComputingLanding from './EngineeringComputingLanding'
+import GraphicDesignLanding from './GraphicDesignLanding'
+import JavaScriptLanding from './JavaScriptLanding'
+import MicrosoftOfficeLanding from './MicrosoftOfficeLanding'
+import ModernWebDevLanding from './ModernWebDevLanding'
+import ReactJSLanding from './ReactJSLanding'
+import SEOLanding from './SEOLanding'
+import UIUXDesignLanding from './UIUXDesignLanding'
+import PythonScriptsLanding from './PythonScriptsLanding'
+import WordPressLanding from './WordPressLanding'
+import AIEssentialsLanding from './AIEssentialsLanding'
+import AIPromptEngineeringLanding from './AIPromptEngineeringLanding'
 
 // Course UUIDs that have custom landing pages
 const CUSTOM_COURSE_PAGES: Record<string, React.ComponentType<{ courseuuid: string; orgslug: string }>> = {
   '1df3527b-ed86-449a-9f45-e4de0bb306a1': DigitalMarketingLanding,
+  '52c650f2-6d4f-4bf7-8c6e-a834e775ba15': ArduinoElectronicsLanding,
+  '2d7e7e16-ff60-4e55-9b9f-7900592595a5': DataAnalysisLanding,
+  'bdddef17-d095-4e5c-bf70-4b0fbc3ac795': DigitalAccountingLanding,
+  '9b45d0fe-b593-419a-bf64-e8946b077656': DigitalAdminLanding,
+  '4c5e1739-da43-4a22-856c-cadc476874b9': DigitalBusinessAdminLanding,
+  '9840cfbf-6208-4586-93e7-1e2dc159267c': DigitalFinanceLanding,
+  'efde5827-642b-4db7-a1f4-18ea2ae20f0d': DigitalHRLanding,
+  'af04c27e-5526-4e63-b182-bc74db342506': DigitalLiteracyLanding,
+  'd8f9a1b2-3c4d-5e6f-7a8b-9c0d1e2f3a4b': DigitalMarketingGradLanding,
+  'e5a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c': DigitalMediaLanding,
+  'f6b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d': DigitalTeachersLanding,
+  'a7c4d5e6-f7a8-4b9c-0d1e-2f3a4b5c6d7e': DigitalWorkplaceLanding,
+  'b8d5e6f7-a8b9-4c0d-1e2f-3a4b5c6d7e8f': EngineeringComputingLanding,
+  'c9e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f9a': GraphicDesignLanding,
+  'd0f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b': JavaScriptLanding,
+  'e1a8b9c0-d1e2-4f3a-4b5c-6d7e8f9a0b1c': MicrosoftOfficeLanding,
+  'f2b9c0d1-e2f3-4a4b-5c6d-7e8f9a0b1c2d': ModernWebDevLanding,
+  'a3c0d1e2-f3a4-4b5c-6d7e-8f9a0b1c2d3e': ReactJSLanding,
+  '5d7da0af-e09a-4fc3-93f4-6db3e8512e2d': SEOLanding,
+  'c5e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a': UIUXDesignLanding,
+  'd6f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b': PythonScriptsLanding,
+  'e7a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c': WordPressLanding,
+  'f8b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d': AIEssentialsLanding,
+  'a9c6d7e8-f9a0-4b1c-2d3e-4f5a6b7c8d9e': AIPromptEngineeringLanding,
 }
 
 interface CourseAboutClientProps {

@@ -1,7 +1,7 @@
 # Project Setup Instructions - Read This First
 
 ## Project
-LearnHouse LMS — custom Hybreed branding, replicating Netology-style course pages.
+LearnHouse LMS — custom Hybreed branding, modern course landing pages.
 
 ## GitHub Repo
 - URL: https://github.com/IAmHybreed237/learnhouse.git
@@ -50,25 +50,27 @@ Make sure PostgreSQL is running. The backend will need it.
 ## Step 5: Start the servers
 
 ### Start backend (FastAPI)
-```bash
+```powershell
 cd apps/api
-python -m uvicorn src.main:app --reload --port 8700
+.venv\Scripts\python.exe -m uvicorn app:app --host 0.0.0.0 --port 8800
 ```
+**IMPORTANT**: Use `app:app` NOT `src.main:app` — the entrypoint is `app.py` in the api root.
 
 ### Start frontend (Next.js)
-```bash
+```powershell
 cd apps/web
-npm run dev
+npx next dev --port 3000
 ```
 
-The frontend runs on `http://127.0.0.1:53128` (or check terminal output for the port).
+The frontend runs on `http://localhost:3000`.
 
 ## Step 6: Verify
 Open these pages in the browser:
-- Homepage: `http://127.0.0.1:53128/`
-- Courses catalog: `http://127.0.0.1:53128/courses`
-- Free courses page: `http://127.0.0.1:53128/free`
-- Course about page: `http://127.0.0.1:53128/course/6f3c82f8-be2a-4244-ba46-dc16ddb1d68b/about`
+- Homepage: `http://localhost:3000/`
+- Courses catalog: `http://localhost:3000/courses`
+- Free courses page: `http://localhost:3000/free`
+- SEO course about page: `http://localhost:3000/course/5d7da0af-e09a-4fc3-93f4-6db3e8512e2d/about`
+- Digital Marketing course: `http://localhost:3000/course/1df3527b-ed86-449a-9f45-e4de0bb306a1/about`
 
 ## What Was Done So Far
 
@@ -83,7 +85,7 @@ Open these pages in the browser:
 - Custom HybreedHeader + HybreedPromoBanner components
 
 ### 2. Course About Page (`/course/[uuid]/about`)
-Built to match Netology-style design with these sections:
+Built with modern design with these sections:
 - **Hero**: Dark bg, 3D graphic (`graphic_hero_fe.webp`), course title, badges, consultation form, stats cards
 - **Most Visible Profession**: White card with text + `graphic_fe_1.webp` image
 - **Median Salaries**: Light gray bg, white card with price, progress bar graph (Beginner/Experienced/Lead)
@@ -115,15 +117,19 @@ Built to match Netology-style design with these sections:
 - `apps/web/public/images/home/` — All homepage images
 
 ## What's Next (TODO)
+- Complete remaining SEO course landing page sections (see CYBER_SETUP.md for details)
 - Wire up pricing cards on course about page with actual enrollment/checkout flow
 - Connect consultation form to backend
 - Make free course cards actually filter by direction
 - Polish mobile responsiveness across all pages
-- Potentially more sections on the course about page
+- Build remaining course landing pages for all 25+ courses
 
 ## Notes
 - Git is NOT in PATH on cyber computers. Use full path: `& "C:\Program Files\Git\bin\git.exe"`
-- The dev server port may change. Check terminal output after `npm run dev`
 - Backend must be running for the frontend to fetch course data
-- Course UUID for testing: `6f3c82f8-be2a-4244-ba46-dc16ddb1d68b`
-- Org slug for testing: check the URL when browsing the site
+- Backend port: 8800, Frontend port: 3000
+- Org slug for testing: `default`
+- SEO course UUID: `5d7da0af-e09a-4fc3-93f4-6db3e8512e2d`
+- Digital Marketing course UUID: `1df3527b-ed86-449a-9f45-e4de0bb306a1`
+- See `CYBER_SETUP.md` for detailed setup guide for cyber cafe computers
+- See `AGENTS.md` for full project state and architecture

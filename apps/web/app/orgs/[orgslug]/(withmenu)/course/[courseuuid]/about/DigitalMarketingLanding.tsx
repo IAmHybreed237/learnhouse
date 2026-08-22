@@ -112,12 +112,12 @@ function HeroSection({ course, orgslug, orgUuid }: { course: any; orgslug: strin
             <div className="max-[767px]:bg-[#282d33] max-[767px]:p-6 max-[767px]:rounded-[32px] max-[767px]:mt-[10px] max-[767px]:z-[1] relative">
               {/* Title */}
               <h1 className="text-[57px] max-[1023px]:text-[57px] max-[767px]:text-[28px] leading-[1.12] max-[767px]:leading-[32px] font-bold text-white my-6 max-[767px]:mt-0 max-[767px]:mb-4 max-w-[680px] max-[1023px]:max-w-full">
-                Internet Marketer: Advanced Course
+                Digital Marketing
               </h1>
 
               {/* Description */}
               <p className="text-[18px] max-[767px]:text-[16px] leading-[28px] max-[767px]:leading-[24px] text-white mb-0 max-w-[553px]">
-                Learn the basics of internet marketing, two specializations, and neural networks to work faster and more effectively. Practice your skills on a simulator or on your own project.
+                Learn how to attract, engage, and convert customers using social media, content marketing, SEO, email marketing, online advertising, and digital analytics.
               </p>
             </div>
 
@@ -781,7 +781,7 @@ function ProgramSection() {
     {
       title: 'Marketing Basics',
       bonus: false,
-      description: 'Introduction to internet marketing fundamentals. Learn how the digital marketing ecosystem works, key terms, and the role of a marketer in a company. Study consumer behavior, target audience analysis, and competitor research.',
+      description: 'Learn the fundamentals of digital marketing: market research, audience analysis, positioning, and strategy development. Understand the marketing funnel from awareness to conversion.',
     },
     {
       title: 'Promotion channels and tools',
