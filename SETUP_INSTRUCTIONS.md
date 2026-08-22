@@ -32,7 +32,9 @@ npm install
 ### Install backend dependencies
 ```bash
 cd apps/api
-pip install -r requirements.txt
+python -m venv .venv
+.venv\Scripts\activate
+pip install -e .
 # or
 uv sync
 ```

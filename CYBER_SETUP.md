@@ -95,14 +95,22 @@ The database dump is NOT included in the git repo (too large). You need to get i
 cd C:\Users\Public\Projects\learnhouse\apps\api
 python -m venv .venv
 .venv\Scripts\activate
-pip install -r requirements.txt
+pip install -e .
+```
+Alternatively, if you have `uv` installed:
+```powershell
+uv sync
 ```
 
 ### 4.2 Configure backend
-Create `apps/api/.env` with:
+Create `apps/api/.env` with these exact contents:
 ```
-DATABASE_URL=postgresql://learnhouse:learnhouse@localhost:5432/learnhouse
-SECRET_KEY=your-secret-key-here
+LEARNHOUSE_DEVELOPMENT_MODE=true
+LEARNHOUSE_AUTH_JWT_SECRET_KEY=ztUBM7vx8QbLJV7eAvCt09hZaKdxs0D6-RdGr0y-yNE
+LEARNHOUSE_SQL_CONNECTION_STRING=postgresql://learnhouse:learnhouse@localhost:5432/learnhouse
+LEARNHOUSE_REDIS_CONNECTION_STRING=redis://localhost:6379/learnhouse
+LEARNHOUSE_ENV=dev
+LEARNHOUSE_INITIAL_ADMIN_PASSWORD=admin123456
 ```
 
 Check `apps/api/config/config.yaml` for other settings. The default port is 1338 but we override to 8800.
@@ -127,9 +135,10 @@ npm install
 ```
 
 ### 5.2 Configure frontend
-Create `apps/web/.env.local` with:
+Create `apps/web/.env.local` with these exact contents:
 ```
 NEXT_PUBLIC_LEARNHOUSE_BACKEND_URL=http://localhost:8800
+NEXT_PUBLIC_LEARNHOUSE_DOMAIN=localhost:3000
 ```
 
 ### 5.3 Start the frontend
